@@ -1,0 +1,82 @@
+{
+    "name": "@pyromancy/google-calendar-util",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "Google Calendar Import Utilities",
+    "main": "dist/bundle.js",
+    "keywords": [
+        "GoogleAppsScript",
+        "GoogleDocs",
+        "GoogleSheets",
+        "GoogleCalender"
+    ],
+    "author": {
+        "name": "Gillian Tunney",
+        "email": "gbtunney@mac.com"
+    },
+    "scripts": {
+        "\n========== CLASP >> ==========": "",
+        "status": "pnpm exec clasp status --ignore ./.claspignore ",
+        "push": "pnpm exec clasp push  $npm_package_config_document_id",
+        "login": "pnpm clasp login",
+        "open:parent": "cross-var open https://docs.google.com/spreadsheets/d/$npm_package_config_document_id",
+        "open:script": "pnpm exec clasp open",
+        "\n========== BUILD >> ==========": "",
+        "build": "pnpm build:esbuild && pnpm build:cp &&  pnpm status",
+        "build:esbuild": "ts-node --esm esbuild.ts",
+        "build:cp": "cp ./appsscript.json ./dist ",
+        "build:ts": "tsc --build",
+        "\n========== HELP >> ==========": "",
+        "help": "pnpm run test:build:cli --help",
+        "\n========== DEV >> ==========": "",
+        "dev": "tsc  --build --watch",
+        "\n========== TEST >> ==========": "",
+        "test": "mkdir -p tests/_output && pnpm test:cli && pnpm test:build:cli  && pnpm test:help",
+        "test:help": "pnpm test:cli --help",
+        "test:cli": "ts-node --esm ./src/index.ts",
+        "test:build:cli": "node ./dist/index.js",
+        "\n========== PUBLISH >> ==========": "",
+        "build:deploy": "pnpm clean && pnpm build:esbuild && pnpm build:cp &&  pnpm push",
+        "\n========== CLEAN >> ==========": "",
+        "clean": "pnpm clean:ts && pnpm clean:build",
+        "clean:build": "rm -R -f dist && rm -R -f types",
+        "clean:ts": "tsc --build --clean",
+        "\n========== CODE STYLE >> ==========": "",
+        "prettier": "cross-var prettier {$npm_package_config_prettier_path}.{$npm_package_config_prettier_extensions} --ignore-path ./.gitignore --write",
+        "\n========== CHECK >> ==========": "",
+        "check": "pnpm build:ts",
+        "\n========== FIX >> ==========": "",
+        "fix": "pnpm prettier"
+    },
+    "license": "ISC",
+    "devDependencies": {
+        "@google/clasp": "^2.4.2",
+        "@snailicide/build-config": "^0.2.5",
+        "@snailicide/g-library": "^0.2.1",
+        "@types/google-apps-script": "^1.0.65",
+        "@types/node": "^20.4.2",
+        "@types/yargs": "^17.0.24",
+        "esbuild": "^0.18.15",
+        "esbuild-gas-plugin": "^0.6.0",
+        "prettier": "^3.0.0",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.1.6",
+        "yargs": "^17.7.2",
+        "zod": "^3.21.4"
+    },
+    "prettier": "@snailicide/build-config/prettier",
+    "config": {
+        "document": {
+            "id": "10xi91YyCk3asES5Tg4RjWIHVONggtxD_LcxPpANbiQc"
+        },
+        "eslint": {
+            "extensions": "ts,js,cjs,mjs",
+            "path": ".es*,*,**/*",
+            "config": ".eslintrc.cjs"
+        },
+        "prettier": {
+            "extensions": "html,ts,js,cjs,mjs,cts,json,yaml,yml,graphql,md",
+            "path": "*,**/*"
+        }
+    }
+}
