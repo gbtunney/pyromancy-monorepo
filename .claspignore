@@ -1,0 +1,13 @@
+/node_modules/**/*
+*.js
+**/*.js
+*.d.ts
+*.js.map
+/tests/_output
+_temp
+types
+tsconfig.json
+node_modules/**
+node_modules/**/.*/**
+node_modules/**/.*
+/Users/gilliantunney/bedrock/packages/google-sheets-script/tsconfig.json
