@@ -4283,7 +4283,7 @@
             "disable_input": "",
             "admin_label": "",
             "help_text": "<p><br></p>",
-            "desc_text": "<p><span class=\"form-sub-label-container\" style=\"vertical-align: top;\"><span class=\"form-sub-label\">Fire<br />\n performance has specific requirements for staging areas and general <br />\nlocation. If you are unsure if your city / venue allows fire <br />\nperformance, we can help figure it out. Please provide us with the name <br />\nof venue or an address. Providing a map location will also help us <br />\nestimate travel time. </span></span><br></p>",
+            "desc_text": "<p><span class=\"Fire performance has specific requirements for staging areas and general location. If you are unsure if your city / venue allows fire performance, we can help figure it out. Please provide us with the name of venue or an address. Providing a map location will also help us estimate travel time.",
             "disable_browser_autocomplete": "",
             "textarea_rte": "",
             "disable_rte_mobile": "",

@@ -5,7 +5,7 @@
     "private": true,
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/gbtunney/snailicide-monorepo.git"
+        "url": "git@github.com:gbtunney/pyromancy-monorepo.git"
     },
     "license": "MIT",
     "author": {
@@ -14,6 +14,7 @@
     },
     "scripts": {
         "preversion": "git-branch-is development && echo $;",
+        "user:list": "pnpm exec lando wp user list",
         "\n========== COMMIT >> ==========": "",
         "commit": "pnpm run precommit && pnpm exec git-cz",
         "cz": "pnpm exec git-cz",
@@ -32,21 +33,22 @@
         "fix": "pnpm fix:self && pnpm -r fix",
         "fix:self": "pnpm prettier --write",
         "\n========== CLEAN >> ==========": "",
-        "clean": "pnpm -r clean",
+        "clean": "pnpm -r clean && pnpm run clean:self",
         "clean:cache": "pnpm composer:clean && pnpm lando:clean",
-        "clean:self": "tsc --build --clean && pnpm clean:cache",
+        "clean:ts": "tsc --build --clean",
+        "clean:self": "pnpm clean:cache",
         "\n========== COMPOSER >> ==========": "",
         "composer:install": "pnpm exec composer install",
         "composer:rebuild": "pnpm exec composer reinstall",
         "composer:clean": "pnpm exec composer  clear-cache",
         "composer:uninstall": "pnpm composer:clean && rm -rf vendor &&  rm -f composer.lock",
         "\n========== LANDO >> ==========": "",
-        "lando:install": "pnpm lando:start",
+        "lando:install": "pnpm lando:start --verbose",
         "lando:start": "pnpm exec lando start",
         "lando:clean": "pnpm exec lando --clear",
         "lando:stop": "pnpm exec lando stop",
         "lando:destroy": "pnpm exec lando destroy",
-        "lando:rebuild": "pnpm exec lando rebuild",
+        "lando:rebuild": "pnpm exec lando rebuild --verbose",
         "\n========== UNINSTALL >> ==========": "",
         "uninstall": "pnpm run clean && pnpm composer:uninstall && pnpm uninstall:list && pnpm run uninstall:rm && pnpm run uninstall:lock",
         "uninstall:list": "find . -name 'node_modules' -type d -prune",
@@ -89,7 +91,7 @@
         },
         "prettier": {
             "extensions": "ts,js,cjs,mjs,cts,json,xml,yaml,yml,graphql,md",
-            "path": "notes/*,*"
+            "path": "**/*,*"
         },
         "commitizen": {
             "path": "@commitlint/cz-commitlint"

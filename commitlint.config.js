@@ -11,7 +11,8 @@ module.exports = {
         'scope-enum': [
             2,
             'always',
-            ['root', 'release', 'google-calendar-util', 'theme-pyromancy2014'],
+            ['root', 'release','prisma-api','theme-pyromancy2014',
+             'google-calendar-util'],
         ],
     },
 }

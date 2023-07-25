@@ -14,3 +14,4 @@ package.lock
 pnpm-lock.yaml
 
 node_modules
+packages
