@@ -5,6 +5,7 @@
     "private": false,
     "type": "module",
     "scripts": {
+        "gui": "pnpm exec prisma studio",
         "\n========== BUILD >> ==========": "",
         "build": " pnpm build:ts",
         "build:ts": "tsc --build",
@@ -13,7 +14,7 @@
         "\n========== DEV >> ==========": "",
         "dev": "tsc  --build --watch",
         "\n========== TEST >> ==========": "",
-        "test": "echo 'test'",
+        "test": "pnpm exec ts-node --esm ./src/index.ts",
         "\n========== PUBLISH >> ==========": "",
         "build:deploy": "pnpm clean && pnpm build:esbuild && pnpm build:cp &&  pnpm push",
         "\n========== CLEAN >> ==========": "",
@@ -42,16 +43,19 @@
         "email": "gbtunney@mac.com"
     },
     "devDependencies": {
+        "@prisma/client": "^5.0.0",
         "@snailicide/build-config": "^0.2.5",
         "@snailicide/g-library": "^0.2.1",
-        "@types/node": "^20.4.2",
+        "@types/node": "^20.4.5",
         "eslint": "^8.45.0",
         "prettier": "^3.0.0",
+        "prettier-plugin-prisma": "^5.0.0",
+        "prettier-plugin-xml": "^0.1.0",
+        "prisma": "^5.0.0",
         "ts-node": "^10.9.1",
         "typescript": "^5.1.6",
         "zod": "^3.21.4"
     },
-    "prettier": "@snailicide/build-config/prettier",
     "config": {
         "document": {
             "id": "10xi91YyCk3asES5Tg4RjWIHVONggtxD_LcxPpANbiQc"
@@ -62,7 +66,7 @@
             "config": ".eslintrc.cjs"
         },
         "prettier": {
-            "extensions": "html,ts,js,cjs,mjs,cts,json,yaml,yml,graphql,md",
+            "extensions": "prisma,xml,html,ts,js,cjs,mjs,cts,json,yaml,yml,graphql,md",
             "path": "*,**/*"
         }
     }

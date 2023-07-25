@@ -15,11 +15,8 @@
 
 ## Helpful Links
 
--   [Vite](https://vitejs.dev/)
--   [Shopify Liquid reference](https://shopify.dev/api/liquid)
--   [Shopify Theme Settings reference](https://shopify.dev/themes/architecture/settings)
--   [vite-plugin-shopify-theme-settings](https://github.com/barrel/barrel-shopify/tree/main/packages/vite-plugin-shopify-theme-settings) _(by barrel-shopify)_
--   the awesome [vite-plugin-shopify](https://github.com/barrel/barrel-shopify/tree/main/packages/vite-plugin-shopify) _(by barrel-shopify)_
+-   [Prisma Documentation | Concepts, Guides, and Reference](https://www.prisma.io/docs)
+-   [postgresql database w/ docker-compose](https://blog.christian-schou.dk/run-postgresql-database-using-docker-compose/)
 
 ## To-Do
 
