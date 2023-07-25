@@ -157,6 +157,9 @@ npm-shrinkwrap.json
 #todo: remove for prod
 yarn.lock
 
+#EDITOR files
+.idea/
+
 # We're using YARN, and it provides its lockfile and settings.
 package.lock
 
@@ -170,8 +173,6 @@ pnpmfile.js
 # Log files.
 *.log
 *.log.*
-scratch
-examples
 
 #todo: figure out what to do with this
 *.test.js
