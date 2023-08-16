@@ -1,0 +1,21 @@
+{
+    "name": "pyromancy/wp-plugin",
+    "homepage": "https://roots.io/bedrock/",
+    "description": "GBT Utility plugin to demonstrate Vite for WP integration.",
+    "authors": [
+        {
+            "name": "Gillian Tunney",
+            "email": "gbtunney@gmail.com",
+            "homepage": "https://github.com/gbtunney"
+        }
+    ],
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-only",
+    "require": {
+        "kucrut/vite-for-wp": "^0.5.2"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.13",
+        "phpstan/phpstan": "^1.9.2"
+    }
+}

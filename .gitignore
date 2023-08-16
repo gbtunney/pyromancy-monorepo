@@ -9,6 +9,8 @@ web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/cache/*
 
+!web/app/plugins/g-wp-plugin
+
 # WordPress
 web/wp
 web/.htaccess
@@ -177,5 +179,4 @@ pnpmfile.js
 #todo: figure out what to do with this
 *.test.js
 
-#temp
-wp-content
+archive

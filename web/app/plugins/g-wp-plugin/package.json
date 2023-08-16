@@ -1,0 +1,78 @@
+{
+    "name": "@pyromancy/wp-plugin",
+    "version": "0.0.1",
+    "type": "module",
+    "private": true,
+    "description": "GBT Utility plugin to demonstrate Vite for WP integration.",
+    "scripts": {
+        "\n========== BUILD >> ==========": "",
+        "build": "pnpm build:ts && vite build",
+        "build:ts": "vue-tsc",
+        "\n========== DEV >> ==========": "",
+        "dev": "vite",
+        "inspector": "pnpm dev && pnpm exec 'http://localhost:5173/__unocss'",
+        "\n========== LIFECYCLE >> ==========": "",
+        "postinstall": "pnpm composer:install",
+        "\n========== TEST >> ==========": "",
+        "test": "tsc --build",
+        "\n========== COMPOSER >> ==========": "",
+        "composer:install": "pnpm exec composer install",
+        "composer:rebuild": "pnpm exec composer reinstall",
+        "composer:clean": "rm -rf vendor &&  rm -f composer.lock",
+        "composer:uninstall": "pnpm composer:clean && pnpm exec composer  clear-cache",
+        "\n========== PUBLISH >> ==========": "",
+        "release": "pnpm prerelease && pnpm publish --access public --report-summary --no-git-checks",
+        "prerelease": "pnpm clean && pnpm build && pnpm run docs && pnpm fix && pnpm check && pnpm test",
+        "\n========== CLEAN >> ==========": "",
+        "clean": "pnpm clean:ts && pnpm clean:build && pnpm composer:clean",
+        "clean:ts": "tsc --build --clean",
+        "clean:build": "pnpm exec rm -R -f dist && pnpm exec rm -R -f assets",
+        "\n========== CODE STYLE >> ==========": "",
+        "prettier": "cross-var prettier {$npm_package_config_prettier_path}.{$npm_package_config_prettier_extensions} --write --ignore-path .gitignore --ignore-path .prettierignore",
+        "\n========== CHECK >> ==========": "",
+        "check": "pnpm build:ts && pnpm clean:ts",
+        "\n========== FIX >> ==========": "",
+        "fix": "pnpm prettier"
+    },
+    "main": "index.js",
+    "dependencies": {
+        "vue": "^3.3.4"
+    },
+    "devDependencies": {
+        "@wordpress/hooks": "^3.1.1",
+        "@fullcalendar/core": "^6.1.8",
+        "@fullcalendar/daygrid": "^6.1.8",
+        "@fullcalendar/interaction": "^6.1.8",
+        "@fullcalendar/vue3": "^6.1.8",
+        "@kucrut/vite-for-wp": "^0.5.2",
+        "@prettier/plugin-php": "^0.19.6",
+        "@snailicide/build-config": "^0.2.5",
+        "@snailicide/g-library": "^0.2.1",
+        "@types/node": "^20.5.0",
+        "@unocss/reset": "^0.55.0",
+        "@vitejs/plugin-vue": "^3.1.0",
+        "cross-env": "^7.0.3",
+        "cross-var": "^1.1.0",
+        "deepmerge": "^4.3.1",
+        "eslint": "^8.45.0",
+        "prettier": "^3.0.0",
+        "prettier-plugin-jsdoc": "^1.0.1",
+        "prettier-plugin-sh": "^0.13.1",
+        "real-config": "^1.39.0",
+        "typescript": "^5.1.6",
+        "unocss": "^0.55.0",
+        "vite": "^4.4.9",
+        "vue-tsc": "^1.8.8"
+    },
+    "config": {
+        "eslint": {
+            "extensions": "ts,js,cjs,mjs",
+            "path": ".es*,*,**/*",
+            "config": ".eslintrc.cjs"
+        },
+        "prettier": {
+            "extensions": "ts,js,cjs,mjs,cts,json,xml,yaml,yml,graphql,md",
+            "path": "**/*,*"
+        }
+    }
+}

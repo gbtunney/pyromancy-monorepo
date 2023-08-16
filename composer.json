@@ -1,19 +1,14 @@
 {
-    "name": "roots/bedrock",
+    "name": "snailicide/pyromancy2023",
     "type": "project",
     "license": "MIT",
-    "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
+    "description": "Pyromancy Website 2023",
     "homepage": "https://roots.io/bedrock/",
     "authors": [
         {
-            "name": "Scott Walkinshaw",
-            "email": "scott.walkinshaw@gmail.com",
+            "name": "Gillian Tunney",
+            "email": "gbtunney@gmail.com",
             "homepage": "https://github.com/swalkinshaw"
-        },
-        {
-            "name": "Ben Word",
-            "email": "ben@benword.com",
-            "homepage": "https://github.com/retlehs"
         }
     ],
     "keywords": [
@@ -51,7 +46,8 @@
         "wpackagist-theme/twentytwentythree": "^1.0",
         "wpackagist-theme/hello-elementor": "2.8.1",
         "wpackagist-plugin/elementor": "3.15.0-beta4",
-        "wpackagist-plugin/ninja-forms": "3.6.28"
+        "wpackagist-plugin/ninja-forms": "3.6.28",
+        "wpackagist-plugin/classic-editor":"1.6.3"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.7.1",

@@ -1,0 +1,10 @@
+## specific
+node_modules
+vendor
+!assets/index.php
+
+*.js
+*.d.ts
+*.js.map
+
+inc/examples

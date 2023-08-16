@@ -23,6 +23,7 @@
         "\n========== BUILD >> ==========": "",
         "build": "pnpm -r build",
         "build:self": "tsc --build",
+        "dev": "pnpm --filter=@pyromancy/wp-plugin dev",
         "\n========== CODE STYLE >> ==========": "",
         "lint": "cross-var eslint $npm_package_config_eslint_path.{$npm_package_config_eslint_extensions} --config ./$npm_package_config_eslint_config",
         "prettier": "cross-var prettier {$npm_package_config_prettier_path}.{$npm_package_config_prettier_extensions} --ignore-path ./.gitignore",
@@ -55,8 +56,9 @@
         "uninstall:rm": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
         "uninstall:lock": "rm -f pnpm-lock.yaml && rm -f packages/**/pnpm-lock.yaml",
         "\n========== LIFECYCLE >> ==========": "",
-        "postinstall": "pnpm composer:install ",
+        "postinstall": "pnpm composer:install",
         "post:install": "pnpm run build",
+        "start": "pnpm install && pnpm lando:start",
         "prepare": "husky install",
         "\n========== TEST >> ==========": "",
         "test": "tsc --build"
@@ -66,6 +68,7 @@
         "@commitlint/cli": "^17.6.7",
         "@commitlint/config-conventional": "^17.6.7",
         "@commitlint/cz-commitlint": "^17.6.7",
+        "@prettier/plugin-php": "^0.19.6",
         "@snailicide/build-config": "^0.2.5",
         "@types/node": "^20.4.2",
         "@typescript-eslint/eslint-plugin": "^6.1.0",
@@ -89,7 +92,7 @@
             "config": ".eslintrc.cjs"
         },
         "prettier": {
-            "extensions": "ts,js,cjs,mjs,cts,json,xml,yaml,yml,graphql,md",
+            "extensions": "php,ts,js,cjs,mjs,cts,json,xml,yaml,yml,graphql,md",
             "path": "notes/**/*,*"
         },
         "commitizen": {
