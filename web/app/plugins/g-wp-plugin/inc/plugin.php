@@ -7,6 +7,6 @@ require_once __DIR__ . '/shortcodes.php';
 
 function bootstrap(): void
 {
-    GPlugin\Frontend\bootstrap();
-    GPlugin\ShortCodes\bootstrap();
+	GPlugin\Frontend\bootstrap();
+	GPlugin\ShortCodes\bootstrap();
 }

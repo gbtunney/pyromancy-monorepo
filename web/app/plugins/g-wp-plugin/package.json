@@ -31,9 +31,9 @@
         "codesniffer:fix": "cross-var pnpm exec $npm_package_config_codesniffer_formatter --standard=$npm_package_config_codesniffer_standard $npm_package_config_codesniffer_path",
         "codesniffer:check": "cross-var pnpm exec $npm_package_config_codesniffer_linter --standard=$npm_package_config_codesniffer_standard --runtime-set ignore_warnings_on_exit 1 --ignore=./inc/examples/ $npm_package_config_codesniffer_path",
         "\n========== CHECK >> ==========": "",
-        "check": "pnpm build:ts &&  pnpm codesniffer:check",
+        "check": "pnpm build:ts",
         "\n========== FIX >> ==========": "",
-        "fix": "pnpm codesniffer:fix || pnpm prettier && pnpm codesniffer:fix"
+        "fix": "pnpm prettier"
     },
     "main": "index.js",
     "dependencies": {
@@ -48,7 +48,7 @@
         "@fullcalendar/interaction": "^6.1.8",
         "@fullcalendar/vue3": "^6.1.8",
         "@kucrut/vite-for-wp": "^0.5.2",
-        "@prettier/plugin-php": "^0.19.6",
+        "@prettier/plugin-php": "^0.20.0",
         "@snailicide/build-config": "^0.2.5",
         "@snailicide/g-library": "^0.2.1",
         "@types/node": "^20.5.0",
@@ -82,7 +82,7 @@
             "config": ".eslintrc.cjs"
         },
         "prettier": {
-            "extensions": "ts,js,cjs,mjs,cts,json,xml,yaml,yml,graphql,md",
+            "extensions": "php,ts,js,cjs,mjs,cts,json,xml,yaml,yml,graphql,md",
             "path": "**/*,*"
         }
     }

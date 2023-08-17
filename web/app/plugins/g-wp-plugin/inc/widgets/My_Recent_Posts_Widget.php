@@ -22,29 +22,34 @@ class MyRecentPostsWidget extends \WPH_Widget
      *
      * @return void
      */
-	public function __construct() { // phpcs:ignore
-        $args = array(
-                         'label'       => \__('My Recent Posts Example', G_TEXTDOMAIN),
-                 'description' => \__('My Recent Posts Widget Description', G_TEXTDOMAIN),
-            'slug'        => 'recent-posts',
+    public function __construct()
+    {
+        // phpcs:ignore
+        $args = [
+            'label' => \__('My Recent Posts Example', G_TEXTDOMAIN),
+            'description' => \__(
+                'My Recent Posts Widget Description',
+                G_TEXTDOMAIN
+            ),
+            'slug' => 'recent-posts',
             // 'options' => array( 'cache' => true )
-        );
+        ];
 
-        $args[ 'fields' ] = array(
+        $args['fields'] = [
             // Title field
-            array(
+            [
                 // Field name/label
-                'name'     => \__('Title', G_TEXTDOMAIN),
+                'name' => \__('Title', G_TEXTDOMAIN),
                 // Field description
-                'desc'     => \__('Enter the widget title.', G_TEXTDOMAIN),
+                'desc' => \__('Enter the widget title.', G_TEXTDOMAIN),
                 // Field id
-                'id'       => 'title',
+                'id' => 'title',
                 // Field type ( text, checkbox, textarea, select, select-group, taxonomy, taxonomyterm, pages, hidden )
-                'type'     => 'text',
+                'type' => 'text',
                 // Class, rows, cols
-                'class'    => 'widefat',
+                'class' => 'widefat',
                 // Default value
-                'std'      => \__('Recent Posts', G_TEXTDOMAIN),
+                'std' => \__('Recent Posts', G_TEXTDOMAIN),
                 /**
                 Set the field validation type/s
                 'alpha_dash'
@@ -71,79 +76,79 @@ class MyRecentPostsWidget extends \WPH_Widget
                 esc_url
                 esc_textarea
                  */
-                'filter'   => 'strip_tags|esc_attr',
-            ),
-            // Taxonomy Field
-            array(
-                'name'  => \__('Taxonomy', G_TEXTDOMAIN),
-                'desc'  => \__('Set the taxonomy.', G_TEXTDOMAIN),
-                'id'    => 'taxonomy',
-                'type'  => 'taxonomy',
-                'class' => 'widefat',
-            ),
-            // Taxonomy Field
-            array(
-                'name'     => \__('Taxonomy terms', G_TEXTDOMAIN),
-                'desc'     => \__('Set the taxonomy terms.', G_TEXTDOMAIN),
-                'id'       => 'taxonomyterm',
-                'type'     => 'taxonomyterm',
-                'taxonomy' => 'category',
-                'class'    => 'widefat',
-            ),
-            // Pages Field
-            array(
-                'name'  => \__('Pages', G_TEXTDOMAIN),
-                'desc'  => \__('Set the page.', G_TEXTDOMAIN),
-                'id'    => 'pages',
-                'type'  => 'pages',
-                'class' => 'widefat',
-            ),
-            // Post type Field
-            array(
-                'name'     => \__('Post type', G_TEXTDOMAIN),
-                'desc'     => \__('Set the post type.', G_TEXTDOMAIN),
-                'id'       => 'posttype',
-                'type'     => 'posttype',
-                'posttype' => 'post',
-                'class'    => 'widefat',
-            ),
-            // Amount Field
-            array(
-                'name'     => \__('Amount', G_TEXTDOMAIN),
-                'desc'     => \__('Select how many posts to show.', G_TEXTDOMAIN),
-                'id'       => 'amount',
-                'type'     => 'select',
-                // Selectbox fields
-                'fields'   => array(
-                    array(
-                        'name'  => \__('1 Post', G_TEXTDOMAIN),
-                        'value' => '1',
-                    ),
-                    array(
-                        'name'  => \__('2 Posts', G_TEXTDOMAIN),
-                        'value' => '2',
-                    ),
-                    array(
-                        'name'  => \__('3 Posts', G_TEXTDOMAIN),
-                        'value' => '3',
-                    ),
-
-                // Add more options
-                ),
-                'validate' => 'myCustomValidation',
-                'filter'   => 'strip_tags|esc_attr',
-            ),
-            // Output type checkbox
-            array(
-                'name'   => \__('Output as list', G_TEXTDOMAIN),
-                'desc'   => \__('Wraps posts with the <li> tag.', G_TEXTDOMAIN),
-                'id'     => 'list',
-                'type'   => 'checkbox',
-                // Checked by default:
-                'std'    => 1, // 0 or 1
                 'filter' => 'strip_tags|esc_attr',
-            ),
-        );
+            ],
+            // Taxonomy Field
+            [
+                'name' => \__('Taxonomy', G_TEXTDOMAIN),
+                'desc' => \__('Set the taxonomy.', G_TEXTDOMAIN),
+                'id' => 'taxonomy',
+                'type' => 'taxonomy',
+                'class' => 'widefat',
+            ],
+            // Taxonomy Field
+            [
+                'name' => \__('Taxonomy terms', G_TEXTDOMAIN),
+                'desc' => \__('Set the taxonomy terms.', G_TEXTDOMAIN),
+                'id' => 'taxonomyterm',
+                'type' => 'taxonomyterm',
+                'taxonomy' => 'category',
+                'class' => 'widefat',
+            ],
+            // Pages Field
+            [
+                'name' => \__('Pages', G_TEXTDOMAIN),
+                'desc' => \__('Set the page.', G_TEXTDOMAIN),
+                'id' => 'pages',
+                'type' => 'pages',
+                'class' => 'widefat',
+            ],
+            // Post type Field
+            [
+                'name' => \__('Post type', G_TEXTDOMAIN),
+                'desc' => \__('Set the post type.', G_TEXTDOMAIN),
+                'id' => 'posttype',
+                'type' => 'posttype',
+                'posttype' => 'post',
+                'class' => 'widefat',
+            ],
+            // Amount Field
+            [
+                'name' => \__('Amount', G_TEXTDOMAIN),
+                'desc' => \__('Select how many posts to show.', G_TEXTDOMAIN),
+                'id' => 'amount',
+                'type' => 'select',
+                // Selectbox fields
+                'fields' => [
+                    [
+                        'name' => \__('1 Post', G_TEXTDOMAIN),
+                        'value' => '1',
+                    ],
+                    [
+                        'name' => \__('2 Posts', G_TEXTDOMAIN),
+                        'value' => '2',
+                    ],
+                    [
+                        'name' => \__('3 Posts', G_TEXTDOMAIN),
+                        'value' => '3',
+                    ],
+
+                    // Add more options
+                ],
+                'validate' => 'myCustomValidation',
+                'filter' => 'strip_tags|esc_attr',
+            ],
+            // Output type checkbox
+            [
+                'name' => \__('Output as list', G_TEXTDOMAIN),
+                'desc' => \__('Wraps posts with the <li> tag.', G_TEXTDOMAIN),
+                'id' => 'list',
+                'type' => 'checkbox',
+                // Checked by default:
+                'std' => 1, // 0 or 1
+                'filter' => 'strip_tags|esc_attr',
+            ],
+        ];
         // Create widget
         $this->create_widget($args);
     }
@@ -168,19 +173,21 @@ class MyRecentPostsWidget extends \WPH_Widget
      * @param array $instance The settings saved.
      * @return void
      */
-	public function widget( $args, $instance ) { //phpcs:ignore
-        $out = $args[ 'before_widget' ];
+    public function widget($args, $instance)
+    {
+        //phpcs:ignore
+        $out = $args['before_widget'];
         // And here do whatever you want
-        $out .= $args[ 'before_title' ];
-        $out .= $instance[ 'title' ];
-        $out .= $args[ 'after_title' ];
+        $out .= $args['before_title'];
+        $out .= $instance['title'];
+        $out .= $args['after_title'];
 
         // Here you would get the most recent posts based on the selected amount: $instance['amount']
         // Then return those posts on the $out variable ready for the output
         $out .= '<p>Hey There! </p>';
 
-        $out .= $args[ 'after_widget' ];
-		echo $out; // phpcs:ignore
+        $out .= $args['after_widget'];
+        echo $out; // phpcs:ignore
     }
 
     /**
@@ -190,11 +197,8 @@ class MyRecentPostsWidget extends \WPH_Widget
      */
     public function initialize()
     {
-        \add_action(
-            'widgets_init',
-            static function () {
-                \register_widget('g_wp\Integrations\Widgets\MyRecentPostsWidget');
-            }
-        );
+        \add_action('widgets_init', static function () {
+            \register_widget('g_wp\Integrations\Widgets\MyRecentPostsWidget');
+        });
     }
 }
