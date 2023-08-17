@@ -9,7 +9,7 @@ import {
     transformerDirectives,
     transformerVariantGroup,
 } from 'unocss'
-//import presetGillian from './src/presets/custom-theme-preset'
+import presetGillian from './src/presets/custom-theme-preset'
 /*export default defineConfig({
   shortcuts: [
     ['root', 'selector-[:root]:[--varname:200,0,0]']
@@ -75,7 +75,7 @@ export default defineConfig({
                 mono: 'DM Mono',
             },
         }),
-        // presetGillian(),
+        presetGillian(),
     ],
     transformers: [transformerDirectives(), transformerVariantGroup()],
     safelist: 'root prose prose-sm m-auto text-left'.split(' '),
