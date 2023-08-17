@@ -38,6 +38,7 @@
     "main": "index.js",
     "dependencies": {
         "@iconify-json/carbon": "^1.1.19",
+        "googleapis": "^126.0.0",
         "immutable": "^4.3.2",
         "vue": "^3.3.4",
         "windicss": "^3.5.6"
