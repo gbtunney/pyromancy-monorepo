@@ -180,3 +180,5 @@ pnpmfile.js
 *.test.js
 
 archive
+notes/samples/
+apps/metaSDK

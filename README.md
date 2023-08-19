@@ -26,3 +26,4 @@ See the [Bedrock installation documentation](https://roots.io/bedrock/docs/insta
 -   [Bedrock with Lando | Bedrock Docs | Roots](https://roots.io/bedrock/docs/bedrock-with-lando/)
 -   [WordPress Packagist: Manage your plugins and themes with Composer](https://wpackagist.org/)
 -   [Docker Docs: How to build, share, and run applications](https://docs.docker.com/)
+-   [Google APIs Explorer  |  Google for Developers](https://developers.google.com/apis-explorer)
