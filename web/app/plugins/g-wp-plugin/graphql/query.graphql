@@ -1,0 +1,17 @@
+query NewQuery {
+    posts {
+        edges {
+            node {
+                slug
+                title
+                content
+                authorId
+                date
+                dateGmt
+                excerpt
+                guid
+                link
+            }
+        }
+    }
+}

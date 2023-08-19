@@ -6,5 +6,7 @@ vendor
 *.js
 *.d.ts
 *.js.map
+!settings.js
 
 inc/examples
+credentials
