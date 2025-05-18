@@ -10,16 +10,16 @@ Caption: <i>Dummy dashboard with custom build vue + tailwind setup (Vite realtim
 
 # How to use ?
 
--   Just clone/fork this repository
--   Check the package.json file
--   command: `npm i`
--   command: `npm run watch` for development and for production: `npm run production`
+- Just clone/fork this repository
+- Check the package.json file
+- command: `npm i`
+- command: `npm run watch` for development and for production: `npm run production`
 
 On production you only need
 
--   assets
--   includes
--   wp-plugin-with-vue-tailwind.php (plugin Entry file)
+- assets
+- includes
+- wp-plugin-with-vue-tailwind.php (plugin Entry file)
 
 ## Now easy enqueue from version 1.0.6
 
@@ -67,5 +67,5 @@ Check it here: https://github.com/hasanuzzamanbe/wp-boilerplate-plugin-with-vuej
 
 ### Other Setups you may Use
 
--   WordPress Plugin with Vue 3, tailwind (Laravel Mix Build) [https://github.com/hasanuzzamanbe/wp-plugin-with-vue-tailwind]
--   WordPress Plugin with Vue 2, Element UI (Laravel Mix Build) [https://github.com/hasanuzzamanbe/wp-boilerplate-plugin-with-vuejs]
+- WordPress Plugin with Vue 3, tailwind (Laravel Mix Build) [https://github.com/hasanuzzamanbe/wp-plugin-with-vue-tailwind]
+- WordPress Plugin with Vue 2, Element UI (Laravel Mix Build) [https://github.com/hasanuzzamanbe/wp-boilerplate-plugin-with-vuejs]

@@ -1,4 +1,5 @@
 import '@unocss/reset/tailwind.css'
 import 'uno.css'
 import './IntegratedCalendar.css'
-alert('calendar1')
+
+import { Avatar } from './../graphql/types/generated-types.js'

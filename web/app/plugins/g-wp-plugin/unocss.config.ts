@@ -9,7 +9,7 @@ import {
     transformerDirectives,
     transformerVariantGroup,
 } from 'unocss'
-import presetGillian from './src/presets/custom-theme-preset'
+import presetGillian from './src/presets/custom-theme-preset.js'
 /*export default defineConfig({
   shortcuts: [
     ['root', 'selector-[:root]:[--varname:200,0,0]']

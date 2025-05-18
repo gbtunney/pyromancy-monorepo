@@ -9,12 +9,10 @@
 
         /* Bundler mode */
         "moduleResolution": "bundler",
-        "allowImportingTsExtensions": true,
         "resolveJsonModule": true,
         "isolatedModules": true,
-        "noEmit": true,
         "jsx": "preserve",
-
+        "declaration": true,
         /* Linting */
         "strict": true,
         "noUnusedLocals": false,
@@ -24,7 +22,6 @@
     "include": [
         "src/**/*.ts",
         "graphql/**/*.ts",
-        "src/**/*.d.ts",
         "src/**/*.tsx",
         "src/**/*.vue"
     ],

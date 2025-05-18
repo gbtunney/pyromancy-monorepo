@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
-import liveReload from 'vite-plugin-live-reload'
-import copy from 'rollup-plugin-copy'
+
 import Unocss from 'unocss/vite'
 import path from 'path'
 
