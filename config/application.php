@@ -7,7 +7,6 @@
  * possible. Try to define as much of your configuration in this file as you
  * can.
  */
-
 use Roots\WPConfig\Config;
 use function Env\env;
 
@@ -128,6 +127,13 @@ Config::define('WP_DEBUG_DISPLAY', false);
 Config::define('WP_DEBUG_LOG', false);
 Config::define('SCRIPT_DEBUG', false);
 ini_set('display_errors', '0');
+ini_set('error_reporting', (E_ALL & ~E_STRICT &-E_DEPRECATED));
+
+/**
+ * GQL Plugin for generating types
+ */
+Config::define('GRAPHQL_DEBUG', true);
+
 
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer

@@ -31,6 +31,13 @@
                 "wpackagist-plugin/*",
                 "wpackagist-theme/*"
             ]
+        },
+        {
+            "type": "composer",
+            "url": "https://composer.elementor.com",
+            "only": [
+                "elementor/elementor-pro"
+            ]
         }
     ],
     "require": {
@@ -42,17 +49,15 @@
         "roots/bedrock-disallow-indexing": "^2.0",
         "roots/wordpress": "6.2.2",
         "roots/wp-config": "1.0.0",
-        "roots/wp-password-bcrypt": "1.1.0",
         "wpackagist-theme/twentytwentythree": "^1.0",
         "wpackagist-theme/hello-elementor": "2.8.1",
-        "wpackagist-plugin/elementor": "3.15.0-beta4",
-        "wpackagist-plugin/ninja-forms": "3.6.28",
-        "wpackagist-plugin/classic-editor": "1.6.3",
-        "wpackagist-plugin/advanced-custom-fields": "6.2.0",
-        "wp-graphql/wp-graphql-acf": "^0.6.1",
-        "wp-graphql/wp-graphql": "^1.14",
+        "wpackagist-plugin/elementor": "^3.28",
+        "wpackagist-plugin/ninja-forms": "^3.10",
+        "wpackagist-plugin/classic-editor": "^1.6",
+        "wpackagist-plugin/advanced-custom-fields": "^6.4",
+        "wpackagist-plugin/wp-graphql": "2.3.0",
         "wp-graphql/wp-graphql-custom-post-type-ui": "^1.2",
-        "wpackagist-plugin/wp-graphql": "^1.14"
+        "elementor/elementor-pro": "^3.28"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.7.1",
