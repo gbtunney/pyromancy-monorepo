@@ -1,0 +1,6 @@
+#!/bin/bash
+# Deployment wrapper script
+# Usage: ./deploy (from project root)
+
+# Run the deployment script from config folder
+./config/deploy.sh "$@"

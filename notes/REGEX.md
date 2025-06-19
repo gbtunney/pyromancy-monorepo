@@ -4,12 +4,12 @@
 
 ### Expression
 
--   PCRE2
+- PCRE2
 
-    -   `/1?\(?([0-9]{3})\)?[-.\s]?([0-9]{3})[-.\s]?([0-9]{4})/g`
+    - `/1?\(?([0-9]{3})\)?[-.\s]?([0-9]{3})[-.\s]?([0-9]{4})/g`
 
--   PCRE - (Google Sheets)
-    -   `/^((((\+[\d\-.]{1,5})?[ \-.]?\d{3})|(\+[\d\-.]{1,5})?[ \-.]?\((\d{3}\)))?[ \-.]?\d{3}[ \-.]?\d{4}\s?)?$/gm`
+- PCRE - (Google Sheets)
+    - `/^((((\+[\d\-.]{1,5})?[ \-.]?\d{3})|(\+[\d\-.]{1,5})?[ \-.]?\((\d{3}\)))?[ \-.]?\d{3}[ \-.]?\d{4}\s?)?$/gm`
 
 ### Test Cases
 
@@ -47,7 +47,7 @@ invalidphone
 
 Works in :
 
--   Google Forms
+- Google Forms
 
 ### Test Cases
 
@@ -71,7 +71,7 @@ Works in :
 
 `[a-zA-Z\d\s\-\,\#\.\+]+` Works in :
 
--   Google Forms
+- Google Forms
 
 ### Test Cases
 

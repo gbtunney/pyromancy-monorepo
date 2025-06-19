@@ -182,3 +182,9 @@ pnpmfile.js
 archive
 notes/samples/
 apps/metaSDK
+
+
+.history
+bluehost-config.php
+.env.production
+.env.development

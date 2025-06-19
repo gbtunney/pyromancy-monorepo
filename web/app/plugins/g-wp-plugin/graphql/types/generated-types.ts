@@ -42,8 +42,8 @@ export type Scalars = {
 export type Avatar = {
     __typename: 'Avatar'
     /**
-     * TEST: URL for the default image or a default type. Accepts '404' (return a
-     * 404 instead of a default image), 'retro' (8bit), 'monsterid' (monster),
+     * TEST: URL for the default image or a default type. Accepts '404' (return
+     * a 404 instead of a default image), 'retro' (8bit), 'monsterid' (monster),
      * 'wavatar' (cartoon face), 'indenticon' (the 'quilt'), 'mystery', 'mm', or
      * 'mysteryman' (The Oyster Man), 'blank' (transparent GIF), or
      * 'gravatar_default' (the Gravatar logo).
@@ -60,8 +60,8 @@ export type Avatar = {
     /** Whether the object is restricted from the current viewer */
     isRestricted?: Maybe<Scalars['Boolean']['output']>
     /**
-     * What rating to display avatars up to. Accepts 'G', 'PG', 'R', 'X', and are
-     * judged in that order.
+     * What rating to display avatars up to. Accepts 'G', 'PG', 'R', 'X', and
+     * are judged in that order.
      */
     rating?: Maybe<Scalars['String']['output']>
     /** Type of url scheme to use. Typically HTTP vs. HTTPS. */
@@ -106,8 +106,8 @@ export type Category = DatabaseIdentifier &
     UniformResourceIdentifiable & {
         __typename: 'Category'
         /**
-         * The ancestors of the node. Default ordered as lowest (closest to the child)
-         * to highest (closest to the root).
+         * The ancestors of the node. Default ordered as lowest (closest to the
+         * child) to highest (closest to the root).
          */
         ancestors?: Maybe<CategoryToAncestorsCategoryConnection>
         /**
@@ -261,8 +261,8 @@ export type CategoryConnection = {
  */
 export type CategoryConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected category Node */
@@ -399,8 +399,8 @@ export type CategoryToCategoryConnectionWhereArgs = {
      */
     childOf?: InputMaybe<Scalars['Int']['input']>
     /**
-     * True to limit results to terms that have no children. This parameter has no
-     * effect on non-hierarchical taxonomies. Default false.
+     * True to limit results to terms that have no children. This parameter has
+     * no effect on non-hierarchical taxonomies. Default false.
      */
     childless?: InputMaybe<Scalars['Boolean']['input']>
     /**
@@ -435,8 +435,8 @@ export type CategoryToCategoryConnectionWhereArgs = {
     /** Retrieve terms where the name is LIKE the input value. Default empty. */
     nameLike?: InputMaybe<Scalars['String']['input']>
     /**
-     * Array of object IDs. Results will be limited to terms associated with these
-     * objects.
+     * Array of object IDs. Results will be limited to terms associated with
+     * these objects.
      */
     objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Direction the connection should be ordered in */
@@ -451,8 +451,8 @@ export type CategoryToCategoryConnectionWhereArgs = {
     /** Parent term ID to retrieve direct-child terms of. Default empty. */
     parent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Search criteria to match terms. Will be SQL-formatted with wildcards before
-     * and after. Default empty.
+     * Search criteria to match terms. Will be SQL-formatted with wildcards
+     * before and after. Default empty.
      */
     search?: InputMaybe<Scalars['String']['input']>
     /** Array of slugs to return term(s) for. Default empty. */
@@ -512,8 +512,8 @@ export type CategoryToContentNodeConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -527,8 +527,8 @@ export type CategoryToContentNodeConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -557,8 +557,8 @@ export type CategoryToParentCategoryConnectionEdge = CategoryConnectionEdge &
     OneToOneConnection & {
         __typename: 'CategoryToParentCategoryConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -621,17 +621,23 @@ export type CategoryToPostConnectionWhereArgs = {
     authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Category ID */
     categoryId?: InputMaybe<Scalars['Int']['input']>
-    /** Array of category IDs, used to display objects from one category OR another */
+    /**
+     * Array of category IDs, used to display objects from one category OR
+     * another
+     */
     categoryIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Use Category Slug */
     categoryName?: InputMaybe<Scalars['String']['input']>
-    /** Array of category IDs, used to display objects from one category OR another */
+    /**
+     * Array of category IDs, used to display objects from one category OR
+     * another
+     */
     categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -645,8 +651,8 @@ export type CategoryToPostConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -687,8 +693,8 @@ export type CategoryToTaxonomyConnectionEdge = Edge &
     TaxonomyConnectionEdge & {
         __typename: 'CategoryToTaxonomyConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -705,14 +711,14 @@ export type Comment = DatabaseIdentifier &
         __typename: 'Comment'
         /**
          * User agent used to post the comment. This field is equivalent to
-         * WP_Comment->comment_agent and the value matching the "comment_agent" column
-         * in SQL.
+         * WP_Comment->comment_agent and the value matching the "comment_agent"
+         * column in SQL.
          */
         agent?: Maybe<Scalars['String']['output']>
         /**
          * The approval status of the comment. This field is equivalent to
-         * WP_Comment->comment_approved and the value matching the "comment_approved"
-         * column in SQL.
+         * WP_Comment->comment_approved and the value matching the
+         * "comment_approved" column in SQL.
          *
          * @deprecated Deprecated in favor of the `status` field
          */
@@ -721,11 +727,11 @@ export type Comment = DatabaseIdentifier &
         author?: Maybe<CommentToCommenterConnectionEdge>
         /**
          * IP address for the author at the time of commenting. This field is
-         * equivalent to WP_Comment->comment_author_IP and the value matching the
-         * "comment_author_IP" column in SQL.
+         * equivalent to WP_Comment->comment_author_IP and the value matching
+         * the "comment_author_IP" column in SQL.
          *
-         * @deprecated Use the ipAddress field on the edge between the comment and
-         *   author
+         * @deprecated Use the ipAddress field on the edge between the comment
+         *   and author
          */
         authorIp?: Maybe<Scalars['String']['output']>
         /**
@@ -738,20 +744,21 @@ export type Comment = DatabaseIdentifier &
         commentedOn?: Maybe<CommentToContentNodeConnectionEdge>
         /**
          * Content of the comment. This field is equivalent to
-         * WP_Comment->comment_content and the value matching the "comment_content"
-         * column in SQL.
+         * WP_Comment->comment_content and the value matching the
+         * "comment_content" column in SQL.
          */
         content?: Maybe<Scalars['String']['output']>
         /** The unique identifier stored in the database */
         databaseId: Scalars['Int']['output']
         /**
-         * Date the comment was posted in local time. This field is equivalent to
-         * WP_Comment->date and the value matching the "date" column in SQL.
+         * Date the comment was posted in local time. This field is equivalent
+         * to WP_Comment->date and the value matching the "date" column in SQL.
          */
         date?: Maybe<Scalars['String']['output']>
         /**
          * Date the comment was posted in GMT. This field is equivalent to
-         * WP_Comment->date_gmt and the value matching the "date_gmt" column in SQL.
+         * WP_Comment->date_gmt and the value matching the "date_gmt" column in
+         * SQL.
          */
         dateGmt?: Maybe<Scalars['String']['output']>
         /** The globally unique identifier for the comment object */
@@ -770,8 +777,8 @@ export type Comment = DatabaseIdentifier &
         isTermNode: Scalars['Boolean']['output']
         /**
          * Karma value for the comment. This field is equivalent to
-         * WP_Comment->comment_karma and the value matching the "comment_karma" column
-         * in SQL.
+         * WP_Comment->comment_karma and the value matching the "comment_karma"
+         * column in SQL.
          */
         karma?: Maybe<Scalars['Int']['output']>
         /** The permalink of the comment */
@@ -789,13 +796,13 @@ export type Comment = DatabaseIdentifier &
         replies?: Maybe<CommentToCommentConnection>
         /**
          * The approval status of the comment. This field is equivalent to
-         * WP_Comment->comment_approved and the value matching the "comment_approved"
-         * column in SQL.
+         * WP_Comment->comment_approved and the value matching the
+         * "comment_approved" column in SQL.
          */
         status?: Maybe<CommentStatusEnum>
         /**
-         * Type of comment. This field is equivalent to WP_Comment->comment_type and
-         * the value matching the "comment_type" column in SQL.
+         * Type of comment. This field is equivalent to WP_Comment->comment_type
+         * and the value matching the "comment_type" column in SQL.
          */
         type?: Maybe<Scalars['String']['output']>
         /** The unique resource identifier path */
@@ -836,8 +843,8 @@ export type CommentAuthor = Commenter &
     Node & {
         __typename: 'CommentAuthor'
         /**
-         * Avatar object for user. The avatar object can be retrieved in different
-         * sizes by specifying the size argument.
+         * Avatar object for user. The avatar object can be retrieved in
+         * different sizes by specifying the size argument.
          */
         avatar?: Maybe<Avatar>
         /** The unique identifier stored in the database */
@@ -883,8 +890,8 @@ export type CommentConnection = {
  */
 export type CommentConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected Comment Node */
@@ -1014,18 +1021,18 @@ export type CommentToCommentConnectionWhereArgs = {
     /** Content Object parent ID to retrieve affiliated comments for. */
     contentParent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Array of content object statuses to retrieve affiliated comments for. Pass
-     * 'any' to match any value.
+     * Array of content object statuses to retrieve affiliated comments for.
+     * Pass 'any' to match any value.
      */
     contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>
     /**
-     * Content object type or array of types to retrieve affiliated comments for.
-     * Pass 'any' to match any value.
+     * Content object type or array of types to retrieve affiliated comments
+     * for. Pass 'any' to match any value.
      */
     contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>
     /**
-     * Array of IDs or email addresses of users whose unapproved comments will be
-     * returned by the query regardless of $status. Default empty
+     * Array of IDs or email addresses of users whose unapproved comments will
+     * be returned by the query regardless of $status. Default empty
      */
     includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Karma score to retrieve matching comments for. */
@@ -1054,16 +1061,16 @@ export type CommentToCommenterConnectionEdge = CommenterConnectionEdge &
     OneToOneConnection & {
         __typename: 'CommentToCommenterConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The email address representing the author for this particular comment */
         email?: Maybe<Scalars['String']['output']>
         /**
-         * IP address of the author at the time of making this comment. This field is
-         * equivalent to WP_Comment->comment_author_IP and the value matching the
-         * "comment_author_IP" column in SQL.
+         * IP address of the author at the time of making this comment. This
+         * field is equivalent to WP_Comment->comment_author_IP and the value
+         * matching the "comment_author_IP" column in SQL.
          */
         ipAddress?: Maybe<Scalars['String']['output']>
         /** The display name of the comment author for this particular comment */
@@ -1080,8 +1087,8 @@ export type CommentToContentNodeConnectionEdge = ContentNodeConnectionEdge &
     OneToOneConnection & {
         __typename: 'CommentToContentNodeConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -1094,8 +1101,8 @@ export type CommentToParentCommentConnectionEdge = CommentConnectionEdge &
     OneToOneConnection & {
         __typename: 'CommentToParentCommentConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -1142,18 +1149,18 @@ export type CommentToParentCommentConnectionWhereArgs = {
     /** Content Object parent ID to retrieve affiliated comments for. */
     contentParent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Array of content object statuses to retrieve affiliated comments for. Pass
-     * 'any' to match any value.
+     * Array of content object statuses to retrieve affiliated comments for.
+     * Pass 'any' to match any value.
      */
     contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>
     /**
-     * Content object type or array of types to retrieve affiliated comments for.
-     * Pass 'any' to match any value.
+     * Content object type or array of types to retrieve affiliated comments
+     * for. Pass 'any' to match any value.
      */
     contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>
     /**
-     * Array of IDs or email addresses of users whose unapproved comments will be
-     * returned by the query regardless of $status. Default empty
+     * Array of IDs or email addresses of users whose unapproved comments will
+     * be returned by the query regardless of $status. Default empty
      */
     includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Karma score to retrieve matching comments for. */
@@ -1192,7 +1199,10 @@ export type Commenter = {
     email?: Maybe<Scalars['String']['output']>
     /** The globally unique identifier for the comment author. */
     id: Scalars['ID']['output']
-    /** Whether the author information is considered restricted. (not fully public) */
+    /**
+     * Whether the author information is considered restricted. (not fully
+     * public)
+     */
     isRestricted?: Maybe<Scalars['Boolean']['output']>
     /** The name of the author of a comment. */
     name?: Maybe<Scalars['String']['output']>
@@ -1206,8 +1216,8 @@ export type Commenter = {
  */
 export type CommenterConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected Commenter Node */
@@ -1250,8 +1260,8 @@ export enum CommentsConnectionOrderbyEnum {
     /** Ordering by comment classification (standard comments, pingbacks, etc.). */
     CommentType = 'COMMENT_TYPE',
     /**
-     * Ordering by the user account ID associated with the comment as the comment
-     * author.
+     * Ordering by the user account ID associated with the comment as the
+     * comment author.
      */
     UserId = 'USER_ID',
 }
@@ -1288,9 +1298,9 @@ export type ContentNode = {
     /** The desired slug of the post */
     desiredSlug?: Maybe<Scalars['String']['output']>
     /**
-     * If a user has edited the node within the past 15 seconds, this will return
-     * the user that last edited. Null if the edit lock doesn't exist or is
-     * greater than 15 seconds
+     * If a user has edited the node within the past 15 seconds, this will
+     * return the user that last edited. Null if the edit lock doesn't exist or
+     * is greater than 15 seconds
      */
     editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>
     /** The RSS enclosure for the object */
@@ -1397,8 +1407,8 @@ export type ContentNodeConnection = {
  */
 export type ContentNodeConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected ContentNode Node */
@@ -1440,8 +1450,8 @@ export type ContentNodeToContentTypeConnectionEdge = ContentTypeConnectionEdge &
     OneToOneConnection & {
         __typename: 'ContentNodeToContentTypeConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -1454,8 +1464,8 @@ export type ContentNodeToEditLastConnectionEdge = Edge &
     UserConnectionEdge & {
         __typename: 'ContentNodeToEditLastConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -1468,8 +1478,8 @@ export type ContentNodeToEditLockConnectionEdge = Edge &
     UserConnectionEdge & {
         __typename: 'ContentNodeToEditLockConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The timestamp for when the node was last edited */
@@ -1583,8 +1593,8 @@ export type ContentType = Node &
         /** Connection between the ContentType type and the ContentNode type */
         contentNodes?: Maybe<ContentTypeToContentNodeConnection>
         /**
-         * Whether content of this type should be deleted when the author of it is
-         * deleted from the system.
+         * Whether content of this type should be deleted when the author of it
+         * is deleted from the system.
          */
         deleteWithUser?: Maybe<Scalars['Boolean']['output']>
         /** Description of the content type. */
@@ -1626,26 +1636,26 @@ export type ContentType = Node &
         /** The name of the icon file to display as a menu icon. */
         menuIcon?: Maybe<Scalars['String']['output']>
         /**
-         * The position of this post type in the menu. Only applies if show_in_menu is
-         * true.
+         * The position of this post type in the menu. Only applies if
+         * show_in_menu is true.
          */
         menuPosition?: Maybe<Scalars['Int']['output']>
         /**
-         * The internal name of the post type. This should not be used for display
-         * purposes.
+         * The internal name of the post type. This should not be used for
+         * display purposes.
          */
         name?: Maybe<Scalars['String']['output']>
         /**
-         * Whether a content type is intended for use publicly either via the admin
-         * interface or by front-end users. While the default settings of
-         * exclude_from_search, publicly_queryable, show_ui, and show_in_nav_menus are
-         * inherited from public, each does not rely on this relationship and controls
-         * a very specific intention.
+         * Whether a content type is intended for use publicly either via the
+         * admin interface or by front-end users. While the default settings of
+         * exclude_from_search, publicly_queryable, show_ui, and
+         * show_in_nav_menus are inherited from public, each does not rely on
+         * this relationship and controls a very specific intention.
          */
         public?: Maybe<Scalars['Boolean']['output']>
         /**
-         * Whether queries can be performed on the front end for the content type as
-         * part of parse_request().
+         * Whether queries can be performed on the front end for the content
+         * type as part of parse_request().
          */
         publiclyQueryable?: Maybe<Scalars['Boolean']['output']>
         /** Name of content type to display in REST API "wp/v2" namespace. */
@@ -1657,23 +1667,23 @@ export type ContentType = Node &
         /** Whether to add the content type to the GraphQL Schema. */
         showInGraphql?: Maybe<Scalars['Boolean']['output']>
         /**
-         * Where to show the content type in the admin menu. To work, $show_ui must be
-         * true. If true, the post type is shown in its own top level menu. If false,
-         * no menu is shown. If a string of an existing top level menu (eg.
-         * "tools.php" or "edit.php?post_type=page"), the post type will be placed as
-         * a sub-menu of that.
+         * Where to show the content type in the admin menu. To work, $show_ui
+         * must be true. If true, the post type is shown in its own top level
+         * menu. If false, no menu is shown. If a string of an existing top
+         * level menu (eg. "tools.php" or "edit.php?post_type=page"), the post
+         * type will be placed as a sub-menu of that.
          */
         showInMenu?: Maybe<Scalars['Boolean']['output']>
         /** Makes this content type available for selection in navigation menus. */
         showInNavMenus?: Maybe<Scalars['Boolean']['output']>
         /**
-         * Whether the content type is associated with a route under the the REST API
-         * "wp/v2" namespace.
+         * Whether the content type is associated with a route under the the
+         * REST API "wp/v2" namespace.
          */
         showInRest?: Maybe<Scalars['Boolean']['output']>
         /**
-         * Whether to generate and allow a UI for managing this content type in the
-         * admin.
+         * Whether to generate and allow a UI for managing this content type in
+         * the admin.
          */
         showUi?: Maybe<Scalars['Boolean']['output']>
         /** The unique resource identifier path */
@@ -1719,8 +1729,8 @@ export type ContentTypeConnection = {
  */
 export type ContentTypeConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected ContentType Node */
@@ -1816,8 +1826,8 @@ export type ContentTypeToContentNodeConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -1831,8 +1841,8 @@ export type ContentTypeToContentNodeConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -1933,18 +1943,18 @@ export type CreateCategoryInput = {
      */
     parentDatabaseId?: InputMaybe<Scalars['Int']['input']>
     /**
-     * The ID of the category that should be set as the parent. This field cannot
-     * be used in conjunction with parentDatabaseId
+     * The ID of the category that should be set as the parent. This field
+     * cannot be used in conjunction with parentDatabaseId
      */
     parentId?: InputMaybe<Scalars['ID']['input']>
     /**
      * If this argument exists then the slug will be checked to see if it is not
      * an existing valid term. If that check succeeds (it is not a valid term),
      * then it is added and the term id is given. If it fails, then a check is
-     * made to whether the taxonomy is hierarchical and the parent argument is not
-     * empty. If the second check succeeds, the term will be inserted and the term
-     * id will be given. If the slug argument is empty, then it will be calculated
-     * from the term name.
+     * made to whether the taxonomy is hierarchical and the parent argument is
+     * not empty. If the second check succeeds, the term will be inserted and
+     * the term id will be given. If the slug argument is empty, then it will be
+     * calculated from the term name.
      */
     slug?: InputMaybe<Scalars['String']['input']>
 }
@@ -2008,10 +2018,10 @@ export type CreateCommentPayload = {
     /** The comment that was created */
     comment?: Maybe<Comment>
     /**
-     * Whether the mutation succeeded. If the comment is not approved, the server
-     * will not return the comment to a non authenticated user, but a success
-     * message can be returned if the create succeeded, and the client can
-     * optimistically add the comment to the client cache
+     * Whether the mutation succeeded. If the comment is not approved, the
+     * server will not return the comment to a non authenticated user, but a
+     * success message can be returned if the create succeeded, and the client
+     * can optimistically add the comment to the client cache
      */
     success?: Maybe<Scalars['Boolean']['output']>
 }
@@ -2088,8 +2098,8 @@ export type CreatePageInput = {
      */
     date?: InputMaybe<Scalars['String']['input']>
     /**
-     * A field used for ordering posts. This is typically used with nav menu items
-     * or for special ordering of hierarchical content types.
+     * A field used for ordering posts. This is typically used with nav menu
+     * items or for special ordering of hierarchical content types.
      */
     menuOrder?: InputMaybe<Scalars['Int']['input']>
     /** The ID of the parent object */
@@ -2135,10 +2145,10 @@ export type CreatePostFormatInput = {
      * If this argument exists then the slug will be checked to see if it is not
      * an existing valid term. If that check succeeds (it is not a valid term),
      * then it is added and the term id is given. If it fails, then a check is
-     * made to whether the taxonomy is hierarchical and the parent argument is not
-     * empty. If the second check succeeds, the term will be inserted and the term
-     * id will be given. If the slug argument is empty, then it will be calculated
-     * from the term name.
+     * made to whether the taxonomy is hierarchical and the parent argument is
+     * not empty. If the second check succeeds, the term will be inserted and
+     * the term id will be given. If the slug argument is empty, then it will be
+     * calculated from the term name.
      */
     slug?: InputMaybe<Scalars['String']['input']>
 }
@@ -2182,8 +2192,8 @@ export type CreatePostInput = {
     /** The excerpt of the object */
     excerpt?: InputMaybe<Scalars['String']['input']>
     /**
-     * A field used for ordering posts. This is typically used with nav menu items
-     * or for special ordering of hierarchical content types.
+     * A field used for ordering posts. This is typically used with nav menu
+     * items or for special ordering of hierarchical content types.
      */
     menuOrder?: InputMaybe<Scalars['Int']['input']>
     /** The password used to protect the content of the object */
@@ -2237,10 +2247,10 @@ export type CreateTagInput = {
      * If this argument exists then the slug will be checked to see if it is not
      * an existing valid term. If that check succeeds (it is not a valid term),
      * then it is added and the term id is given. If it fails, then a check is
-     * made to whether the taxonomy is hierarchical and the parent argument is not
-     * empty. If the second check succeeds, the term will be inserted and the term
-     * id will be given. If the slug argument is empty, then it will be calculated
-     * from the term name.
+     * made to whether the taxonomy is hierarchical and the parent argument is
+     * not empty. If the second check succeeds, the term will be inserted and
+     * the term id will be given. If the slug argument is empty, then it will be
+     * calculated from the term name.
      */
     slug?: InputMaybe<Scalars['String']['input']>
 }
@@ -2271,10 +2281,10 @@ export type CreateUserInput = {
     /** A string containing content about the user. */
     description?: InputMaybe<Scalars['String']['input']>
     /**
-     * A string that will be shown on the site. Defaults to user's username. It is
-     * likely that you will want to change this, for both appearance and security
-     * through obscurity (that is if you dont use and delete the default admin
-     * user).
+     * A string that will be shown on the site. Defaults to user's username. It
+     * is likely that you will want to change this, for both appearance and
+     * security through obscurity (that is if you dont use and delete the
+     * default admin user).
      */
     displayName?: InputMaybe<Scalars['String']['input']>
     /** A string containing the user's email address. */
@@ -2288,8 +2298,8 @@ export type CreateUserInput = {
     /** User's locale. */
     locale?: InputMaybe<Scalars['String']['input']>
     /**
-     * A string that contains a URL-friendly name for the user. The default is the
-     * user's username.
+     * A string that contains a URL-friendly name for the user. The default is
+     * the user's username.
      */
     nicename?: InputMaybe<Scalars['String']['input']>
     /** The user's nickname, defaults to the user's username. */
@@ -2298,7 +2308,10 @@ export type CreateUserInput = {
     password?: InputMaybe<Scalars['String']['input']>
     /** The date the user registered. Format is Y-m-d H:i:s. */
     registered?: InputMaybe<Scalars['String']['input']>
-    /** A string for whether to enable the rich editor or not. False if not empty. */
+    /**
+     * A string for whether to enable the rich editor or not. False if not
+     * empty.
+     */
     richEditing?: InputMaybe<Scalars['String']['input']>
     /** An array of roles to be assigned to the user. */
     roles?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
@@ -2447,8 +2460,8 @@ export type DeleteMediaItemInput = {
      */
     clientMutationId?: InputMaybe<Scalars['String']['input']>
     /**
-     * Whether the mediaItem should be force deleted instead of being moved to the
-     * trash
+     * Whether the mediaItem should be force deleted instead of being moved to
+     * the trash
      */
     forceDelete?: InputMaybe<Scalars['Boolean']['input']>
     /** The ID of the mediaItem to delete */
@@ -2628,8 +2641,8 @@ export type DiscussionSettings = {
     /** Allow people to submit comments on new posts. */
     defaultCommentStatus?: Maybe<Scalars['String']['output']>
     /**
-     * Allow link notifications from other blogs (pingbacks and trackbacks) on new
-     * articles.
+     * Allow link notifications from other blogs (pingbacks and trackbacks) on
+     * new articles.
      */
     defaultPingStatus?: Maybe<Scalars['String']['output']>
 }
@@ -2640,8 +2653,8 @@ export type DiscussionSettings = {
  */
 export type Edge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected node */
@@ -2704,8 +2717,8 @@ export type EnqueuedScript = EnqueuedAsset &
         /** The inline code to be run before the asset is loaded. */
         before?: Maybe<Array<Maybe<Scalars['String']['output']>>>
         /**
-         * The HTML conditional comment for the enqueued asset. E.g. IE 6, lte IE 7,
-         * etc
+         * The HTML conditional comment for the enqueued asset. E.g. IE 6, lte
+         * IE 7, etc
          */
         conditional?: Maybe<Scalars['String']['output']>
         /** Dependencies needed to use this asset */
@@ -2757,8 +2770,8 @@ export type EnqueuedScriptConnection = {
  */
 export type EnqueuedScriptConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected EnqueuedScript Node */
@@ -2796,8 +2809,8 @@ export type EnqueuedStylesheet = EnqueuedAsset &
         /** The inline code to be run before the asset is loaded. */
         before?: Maybe<Array<Maybe<Scalars['String']['output']>>>
         /**
-         * The HTML conditional comment for the enqueued asset. E.g. IE 6, lte IE 7,
-         * etc
+         * The HTML conditional comment for the enqueued asset. E.g. IE 6, lte
+         * IE 7, etc
          */
         conditional?: Maybe<Scalars['String']['output']>
         /** Dependencies needed to use this asset */
@@ -2819,8 +2832,8 @@ export type EnqueuedStylesheet = EnqueuedAsset &
         /** The media attribute to use for the link */
         media?: Maybe<Scalars['String']['output']>
         /**
-         * The absolute path to the enqueued style. Set when the stylesheet is meant
-         * to load inline.
+         * The absolute path to the enqueued style. Set when the stylesheet is
+         * meant to load inline.
          */
         path?: Maybe<Scalars['String']['output']>
         /** The `rel` attribute to use for the link */
@@ -2829,7 +2842,10 @@ export type EnqueuedStylesheet = EnqueuedAsset &
         src?: Maybe<Scalars['String']['output']>
         /** Optional suffix, used in combination with RTL */
         suffix?: Maybe<Scalars['String']['output']>
-        /** The title of the enqueued style. Used for preferred/alternate stylesheets. */
+        /**
+         * The title of the enqueued style. Used for preferred/alternate
+         * stylesheets.
+         */
         title?: Maybe<Scalars['String']['output']>
         /** The version of the enqueued style */
         version?: Maybe<Scalars['String']['output']>
@@ -2858,8 +2874,8 @@ export type EnqueuedStylesheetConnection = {
  */
 export type EnqueuedStylesheetConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected EnqueuedStylesheet Node */
@@ -2934,9 +2950,9 @@ export type HierarchicalContentNode = {
     /** The desired slug of the post */
     desiredSlug?: Maybe<Scalars['String']['output']>
     /**
-     * If a user has edited the node within the past 15 seconds, this will return
-     * the user that last edited. Null if the edit lock doesn't exist or is
-     * greater than 15 seconds
+     * If a user has edited the node within the past 15 seconds, this will
+     * return the user that last edited. Null if the edit lock doesn't exist or
+     * is greater than 15 seconds
      */
     editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>
     /** The RSS enclosure for the object */
@@ -3061,7 +3077,8 @@ export type HierarchicalContentNodeToContentNodeAncestorsConnection =
         ContentNodeConnection & {
             __typename: 'HierarchicalContentNodeToContentNodeAncestorsConnection'
             /**
-             * Edges for the HierarchicalContentNodeToContentNodeAncestorsConnection
+             * Edges for the
+             * HierarchicalContentNodeToContentNodeAncestorsConnection
              * connection
              */
             edges: Array<HierarchicalContentNodeToContentNodeAncestorsConnectionEdge>
@@ -3113,8 +3130,8 @@ export type HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -3128,8 +3145,8 @@ export type HierarchicalContentNodeToContentNodeAncestorsConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -3158,7 +3175,8 @@ export type HierarchicalContentNodeToContentNodeChildrenConnection =
         ContentNodeConnection & {
             __typename: 'HierarchicalContentNodeToContentNodeChildrenConnection'
             /**
-             * Edges for the HierarchicalContentNodeToContentNodeChildrenConnection
+             * Edges for the
+             * HierarchicalContentNodeToContentNodeChildrenConnection
              * connection
              */
             edges: Array<HierarchicalContentNodeToContentNodeChildrenConnectionEdge>
@@ -3210,8 +3228,8 @@ export type HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -3225,8 +3243,8 @@ export type HierarchicalContentNodeToContentNodeChildrenConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -3256,8 +3274,8 @@ export type HierarchicalContentNodeToParentContentNodeConnectionEdge =
         OneToOneConnection & {
             __typename: 'HierarchicalContentNodeToParentContentNodeConnectionEdge'
             /**
-             * Opaque reference to the nodes position in the connection. Value can be used
-             * with pagination args.
+             * Opaque reference to the nodes position in the connection. Value
+             * can be used with pagination args.
              */
             cursor?: Maybe<Scalars['String']['output']>
             /** The node of the connection, without the edges */
@@ -3382,8 +3400,8 @@ export type MediaItem = ContentNode &
         /** Alternative text to display when resource is not displayed */
         altText?: Maybe<Scalars['String']['output']>
         /**
-         * Returns ancestors of the node. Default ordered as lowest (closest to the
-         * child) to highest (closest to the root).
+         * Returns ancestors of the node. Default ordered as lowest (closest to
+         * the child) to highest (closest to the root).
          */
         ancestors?: Maybe<HierarchicalContentNodeToContentNodeAncestorsConnection>
         /** Connection between the NodeWithAuthor type and the User type */
@@ -3395,14 +3413,14 @@ export type MediaItem = ContentNode &
         /** The caption for the resource */
         caption?: Maybe<Scalars['String']['output']>
         /**
-         * Connection between the HierarchicalContentNode type and the ContentNode
-         * type
+         * Connection between the HierarchicalContentNode type and the
+         * ContentNode type
          */
         children?: Maybe<HierarchicalContentNodeToContentNodeChildrenConnection>
         /**
-         * The number of comments. Even though WPGraphQL denotes this field as an
-         * integer, in WordPress this field should be saved as a numeric string for
-         * compatibility.
+         * The number of comments. Even though WPGraphQL denotes this field as
+         * an integer, in WordPress this field should be saved as a numeric
+         * string for compatibility.
          */
         commentCount?: Maybe<Scalars['Int']['output']>
         /** Whether the comments are open or closed for this particular post. */
@@ -3424,27 +3442,33 @@ export type MediaItem = ContentNode &
         /** The desired slug of the post */
         desiredSlug?: Maybe<Scalars['String']['output']>
         /**
-         * If a user has edited the node within the past 15 seconds, this will return
-         * the user that last edited. Null if the edit lock doesn't exist or is
-         * greater than 15 seconds
+         * If a user has edited the node within the past 15 seconds, this will
+         * return the user that last edited. Null if the edit lock doesn't exist
+         * or is greater than 15 seconds
          */
         editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>
         /** The RSS enclosure for the object */
         enclosure?: Maybe<Scalars['String']['output']>
         /** Connection between the ContentNode type and the EnqueuedScript type */
         enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>
-        /** Connection between the ContentNode type and the EnqueuedStylesheet type */
+        /**
+         * Connection between the ContentNode type and the EnqueuedStylesheet
+         * type
+         */
         enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>
-        /** The filename of the mediaItem for the specified size (default size is full) */
+        /**
+         * The filename of the mediaItem for the specified size (default size is
+         * full)
+         */
         file?: Maybe<Scalars['String']['output']>
         /** The path to the original file relative to the uploads directory */
         filePath?: Maybe<Scalars['String']['output']>
         /** The filesize in bytes of the resource */
         fileSize?: Maybe<Scalars['Int']['output']>
         /**
-         * The global unique identifier for this post. This currently matches the
-         * value stored in WP_Post->guid and the guid column in the "post_objects"
-         * database table.
+         * The global unique identifier for this post. This currently matches
+         * the value stored in WP_Post->guid and the guid column in the
+         * "post_objects" database table.
          */
         guid?: Maybe<Scalars['String']['output']>
         /** Whether the attachment object is password protected. */
@@ -3484,8 +3508,8 @@ export type MediaItem = ContentNode &
         /** The mime type of the mediaItem */
         mimeType?: Maybe<Scalars['String']['output']>
         /**
-         * The local modified time for a post. If a post was recently updated the
-         * modified field will change to match the corresponding time.
+         * The local modified time for a post. If a post was recently updated
+         * the modified field will change to match the corresponding time.
          */
         modified?: Maybe<Scalars['String']['output']>
         /**
@@ -3508,16 +3532,17 @@ export type MediaItem = ContentNode &
         /** The sizes attribute value for an image. */
         sizes?: Maybe<Scalars['String']['output']>
         /**
-         * The uri slug for the post. This is equivalent to the WP_Post->post_name
-         * field and the post_name column in the database for the "post_objects"
-         * table.
+         * The uri slug for the post. This is equivalent to the
+         * WP_Post->post_name field and the post_name column in the database for
+         * the "post_objects" table.
          */
         slug?: Maybe<Scalars['String']['output']>
         /** Url of the mediaItem */
         sourceUrl?: Maybe<Scalars['String']['output']>
         /**
-         * The srcset attribute specifies the URL of the image to use in different
-         * situations. It is a comma separated string of urls and their widths.
+         * The srcset attribute specifies the URL of the image to use in
+         * different situations. It is a comma separated string of urls and
+         * their widths.
          */
         srcSet?: Maybe<Scalars['String']['output']>
         /** The current status of the object */
@@ -3525,8 +3550,8 @@ export type MediaItem = ContentNode &
         /** The template assigned to a node of content */
         template?: Maybe<ContentTemplate>
         /**
-         * The title of the post. This is currently just the raw title. An amendment
-         * to support rendered title needs to be made.
+         * The title of the post. This is currently just the raw title. An
+         * amendment to support rendered title needs to be made.
          */
         title?: Maybe<Scalars['String']['output']>
         /** The unique resource identifier path */
@@ -3685,8 +3710,8 @@ export type MediaItemConnection = {
  */
 export type MediaItemConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected mediaItem Node */
@@ -3719,8 +3744,8 @@ export enum MediaItemIdType {
     /** Identify a resource by the (hashed) Global ID. */
     Id = 'ID',
     /**
-     * Identify a resource by the slug. Available to non-hierarchcial Types where
-     * the slug is a unique identifier.
+     * Identify a resource by the slug. Available to non-hierarchcial Types
+     * where the slug is a unique identifier.
      */
     Slug = 'SLUG',
     /** Identify a media item by its source url */
@@ -3747,8 +3772,8 @@ export type MediaItemMeta = {
     /** The focal length value of the media item. */
     focalLength?: Maybe<Scalars['Float']['output']>
     /**
-     * The ISO (International Organization for Standardization) value of the media
-     * item.
+     * The ISO (International Organization for Standardization) value of the
+     * media item.
      */
     iso?: Maybe<Scalars['Int']['output']>
     /** List of keywords used to describe or identfy the media item. */
@@ -3882,18 +3907,18 @@ export type MediaItemToCommentConnectionWhereArgs = {
     /** Content Object parent ID to retrieve affiliated comments for. */
     contentParent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Array of content object statuses to retrieve affiliated comments for. Pass
-     * 'any' to match any value.
+     * Array of content object statuses to retrieve affiliated comments for.
+     * Pass 'any' to match any value.
      */
     contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>
     /**
-     * Content object type or array of types to retrieve affiliated comments for.
-     * Pass 'any' to match any value.
+     * Content object type or array of types to retrieve affiliated comments
+     * for. Pass 'any' to match any value.
      */
     contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>
     /**
-     * Array of IDs or email addresses of users whose unapproved comments will be
-     * returned by the query regardless of $status. Default empty
+     * Array of IDs or email addresses of users whose unapproved comments will
+     * be returned by the query regardless of $status. Default empty
      */
     includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Karma score to retrieve matching comments for. */
@@ -4002,8 +4027,8 @@ export type MenuConnection = {
  */
 export type MenuConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected Menu Node */
@@ -4073,8 +4098,8 @@ export type MenuItem = DatabaseIdentifier &
         /** The globally unique identifier of the parent nav menu item object. */
         parentId?: Maybe<Scalars['ID']['output']>
         /**
-         * Path for the resource. Relative path for internal resources. Absolute path
-         * for external resources.
+         * Path for the resource. Relative path for internal resources. Absolute
+         * path for external resources.
          */
         path?: Maybe<Scalars['String']['output']>
         /** Target attribute for the menu item link. */
@@ -4121,8 +4146,8 @@ export type MenuItemConnection = {
  */
 export type MenuItemConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected MenuItem Node */
@@ -4174,8 +4199,8 @@ export type MenuItemLinkable = {
  */
 export type MenuItemLinkableConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected MenuItemLinkable Node */
@@ -4202,8 +4227,8 @@ export type MenuItemToMenuConnectionEdge = Edge &
     OneToOneConnection & {
         __typename: 'MenuItemToMenuConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -4269,8 +4294,8 @@ export type MenuItemToMenuItemLinkableConnectionEdge = Edge &
     OneToOneConnection & {
         __typename: 'MenuItemToMenuItemLinkableConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -4444,13 +4469,13 @@ export enum MimeTypeEnum {
      */
     ApplicationVndOpenxmlformatsOfficedocumentPresentationmlSlide = 'APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_PRESENTATIONML_SLIDE',
     /**
-     * Application/vnd.openxmlformats-officedocument.presentationml.slideshow mime
-     * type.
+     * Application/vnd.openxmlformats-officedocument.presentationml.slideshow
+     * mime type.
      */
     ApplicationVndOpenxmlformatsOfficedocumentPresentationmlSlideshow = 'APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_PRESENTATIONML_SLIDESHOW',
     /**
-     * Application/vnd.openxmlformats-officedocument.presentationml.template mime
-     * type.
+     * Application/vnd.openxmlformats-officedocument.presentationml.template
+     * mime type.
      */
     ApplicationVndOpenxmlformatsOfficedocumentPresentationmlTemplate = 'APPLICATION_VND_OPENXMLFORMATS_OFFICEDOCUMENT_PRESENTATIONML_TEMPLATE',
     /**
@@ -4603,8 +4628,8 @@ export type NodeWithAuthorToUserConnectionEdge = Edge &
     UserConnectionEdge & {
         __typename: 'NodeWithAuthorToUserConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -4679,8 +4704,8 @@ export type NodeWithFeaturedImage = {
     /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
     featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>
     /**
-     * The database identifier for the featured image node assigned to the content
-     * node
+     * The database identifier for the featured image node assigned to the
+     * content node
      */
     featuredImageDatabaseId?: Maybe<Scalars['Int']['output']>
     /** Globally unique ID of the featured image assigned to the node */
@@ -4695,8 +4720,8 @@ export type NodeWithFeaturedImageToMediaItemConnectionEdge = Edge &
     OneToOneConnection & {
         __typename: 'NodeWithFeaturedImageToMediaItemConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -4712,8 +4737,8 @@ export type NodeWithPageAttributes = {
     /** The globally unique ID for the object */
     id: Scalars['ID']['output']
     /**
-     * A field used for ordering posts. This is typically used with nav menu items
-     * or for special ordering of hierarchical content types.
+     * A field used for ordering posts. This is typically used with nav menu
+     * items or for special ordering of hierarchical content types.
      */
     menuOrder?: Maybe<Scalars['Int']['output']>
 }
@@ -4741,8 +4766,8 @@ export type NodeWithRevisionsToContentNodeConnectionEdge =
         OneToOneConnection & {
             __typename: 'NodeWithRevisionsToContentNodeConnectionEdge'
             /**
-             * Opaque reference to the nodes position in the connection. Value can be used
-             * with pagination args.
+             * Opaque reference to the nodes position in the connection. Value
+             * can be used with pagination args.
              */
             cursor?: Maybe<Scalars['String']['output']>
             /** The node of the connection, without the edges */
@@ -4803,8 +4828,8 @@ export type NodeWithTrackbacks = {
  */
 export type OneToOneConnection = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected node */
@@ -4844,8 +4869,8 @@ export type Page = ContentNode &
     UniformResourceIdentifiable & {
         __typename: 'Page'
         /**
-         * Returns ancestors of the node. Default ordered as lowest (closest to the
-         * child) to highest (closest to the root).
+         * Returns ancestors of the node. Default ordered as lowest (closest to
+         * the child) to highest (closest to the root).
          */
         ancestors?: Maybe<HierarchicalContentNodeToContentNodeAncestorsConnection>
         /** Connection between the NodeWithAuthor type and the User type */
@@ -4855,14 +4880,14 @@ export type Page = ContentNode &
         /** The globally unique identifier of the author of the node */
         authorId?: Maybe<Scalars['ID']['output']>
         /**
-         * Connection between the HierarchicalContentNode type and the ContentNode
-         * type
+         * Connection between the HierarchicalContentNode type and the
+         * ContentNode type
          */
         children?: Maybe<HierarchicalContentNodeToContentNodeChildrenConnection>
         /**
-         * The number of comments. Even though WPGraphQL denotes this field as an
-         * integer, in WordPress this field should be saved as a numeric string for
-         * compatibility.
+         * The number of comments. Even though WPGraphQL denotes this field as
+         * an integer, in WordPress this field should be saved as a numeric
+         * string for compatibility.
          */
         commentCount?: Maybe<Scalars['Int']['output']>
         /** Whether the comments are open or closed for this particular post. */
@@ -4884,30 +4909,36 @@ export type Page = ContentNode &
         /** The desired slug of the post */
         desiredSlug?: Maybe<Scalars['String']['output']>
         /**
-         * If a user has edited the node within the past 15 seconds, this will return
-         * the user that last edited. Null if the edit lock doesn't exist or is
-         * greater than 15 seconds
+         * If a user has edited the node within the past 15 seconds, this will
+         * return the user that last edited. Null if the edit lock doesn't exist
+         * or is greater than 15 seconds
          */
         editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>
         /** The RSS enclosure for the object */
         enclosure?: Maybe<Scalars['String']['output']>
         /** Connection between the ContentNode type and the EnqueuedScript type */
         enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>
-        /** Connection between the ContentNode type and the EnqueuedStylesheet type */
+        /**
+         * Connection between the ContentNode type and the EnqueuedStylesheet
+         * type
+         */
         enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>
-        /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
+        /**
+         * Connection between the NodeWithFeaturedImage type and the MediaItem
+         * type
+         */
         featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>
         /**
-         * The database identifier for the featured image node assigned to the content
-         * node
+         * The database identifier for the featured image node assigned to the
+         * content node
          */
         featuredImageDatabaseId?: Maybe<Scalars['Int']['output']>
         /** Globally unique ID of the featured image assigned to the node */
         featuredImageId?: Maybe<Scalars['ID']['output']>
         /**
-         * The global unique identifier for this post. This currently matches the
-         * value stored in WP_Post->guid and the guid column in the "post_objects"
-         * database table.
+         * The global unique identifier for this post. This currently matches
+         * the value stored in WP_Post->guid and the guid column in the
+         * "post_objects" database table.
          */
         guid?: Maybe<Scalars['String']['output']>
         /** Whether the page object is password protected. */
@@ -4937,13 +4968,13 @@ export type Page = ContentNode &
         /** The permalink of the post */
         link?: Maybe<Scalars['String']['output']>
         /**
-         * A field used for ordering posts. This is typically used with nav menu items
-         * or for special ordering of hierarchical content types.
+         * A field used for ordering posts. This is typically used with nav menu
+         * items or for special ordering of hierarchical content types.
          */
         menuOrder?: Maybe<Scalars['Int']['output']>
         /**
-         * The local modified time for a post. If a post was recently updated the
-         * modified field will change to match the corresponding time.
+         * The local modified time for a post. If a post was recently updated
+         * the modified field will change to match the corresponding time.
          */
         modified?: Maybe<Scalars['String']['output']>
         /**
@@ -4972,16 +5003,17 @@ export type Page = ContentNode &
         /** Whether the object is a node in the preview state */
         previewRevisionId?: Maybe<Scalars['ID']['output']>
         /**
-         * If the current node is a revision, this field exposes the node this is a
-         * revision of. Returns null if the node is not a revision of another node.
+         * If the current node is a revision, this field exposes the node this
+         * is a revision of. Returns null if the node is not a revision of
+         * another node.
          */
         revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>
         /** Connection between the Page type and the page type */
         revisions?: Maybe<PageToRevisionConnection>
         /**
-         * The uri slug for the post. This is equivalent to the WP_Post->post_name
-         * field and the post_name column in the database for the "post_objects"
-         * table.
+         * The uri slug for the post. This is equivalent to the
+         * WP_Post->post_name field and the post_name column in the database for
+         * the "post_objects" table.
          */
         slug?: Maybe<Scalars['String']['output']>
         /** The current status of the object */
@@ -4989,8 +5021,8 @@ export type Page = ContentNode &
         /** The template assigned to a node of content */
         template?: Maybe<ContentTemplate>
         /**
-         * The title of the post. This is currently just the raw title. An amendment
-         * to support rendered title needs to be made.
+         * The title of the post. This is currently just the raw title. An
+         * amendment to support rendered title needs to be made.
          */
         title?: Maybe<Scalars['String']['output']>
         /** The unique resource identifier path */
@@ -5105,8 +5137,8 @@ export type PageConnection = {
  */
 export type PageConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected page Node */
@@ -5238,18 +5270,18 @@ export type PageToCommentConnectionWhereArgs = {
     /** Content Object parent ID to retrieve affiliated comments for. */
     contentParent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Array of content object statuses to retrieve affiliated comments for. Pass
-     * 'any' to match any value.
+     * Array of content object statuses to retrieve affiliated comments for.
+     * Pass 'any' to match any value.
      */
     contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>
     /**
-     * Content object type or array of types to retrieve affiliated comments for.
-     * Pass 'any' to match any value.
+     * Content object type or array of types to retrieve affiliated comments
+     * for. Pass 'any' to match any value.
      */
     contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>
     /**
-     * Array of IDs or email addresses of users whose unapproved comments will be
-     * returned by the query regardless of $status. Default empty
+     * Array of IDs or email addresses of users whose unapproved comments will
+     * be returned by the query regardless of $status. Default empty
      */
     includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Karma score to retrieve matching comments for. */
@@ -5278,8 +5310,8 @@ export type PageToPreviewConnectionEdge = Edge &
     PageConnectionEdge & {
         __typename: 'PageToPreviewConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -5343,8 +5375,8 @@ export type PageToRevisionConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -5358,8 +5390,8 @@ export type PageToRevisionConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -5400,8 +5432,8 @@ export type Plugin = Node & {
     /** Plugin path. */
     path?: Maybe<Scalars['String']['output']>
     /**
-     * URI for the plugin website. This is useful for directing users for support
-     * requests etc.
+     * URI for the plugin website. This is useful for directing users for
+     * support requests etc.
      */
     pluginUri?: Maybe<Scalars['String']['output']>
     /** Current version of the plugin. */
@@ -5414,8 +5446,8 @@ export type Plugin = Node & {
  */
 export type PluginConnection = {
     /**
-     * A list of edges (relational context) between RootQuery and connected Plugin
-     * Nodes
+     * A list of edges (relational context) between RootQuery and connected
+     * Plugin Nodes
      */
     edges: Array<PluginConnectionEdge>
     /** A list of connected Plugin Nodes */
@@ -5430,8 +5462,8 @@ export type PluginConnection = {
  */
 export type PluginConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected Plugin Node */
@@ -5498,8 +5530,8 @@ export type Post = ContentNode &
         /**
          * The ancestors of the content node.
          *
-         * @deprecated This content type is not hierarchical and typically will not
-         *   have ancestors
+         * @deprecated This content type is not hierarchical and typically will
+         *   not have ancestors
          */
         ancestors?: Maybe<PostToPostConnection>
         /** Connection between the NodeWithAuthor type and the User type */
@@ -5511,9 +5543,9 @@ export type Post = ContentNode &
         /** Connection between the Post type and the category type */
         categories?: Maybe<PostToCategoryConnection>
         /**
-         * The number of comments. Even though WPGraphQL denotes this field as an
-         * integer, in WordPress this field should be saved as a numeric string for
-         * compatibility.
+         * The number of comments. Even though WPGraphQL denotes this field as
+         * an integer, in WordPress this field should be saved as a numeric
+         * string for compatibility.
          */
         commentCount?: Maybe<Scalars['Int']['output']>
         /** Whether the comments are open or closed for this particular post. */
@@ -5535,32 +5567,38 @@ export type Post = ContentNode &
         /** The desired slug of the post */
         desiredSlug?: Maybe<Scalars['String']['output']>
         /**
-         * If a user has edited the node within the past 15 seconds, this will return
-         * the user that last edited. Null if the edit lock doesn't exist or is
-         * greater than 15 seconds
+         * If a user has edited the node within the past 15 seconds, this will
+         * return the user that last edited. Null if the edit lock doesn't exist
+         * or is greater than 15 seconds
          */
         editingLockedBy?: Maybe<ContentNodeToEditLockConnectionEdge>
         /** The RSS enclosure for the object */
         enclosure?: Maybe<Scalars['String']['output']>
         /** Connection between the ContentNode type and the EnqueuedScript type */
         enqueuedScripts?: Maybe<ContentNodeToEnqueuedScriptConnection>
-        /** Connection between the ContentNode type and the EnqueuedStylesheet type */
+        /**
+         * Connection between the ContentNode type and the EnqueuedStylesheet
+         * type
+         */
         enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>
         /** The excerpt of the post. */
         excerpt?: Maybe<Scalars['String']['output']>
-        /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
+        /**
+         * Connection between the NodeWithFeaturedImage type and the MediaItem
+         * type
+         */
         featuredImage?: Maybe<NodeWithFeaturedImageToMediaItemConnectionEdge>
         /**
-         * The database identifier for the featured image node assigned to the content
-         * node
+         * The database identifier for the featured image node assigned to the
+         * content node
          */
         featuredImageDatabaseId?: Maybe<Scalars['Int']['output']>
         /** Globally unique ID of the featured image assigned to the node */
         featuredImageId?: Maybe<Scalars['ID']['output']>
         /**
-         * The global unique identifier for this post. This currently matches the
-         * value stored in WP_Post->guid and the guid column in the "post_objects"
-         * database table.
+         * The global unique identifier for this post. This currently matches
+         * the value stored in WP_Post->guid and the guid column in the
+         * "post_objects" database table.
          */
         guid?: Maybe<Scalars['String']['output']>
         /** Whether the post object is password protected. */
@@ -5590,8 +5628,8 @@ export type Post = ContentNode &
         /** The permalink of the post */
         link?: Maybe<Scalars['String']['output']>
         /**
-         * The local modified time for a post. If a post was recently updated the
-         * modified field will change to match the corresponding time.
+         * The local modified time for a post. If a post was recently updated
+         * the modified field will change to match the corresponding time.
          */
         modified?: Maybe<Scalars['String']['output']>
         /**
@@ -5602,8 +5640,8 @@ export type Post = ContentNode &
         /**
          * The parent of the content node.
          *
-         * @deprecated This content type is not hierarchical and typically will not
-         *   have a parent
+         * @deprecated This content type is not hierarchical and typically will
+         *   not have a parent
          */
         parent?: Maybe<PostToParentConnectionEdge>
         /** The password for the post object. */
@@ -5627,16 +5665,17 @@ export type Post = ContentNode &
         /** Whether the object is a node in the preview state */
         previewRevisionId?: Maybe<Scalars['ID']['output']>
         /**
-         * If the current node is a revision, this field exposes the node this is a
-         * revision of. Returns null if the node is not a revision of another node.
+         * If the current node is a revision, this field exposes the node this
+         * is a revision of. Returns null if the node is not a revision of
+         * another node.
          */
         revisionOf?: Maybe<NodeWithRevisionsToContentNodeConnectionEdge>
         /** Connection between the Post type and the post type */
         revisions?: Maybe<PostToRevisionConnection>
         /**
-         * The uri slug for the post. This is equivalent to the WP_Post->post_name
-         * field and the post_name column in the database for the "post_objects"
-         * table.
+         * The uri slug for the post. This is equivalent to the
+         * WP_Post->post_name field and the post_name column in the database for
+         * the "post_objects" table.
          */
         slug?: Maybe<Scalars['String']['output']>
         /** The current status of the object */
@@ -5648,8 +5687,8 @@ export type Post = ContentNode &
         /** Connection between the Post type and the TermNode type */
         terms?: Maybe<PostToTermNodeConnection>
         /**
-         * The title of the post. This is currently just the raw title. An amendment
-         * to support rendered title needs to be made.
+         * The title of the post. This is currently just the raw title. An
+         * amendment to support rendered title needs to be made.
          */
         title?: Maybe<Scalars['String']['output']>
         /** URLs queued to be pinged. */
@@ -5807,8 +5846,8 @@ export type PostCategoriesInput = {
  */
 export type PostCategoriesNodeInput = {
     /**
-     * The description of the category. This field is used to set a description of
-     * the category if a new one is created during the mutation.
+     * The description of the category. This field is used to set a description
+     * of the category if a new one is created during the mutation.
      */
     description?: InputMaybe<Scalars['String']['input']>
     /**
@@ -5818,11 +5857,11 @@ export type PostCategoriesNodeInput = {
      */
     id?: InputMaybe<Scalars['ID']['input']>
     /**
-     * The name of the category. This field is used to create a new term, if term
-     * creation is enabled in nested mutations, and if one does not already exist
-     * with the provided slug or ID or if a slug or ID is not provided. If no name
-     * is included and a term is created, the creation will fallback to the slug
-     * field.
+     * The name of the category. This field is used to create a new term, if
+     * term creation is enabled in nested mutations, and if one does not already
+     * exist with the provided slug or ID or if a slug or ID is not provided. If
+     * no name is included and a term is created, the creation will fallback to
+     * the slug field.
      */
     name?: InputMaybe<Scalars['String']['input']>
     /**
@@ -5856,8 +5895,8 @@ export type PostConnection = {
  */
 export type PostConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected post Node */
@@ -6013,8 +6052,8 @@ export type PostFormatConnection = {
  */
 export type PostFormatConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected postFormat Node */
@@ -6104,8 +6143,8 @@ export type PostFormatToContentNodeConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -6119,8 +6158,8 @@ export type PostFormatToContentNodeConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -6199,17 +6238,23 @@ export type PostFormatToPostConnectionWhereArgs = {
     authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Category ID */
     categoryId?: InputMaybe<Scalars['Int']['input']>
-    /** Array of category IDs, used to display objects from one category OR another */
+    /**
+     * Array of category IDs, used to display objects from one category OR
+     * another
+     */
     categoryIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Use Category Slug */
     categoryName?: InputMaybe<Scalars['String']['input']>
-    /** Array of category IDs, used to display objects from one category OR another */
+    /**
+     * Array of category IDs, used to display objects from one category OR
+     * another
+     */
     categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -6223,8 +6268,8 @@ export type PostFormatToPostConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -6265,8 +6310,8 @@ export type PostFormatToTaxonomyConnectionEdge = Edge &
     TaxonomyConnectionEdge & {
         __typename: 'PostFormatToTaxonomyConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -6283,8 +6328,8 @@ export enum PostIdType {
     /** Identify a resource by the (hashed) Global ID. */
     Id = 'ID',
     /**
-     * Identify a resource by the slug. Available to non-hierarchcial Types where
-     * the slug is a unique identifier.
+     * Identify a resource by the slug. Available to non-hierarchcial Types
+     * where the slug is a unique identifier.
      */
     Slug = 'SLUG',
     /** Identify a resource by the URI. */
@@ -6298,11 +6343,14 @@ export enum PostIdType {
  */
 export enum PostObjectFieldFormatEnum {
     /**
-     * Unprocessed content exactly as stored in the database, requires appropriate
-     * permissions.
+     * Unprocessed content exactly as stored in the database, requires
+     * appropriate permissions.
      */
     Raw = 'RAW',
-    /** Content with all formatting and transformations applied, ready for display. */
+    /**
+     * Content with all formatting and transformations applied, ready for
+     * display.
+     */
     Rendered = 'RENDERED',
 }
 
@@ -6329,8 +6377,8 @@ export enum PostObjectsConnectionOrderbyEnum {
     /** Chronological ordering by publication date. */
     Date = 'DATE',
     /**
-     * Maintain custom order of IDs exactly as specified in the query with the IN
-     * field.
+     * Maintain custom order of IDs exactly as specified in the query with the
+     * IN field.
      */
     In = 'IN',
     /** Ordering by manually defined sort position. */
@@ -6378,14 +6426,15 @@ export type PostPostFormatsInput = {
  */
 export type PostPostFormatsNodeInput = {
     /**
-     * The description of the postFormat. This field is used to set a description
-     * of the postFormat if a new one is created during the mutation.
+     * The description of the postFormat. This field is used to set a
+     * description of the postFormat if a new one is created during the
+     * mutation.
      */
     description?: InputMaybe<Scalars['String']['input']>
     /**
      * The ID of the postFormat. If present, this will be used to connect to the
-     * post. If no existing postFormat exists with this ID, no connection will be
-     * made.
+     * post. If no existing postFormat exists with this ID, no connection will
+     * be made.
      */
     id?: InputMaybe<Scalars['ID']['input']>
     /**
@@ -6397,10 +6446,10 @@ export type PostPostFormatsNodeInput = {
      */
     name?: InputMaybe<Scalars['String']['input']>
     /**
-     * The slug of the postFormat. If no ID is present, this field will be used to
-     * make a connection. If no existing term exists with this slug, this field
-     * will be used as a fallback to the Name field when creating a new term to
-     * connect to, if term creation is enabled as a nested mutation.
+     * The slug of the postFormat. If no ID is present, this field will be used
+     * to make a connection. If no existing term exists with this slug, this
+     * field will be used as a fallback to the Name field when creating a new
+     * term to connect to, if term creation is enabled as a nested mutation.
      */
     slug?: InputMaybe<Scalars['String']['input']>
 }
@@ -6440,8 +6489,8 @@ export enum PostStatusEnum {
 /** Set relationships between the post to tags */
 export type PostTagsInput = {
     /**
-     * If true, this will append the tag to existing related tags. If false, this
-     * will replace existing relationships. Default true.
+     * If true, this will append the tag to existing related tags. If false,
+     * this will replace existing relationships. Default true.
      */
     append?: InputMaybe<Scalars['Boolean']['input']>
     /** The input list of items to set. */
@@ -6457,28 +6506,28 @@ export type PostTagsInput = {
  */
 export type PostTagsNodeInput = {
     /**
-     * The description of the tag. This field is used to set a description of the
-     * tag if a new one is created during the mutation.
+     * The description of the tag. This field is used to set a description of
+     * the tag if a new one is created during the mutation.
      */
     description?: InputMaybe<Scalars['String']['input']>
     /**
-     * The ID of the tag. If present, this will be used to connect to the post. If
-     * no existing tag exists with this ID, no connection will be made.
+     * The ID of the tag. If present, this will be used to connect to the post.
+     * If no existing tag exists with this ID, no connection will be made.
      */
     id?: InputMaybe<Scalars['ID']['input']>
     /**
      * The name of the tag. This field is used to create a new term, if term
-     * creation is enabled in nested mutations, and if one does not already exist
-     * with the provided slug or ID or if a slug or ID is not provided. If no name
-     * is included and a term is created, the creation will fallback to the slug
-     * field.
+     * creation is enabled in nested mutations, and if one does not already
+     * exist with the provided slug or ID or if a slug or ID is not provided. If
+     * no name is included and a term is created, the creation will fallback to
+     * the slug field.
      */
     name?: InputMaybe<Scalars['String']['input']>
     /**
-     * The slug of the tag. If no ID is present, this field will be used to make a
-     * connection. If no existing term exists with this slug, this field will be
-     * used as a fallback to the Name field when creating a new term to connect
-     * to, if term creation is enabled as a nested mutation.
+     * The slug of the tag. If no ID is present, this field will be used to make
+     * a connection. If no existing term exists with this slug, this field will
+     * be used as a fallback to the Name field when creating a new term to
+     * connect to, if term creation is enabled as a nested mutation.
      */
     slug?: InputMaybe<Scalars['String']['input']>
 }
@@ -6537,8 +6586,8 @@ export type PostToCategoryConnectionWhereArgs = {
      */
     childOf?: InputMaybe<Scalars['Int']['input']>
     /**
-     * True to limit results to terms that have no children. This parameter has no
-     * effect on non-hierarchical taxonomies. Default false.
+     * True to limit results to terms that have no children. This parameter has
+     * no effect on non-hierarchical taxonomies. Default false.
      */
     childless?: InputMaybe<Scalars['Boolean']['input']>
     /**
@@ -6573,8 +6622,8 @@ export type PostToCategoryConnectionWhereArgs = {
     /** Retrieve terms where the name is LIKE the input value. Default empty. */
     nameLike?: InputMaybe<Scalars['String']['input']>
     /**
-     * Array of object IDs. Results will be limited to terms associated with these
-     * objects.
+     * Array of object IDs. Results will be limited to terms associated with
+     * these objects.
      */
     objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Direction the connection should be ordered in */
@@ -6589,8 +6638,8 @@ export type PostToCategoryConnectionWhereArgs = {
     /** Parent term ID to retrieve direct-child terms of. Default empty. */
     parent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Search criteria to match terms. Will be SQL-formatted with wildcards before
-     * and after. Default empty.
+     * Search criteria to match terms. Will be SQL-formatted with wildcards
+     * before and after. Default empty.
      */
     search?: InputMaybe<Scalars['String']['input']>
     /** Array of slugs to return term(s) for. Default empty. */
@@ -6682,18 +6731,18 @@ export type PostToCommentConnectionWhereArgs = {
     /** Content Object parent ID to retrieve affiliated comments for. */
     contentParent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Array of content object statuses to retrieve affiliated comments for. Pass
-     * 'any' to match any value.
+     * Array of content object statuses to retrieve affiliated comments for.
+     * Pass 'any' to match any value.
      */
     contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>
     /**
-     * Content object type or array of types to retrieve affiliated comments for.
-     * Pass 'any' to match any value.
+     * Content object type or array of types to retrieve affiliated comments
+     * for. Pass 'any' to match any value.
      */
     contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>
     /**
-     * Array of IDs or email addresses of users whose unapproved comments will be
-     * returned by the query regardless of $status. Default empty
+     * Array of IDs or email addresses of users whose unapproved comments will
+     * be returned by the query regardless of $status. Default empty
      */
     includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Karma score to retrieve matching comments for. */
@@ -6722,15 +6771,15 @@ export type PostToParentConnectionEdge = Edge &
     PostConnectionEdge & {
         __typename: 'PostToParentConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /**
          * The node of the connection, without the edges
          *
-         * @deprecated This content type is not hierarchical and typically will not
-         *   have a parent
+         * @deprecated This content type is not hierarchical and typically will
+         *   not have a parent
          */
         node: Post
     }
@@ -6754,15 +6803,15 @@ export type PostToPostConnectionEdge = Edge &
         /**
          * A cursor for use in pagination
          *
-         * @deprecated This content type is not hierarchical and typically will not
-         *   have ancestors
+         * @deprecated This content type is not hierarchical and typically will
+         *   not have ancestors
          */
         cursor?: Maybe<Scalars['String']['output']>
         /**
          * The item at the end of the edge
          *
-         * @deprecated This content type is not hierarchical and typically will not
-         *   have ancestors
+         * @deprecated This content type is not hierarchical and typically will
+         *   not have ancestors
          */
         node: Post
     }
@@ -6839,8 +6888,8 @@ export type PostToPostFormatConnectionWhereArgs = {
      */
     childOf?: InputMaybe<Scalars['Int']['input']>
     /**
-     * True to limit results to terms that have no children. This parameter has no
-     * effect on non-hierarchical taxonomies. Default false.
+     * True to limit results to terms that have no children. This parameter has
+     * no effect on non-hierarchical taxonomies. Default false.
      */
     childless?: InputMaybe<Scalars['Boolean']['input']>
     /**
@@ -6875,8 +6924,8 @@ export type PostToPostFormatConnectionWhereArgs = {
     /** Retrieve terms where the name is LIKE the input value. Default empty. */
     nameLike?: InputMaybe<Scalars['String']['input']>
     /**
-     * Array of object IDs. Results will be limited to terms associated with these
-     * objects.
+     * Array of object IDs. Results will be limited to terms associated with
+     * these objects.
      */
     objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Direction the connection should be ordered in */
@@ -6891,8 +6940,8 @@ export type PostToPostFormatConnectionWhereArgs = {
     /** Parent term ID to retrieve direct-child terms of. Default empty. */
     parent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Search criteria to match terms. Will be SQL-formatted with wildcards before
-     * and after. Default empty.
+     * Search criteria to match terms. Will be SQL-formatted with wildcards
+     * before and after. Default empty.
      */
     search?: InputMaybe<Scalars['String']['input']>
     /** Array of slugs to return term(s) for. Default empty. */
@@ -6909,8 +6958,8 @@ export type PostToPreviewConnectionEdge = Edge &
     PostConnectionEdge & {
         __typename: 'PostToPreviewConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -6973,17 +7022,23 @@ export type PostToRevisionConnectionWhereArgs = {
     authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Category ID */
     categoryId?: InputMaybe<Scalars['Int']['input']>
-    /** Array of category IDs, used to display objects from one category OR another */
+    /**
+     * Array of category IDs, used to display objects from one category OR
+     * another
+     */
     categoryIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Use Category Slug */
     categoryName?: InputMaybe<Scalars['String']['input']>
-    /** Array of category IDs, used to display objects from one category OR another */
+    /**
+     * Array of category IDs, used to display objects from one category OR
+     * another
+     */
     categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -6997,8 +7052,8 @@ export type PostToRevisionConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -7086,8 +7141,8 @@ export type PostToTagConnectionWhereArgs = {
      */
     childOf?: InputMaybe<Scalars['Int']['input']>
     /**
-     * True to limit results to terms that have no children. This parameter has no
-     * effect on non-hierarchical taxonomies. Default false.
+     * True to limit results to terms that have no children. This parameter has
+     * no effect on non-hierarchical taxonomies. Default false.
      */
     childless?: InputMaybe<Scalars['Boolean']['input']>
     /**
@@ -7122,8 +7177,8 @@ export type PostToTagConnectionWhereArgs = {
     /** Retrieve terms where the name is LIKE the input value. Default empty. */
     nameLike?: InputMaybe<Scalars['String']['input']>
     /**
-     * Array of object IDs. Results will be limited to terms associated with these
-     * objects.
+     * Array of object IDs. Results will be limited to terms associated with
+     * these objects.
      */
     objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Direction the connection should be ordered in */
@@ -7138,8 +7193,8 @@ export type PostToTagConnectionWhereArgs = {
     /** Parent term ID to retrieve direct-child terms of. Default empty. */
     parent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Search criteria to match terms. Will be SQL-formatted with wildcards before
-     * and after. Default empty.
+     * Search criteria to match terms. Will be SQL-formatted with wildcards
+     * before and after. Default empty.
      */
     search?: InputMaybe<Scalars['String']['input']>
     /** Array of slugs to return term(s) for. Default empty. */
@@ -7204,8 +7259,8 @@ export type PostToTermNodeConnectionWhereArgs = {
      */
     childOf?: InputMaybe<Scalars['Int']['input']>
     /**
-     * True to limit results to terms that have no children. This parameter has no
-     * effect on non-hierarchical taxonomies. Default false.
+     * True to limit results to terms that have no children. This parameter has
+     * no effect on non-hierarchical taxonomies. Default false.
      */
     childless?: InputMaybe<Scalars['Boolean']['input']>
     /**
@@ -7240,8 +7295,8 @@ export type PostToTermNodeConnectionWhereArgs = {
     /** Retrieve terms where the name is LIKE the input value. Default empty. */
     nameLike?: InputMaybe<Scalars['String']['input']>
     /**
-     * Array of object IDs. Results will be limited to terms associated with these
-     * objects.
+     * Array of object IDs. Results will be limited to terms associated with
+     * these objects.
      */
     objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Direction the connection should be ordered in */
@@ -7256,8 +7311,8 @@ export type PostToTermNodeConnectionWhereArgs = {
     /** Parent term ID to retrieve direct-child terms of. Default empty. */
     parent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Search criteria to match terms. Will be SQL-formatted with wildcards before
-     * and after. Default empty.
+     * Search criteria to match terms. Will be SQL-formatted with wildcards
+     * before and after. Default empty.
      */
     search?: InputMaybe<Scalars['String']['input']>
     /** Array of slugs to return term(s) for. Default empty. */
@@ -7364,10 +7419,10 @@ export type RegisterUserInput = {
     /** A string containing content about the user. */
     description?: InputMaybe<Scalars['String']['input']>
     /**
-     * A string that will be shown on the site. Defaults to user's username. It is
-     * likely that you will want to change this, for both appearance and security
-     * through obscurity (that is if you dont use and delete the default admin
-     * user).
+     * A string that will be shown on the site. Defaults to user's username. It
+     * is likely that you will want to change this, for both appearance and
+     * security through obscurity (that is if you dont use and delete the
+     * default admin user).
      */
     displayName?: InputMaybe<Scalars['String']['input']>
     /** A string containing the user's email address. */
@@ -7381,8 +7436,8 @@ export type RegisterUserInput = {
     /** User's locale. */
     locale?: InputMaybe<Scalars['String']['input']>
     /**
-     * A string that contains a URL-friendly name for the user. The default is the
-     * user's username.
+     * A string that contains a URL-friendly name for the user. The default is
+     * the user's username.
      */
     nicename?: InputMaybe<Scalars['String']['input']>
     /** The user's nickname, defaults to the user's username. */
@@ -7391,7 +7446,10 @@ export type RegisterUserInput = {
     password?: InputMaybe<Scalars['String']['input']>
     /** The date the user registered. Format is Y-m-d H:i:s. */
     registered?: InputMaybe<Scalars['String']['input']>
-    /** A string for whether to enable the rich editor or not. False if not empty. */
+    /**
+     * A string for whether to enable the rich editor or not. False if not
+     * empty.
+     */
     richEditing?: InputMaybe<Scalars['String']['input']>
     /** A string that contains the user's username. */
     username: Scalars['String']['input']
@@ -7729,8 +7787,8 @@ export type RootQuery = {
      * A mediaItem object
      *
      * @deprecated Deprecated in favor of using the single entry point for this
-     *   type with ID and IDType fields. For example, instead of postBy( id: "" ),
-     *   use post(id: "" idType: "")
+     *   type with ID and IDType fields. For example, instead of postBy( id: ""
+     *   ), use post(id: "" idType: "")
      */
     mediaItemBy?: Maybe<MediaItem>
     /** Connection between the RootQuery type and the mediaItem type */
@@ -7753,8 +7811,8 @@ export type RootQuery = {
      * A page object
      *
      * @deprecated Deprecated in favor of using the single entry point for this
-     *   type with ID and IDType fields. For example, instead of postBy( id: "" ),
-     *   use post(id: "" idType: "")
+     *   type with ID and IDType fields. For example, instead of postBy( id: ""
+     *   ), use post(id: "" idType: "")
      */
     pageBy?: Maybe<Page>
     /** Connection between the RootQuery type and the page type */
@@ -7769,8 +7827,8 @@ export type RootQuery = {
      * A post object
      *
      * @deprecated Deprecated in favor of using the single entry point for this
-     *   type with ID and IDType fields. For example, instead of postBy( id: "" ),
-     *   use post(id: "" idType: "")
+     *   type with ID and IDType fields. For example, instead of postBy( id: ""
+     *   ), use post(id: "" idType: "")
      */
     postBy?: Maybe<Post>
     /** A 0bject */
@@ -8183,8 +8241,8 @@ export type RootQueryToCategoryConnectionWhereArgs = {
      */
     childOf?: InputMaybe<Scalars['Int']['input']>
     /**
-     * True to limit results to terms that have no children. This parameter has no
-     * effect on non-hierarchical taxonomies. Default false.
+     * True to limit results to terms that have no children. This parameter has
+     * no effect on non-hierarchical taxonomies. Default false.
      */
     childless?: InputMaybe<Scalars['Boolean']['input']>
     /**
@@ -8219,8 +8277,8 @@ export type RootQueryToCategoryConnectionWhereArgs = {
     /** Retrieve terms where the name is LIKE the input value. Default empty. */
     nameLike?: InputMaybe<Scalars['String']['input']>
     /**
-     * Array of object IDs. Results will be limited to terms associated with these
-     * objects.
+     * Array of object IDs. Results will be limited to terms associated with
+     * these objects.
      */
     objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Direction the connection should be ordered in */
@@ -8235,8 +8293,8 @@ export type RootQueryToCategoryConnectionWhereArgs = {
     /** Parent term ID to retrieve direct-child terms of. Default empty. */
     parent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Search criteria to match terms. Will be SQL-formatted with wildcards before
-     * and after. Default empty.
+     * Search criteria to match terms. Will be SQL-formatted with wildcards
+     * before and after. Default empty.
      */
     search?: InputMaybe<Scalars['String']['input']>
     /** Array of slugs to return term(s) for. Default empty. */
@@ -8328,18 +8386,18 @@ export type RootQueryToCommentConnectionWhereArgs = {
     /** Content Object parent ID to retrieve affiliated comments for. */
     contentParent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Array of content object statuses to retrieve affiliated comments for. Pass
-     * 'any' to match any value.
+     * Array of content object statuses to retrieve affiliated comments for.
+     * Pass 'any' to match any value.
      */
     contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>
     /**
-     * Content object type or array of types to retrieve affiliated comments for.
-     * Pass 'any' to match any value.
+     * Content object type or array of types to retrieve affiliated comments
+     * for. Pass 'any' to match any value.
      */
     contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>
     /**
-     * Array of IDs or email addresses of users whose unapproved comments will be
-     * returned by the query regardless of $status. Default empty
+     * Array of IDs or email addresses of users whose unapproved comments will
+     * be returned by the query regardless of $status. Default empty
      */
     includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Karma score to retrieve matching comments for. */
@@ -8411,8 +8469,8 @@ export type RootQueryToContentNodeConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -8426,8 +8484,8 @@ export type RootQueryToContentNodeConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -8634,8 +8692,8 @@ export type RootQueryToMediaItemConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -8649,8 +8707,8 @@ export type RootQueryToMediaItemConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -8834,8 +8892,8 @@ export type RootQueryToPageConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -8849,8 +8907,8 @@ export type RootQueryToPageConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -8980,17 +9038,23 @@ export type RootQueryToPostConnectionWhereArgs = {
     authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Category ID */
     categoryId?: InputMaybe<Scalars['Int']['input']>
-    /** Array of category IDs, used to display objects from one category OR another */
+    /**
+     * Array of category IDs, used to display objects from one category OR
+     * another
+     */
     categoryIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Use Category Slug */
     categoryName?: InputMaybe<Scalars['String']['input']>
-    /** Array of category IDs, used to display objects from one category OR another */
+    /**
+     * Array of category IDs, used to display objects from one category OR
+     * another
+     */
     categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -9004,8 +9068,8 @@ export type RootQueryToPostConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -9094,8 +9158,8 @@ export type RootQueryToPostFormatConnectionWhereArgs = {
      */
     childOf?: InputMaybe<Scalars['Int']['input']>
     /**
-     * True to limit results to terms that have no children. This parameter has no
-     * effect on non-hierarchical taxonomies. Default false.
+     * True to limit results to terms that have no children. This parameter has
+     * no effect on non-hierarchical taxonomies. Default false.
      */
     childless?: InputMaybe<Scalars['Boolean']['input']>
     /**
@@ -9130,8 +9194,8 @@ export type RootQueryToPostFormatConnectionWhereArgs = {
     /** Retrieve terms where the name is LIKE the input value. Default empty. */
     nameLike?: InputMaybe<Scalars['String']['input']>
     /**
-     * Array of object IDs. Results will be limited to terms associated with these
-     * objects.
+     * Array of object IDs. Results will be limited to terms associated with
+     * these objects.
      */
     objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Direction the connection should be ordered in */
@@ -9146,8 +9210,8 @@ export type RootQueryToPostFormatConnectionWhereArgs = {
     /** Parent term ID to retrieve direct-child terms of. Default empty. */
     parent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Search criteria to match terms. Will be SQL-formatted with wildcards before
-     * and after. Default empty.
+     * Search criteria to match terms. Will be SQL-formatted with wildcards
+     * before and after. Default empty.
      */
     search?: InputMaybe<Scalars['String']['input']>
     /** Array of slugs to return term(s) for. Default empty. */
@@ -9207,8 +9271,8 @@ export type RootQueryToRevisionsConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -9222,8 +9286,8 @@ export type RootQueryToRevisionsConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -9300,8 +9364,8 @@ export type RootQueryToTagConnectionWhereArgs = {
      */
     childOf?: InputMaybe<Scalars['Int']['input']>
     /**
-     * True to limit results to terms that have no children. This parameter has no
-     * effect on non-hierarchical taxonomies. Default false.
+     * True to limit results to terms that have no children. This parameter has
+     * no effect on non-hierarchical taxonomies. Default false.
      */
     childless?: InputMaybe<Scalars['Boolean']['input']>
     /**
@@ -9336,8 +9400,8 @@ export type RootQueryToTagConnectionWhereArgs = {
     /** Retrieve terms where the name is LIKE the input value. Default empty. */
     nameLike?: InputMaybe<Scalars['String']['input']>
     /**
-     * Array of object IDs. Results will be limited to terms associated with these
-     * objects.
+     * Array of object IDs. Results will be limited to terms associated with
+     * these objects.
      */
     objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Direction the connection should be ordered in */
@@ -9352,8 +9416,8 @@ export type RootQueryToTagConnectionWhereArgs = {
     /** Parent term ID to retrieve direct-child terms of. Default empty. */
     parent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Search criteria to match terms. Will be SQL-formatted with wildcards before
-     * and after. Default empty.
+     * Search criteria to match terms. Will be SQL-formatted with wildcards
+     * before and after. Default empty.
      */
     search?: InputMaybe<Scalars['String']['input']>
     /** Array of slugs to return term(s) for. Default empty. */
@@ -9459,8 +9523,8 @@ export type RootQueryToTermNodeConnectionWhereArgs = {
      */
     childOf?: InputMaybe<Scalars['Int']['input']>
     /**
-     * True to limit results to terms that have no children. This parameter has no
-     * effect on non-hierarchical taxonomies. Default false.
+     * True to limit results to terms that have no children. This parameter has
+     * no effect on non-hierarchical taxonomies. Default false.
      */
     childless?: InputMaybe<Scalars['Boolean']['input']>
     /**
@@ -9495,8 +9559,8 @@ export type RootQueryToTermNodeConnectionWhereArgs = {
     /** Retrieve terms where the name is LIKE the input value. Default empty. */
     nameLike?: InputMaybe<Scalars['String']['input']>
     /**
-     * Array of object IDs. Results will be limited to terms associated with these
-     * objects.
+     * Array of object IDs. Results will be limited to terms associated with
+     * these objects.
      */
     objectIds?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Direction the connection should be ordered in */
@@ -9511,8 +9575,8 @@ export type RootQueryToTermNodeConnectionWhereArgs = {
     /** Parent term ID to retrieve direct-child terms of. Default empty. */
     parent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Search criteria to match terms. Will be SQL-formatted with wildcards before
-     * and after. Default empty.
+     * Search criteria to match terms. Will be SQL-formatted with wildcards
+     * before and after. Default empty.
      */
     search?: InputMaybe<Scalars['String']['input']>
     /** Array of slugs to return term(s) for. Default empty. */
@@ -9626,8 +9690,8 @@ export type RootQueryToUserConnectionWhereArgs = {
      */
     loginIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * An array of logins to exclude. Users matching one of these logins will not
-     * be included in results.
+     * An array of logins to exclude. Users matching one of these logins will
+     * not be included in results.
      */
     loginNotIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /** The user nicename. */
@@ -9661,8 +9725,8 @@ export type RootQueryToUserConnectionWhereArgs = {
     roleNotIn?: InputMaybe<Array<InputMaybe<UserRoleEnum>>>
     /**
      * Search keyword. Searches for possible string matches on columns. When
-     * "searchColumns" is left empty, it tries to determine which column to search
-     * in based on search string.
+     * "searchColumns" is left empty, it tries to determine which column to
+     * search in based on search string.
      */
     search?: InputMaybe<Scalars['String']['input']>
     /**
@@ -9721,8 +9785,8 @@ export type RootQueryToUserRoleConnectionPageInfo = PageInfo &
  */
 export enum ScriptLoadingGroupLocationEnum {
     /**
-     * Delayed loading at end of document, right before the closing `<body>` tag.
-     * (allows content to render first)
+     * Delayed loading at end of document, right before the closing `<body>`
+     * tag. (allows content to render first)
      */
     Footer = 'FOOTER',
     /**
@@ -9742,7 +9806,10 @@ export enum ScriptLoadingStrategyEnum {
      * downloaded
      */
     Async = 'ASYNC',
-    /** Download script in parallel but defer execution until page is fully parsed */
+    /**
+     * Download script in parallel but defer execution until page is fully
+     * parsed
+     */
     Defer = 'DEFER',
 }
 
@@ -9768,8 +9835,8 @@ export type SendPasswordResetEmailPayload = {
      */
     clientMutationId?: Maybe<Scalars['String']['output']>
     /**
-     * Whether the mutation completed successfully. This does NOT necessarily mean
-     * that an email was sent.
+     * Whether the mutation completed successfully. This does NOT necessarily
+     * mean that an email was sent.
      */
     success?: Maybe<Scalars['Boolean']['output']>
     /**
@@ -9951,8 +10018,8 @@ export type TagConnection = {
  */
 export type TagConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected tag Node */
@@ -10039,8 +10106,8 @@ export type TagToContentNodeConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -10054,8 +10121,8 @@ export type TagToContentNodeConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -10133,17 +10200,23 @@ export type TagToPostConnectionWhereArgs = {
     authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Category ID */
     categoryId?: InputMaybe<Scalars['Int']['input']>
-    /** Array of category IDs, used to display objects from one category OR another */
+    /**
+     * Array of category IDs, used to display objects from one category OR
+     * another
+     */
     categoryIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Use Category Slug */
     categoryName?: InputMaybe<Scalars['String']['input']>
-    /** Array of category IDs, used to display objects from one category OR another */
+    /**
+     * Array of category IDs, used to display objects from one category OR
+     * another
+     */
     categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -10157,8 +10230,8 @@ export type TagToPostConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -10199,8 +10272,8 @@ export type TagToTaxonomyConnectionEdge = Edge &
     TaxonomyConnectionEdge & {
         __typename: 'TagToTaxonomyConnectionEdge'
         /**
-         * Opaque reference to the nodes position in the connection. Value can be used
-         * with pagination args.
+         * Opaque reference to the nodes position in the connection. Value can
+         * be used with pagination args.
          */
         cursor?: Maybe<Scalars['String']['output']>
         /** The node of the connection, without the edges */
@@ -10307,8 +10380,8 @@ export type TaxonomyConnection = {
  */
 export type TaxonomyConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected Taxonomy Node */
@@ -10576,8 +10649,8 @@ export type TermNodeConnection = {
  */
 export type TermNodeConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected TermNode Node */
@@ -10750,9 +10823,9 @@ export type Theme = Node & {
      */
     name?: Maybe<Scalars['String']['output']>
     /**
-     * The URL of the screenshot for the theme. The screenshot is intended to give
-     * an overview of what the theme looks like. This field is equivalent to
-     * WP_Theme->get_screenshot().
+     * The URL of the screenshot for the theme. The screenshot is intended to
+     * give an overview of what the theme looks like. This field is equivalent
+     * to WP_Theme->get_screenshot().
      */
     screenshot?: Maybe<Scalars['String']['output']>
     /**
@@ -10767,8 +10840,8 @@ export type Theme = Node & {
      */
     tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>
     /**
-     * A URI if the theme has a website associated with it. The Theme URI is handy
-     * for directing users to a theme site for support etc. This field is
+     * A URI if the theme has a website associated with it. The Theme URI is
+     * handy for directing users to a theme site for support etc. This field is
      * equivalent to WP_Theme->get( "ThemeURI" ).
      */
     themeUri?: Maybe<Scalars['String']['output']>
@@ -10785,8 +10858,8 @@ export type Theme = Node & {
  */
 export type ThemeConnection = {
     /**
-     * A list of edges (relational context) between RootQuery and connected Theme
-     * Nodes
+     * A list of edges (relational context) between RootQuery and connected
+     * Theme Nodes
      */
     edges: Array<ThemeConnectionEdge>
     /** A list of connected Theme Nodes */
@@ -10801,8 +10874,8 @@ export type ThemeConnection = {
  */
 export type ThemeConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected Theme Node */
@@ -10867,18 +10940,18 @@ export type UpdateCategoryInput = {
      */
     parentDatabaseId?: InputMaybe<Scalars['Int']['input']>
     /**
-     * The ID of the category that should be set as the parent. This field cannot
-     * be used in conjunction with parentDatabaseId
+     * The ID of the category that should be set as the parent. This field
+     * cannot be used in conjunction with parentDatabaseId
      */
     parentId?: InputMaybe<Scalars['ID']['input']>
     /**
      * If this argument exists then the slug will be checked to see if it is not
      * an existing valid term. If that check succeeds (it is not a valid term),
      * then it is added and the term id is given. If it fails, then a check is
-     * made to whether the taxonomy is hierarchical and the parent argument is not
-     * empty. If the second check succeeds, the term will be inserted and the term
-     * id will be given. If the slug argument is empty, then it will be calculated
-     * from the term name.
+     * made to whether the taxonomy is hierarchical and the parent argument is
+     * not empty. If the second check succeeds, the term will be inserted and
+     * the term id will be given. If the slug argument is empty, then it will be
+     * calculated from the term name.
      */
     slug?: InputMaybe<Scalars['String']['input']>
 }
@@ -10944,10 +11017,10 @@ export type UpdateCommentPayload = {
     /** The comment that was created */
     comment?: Maybe<Comment>
     /**
-     * Whether the mutation succeeded. If the comment is not approved, the server
-     * will not return the comment to a non authenticated user, but a success
-     * message can be returned if the create succeeded, and the client can
-     * optimistically add the comment to the client cache
+     * Whether the mutation succeeded. If the comment is not approved, the
+     * server will not return the comment to a non authenticated user, but a
+     * success message can be returned if the create succeeded, and the client
+     * can optimistically add the comment to the client cache
      */
     success?: Maybe<Scalars['Boolean']['output']>
 }
@@ -11030,8 +11103,8 @@ export type UpdatePageInput = {
     /** Override the edit lock when another user is editing the post */
     ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>
     /**
-     * A field used for ordering posts. This is typically used with nav menu items
-     * or for special ordering of hierarchical content types.
+     * A field used for ordering posts. This is typically used with nav menu
+     * items or for special ordering of hierarchical content types.
      */
     menuOrder?: InputMaybe<Scalars['Int']['input']>
     /** The ID of the parent object */
@@ -11079,10 +11152,10 @@ export type UpdatePostFormatInput = {
      * If this argument exists then the slug will be checked to see if it is not
      * an existing valid term. If that check succeeds (it is not a valid term),
      * then it is added and the term id is given. If it fails, then a check is
-     * made to whether the taxonomy is hierarchical and the parent argument is not
-     * empty. If the second check succeeds, the term will be inserted and the term
-     * id will be given. If the slug argument is empty, then it will be calculated
-     * from the term name.
+     * made to whether the taxonomy is hierarchical and the parent argument is
+     * not empty. If the second check succeeds, the term will be inserted and
+     * the term id will be given. If the slug argument is empty, then it will be
+     * calculated from the term name.
      */
     slug?: InputMaybe<Scalars['String']['input']>
 }
@@ -11130,8 +11203,8 @@ export type UpdatePostInput = {
     /** Override the edit lock when another user is editing the post */
     ignoreEditLock?: InputMaybe<Scalars['Boolean']['input']>
     /**
-     * A field used for ordering posts. This is typically used with nav menu items
-     * or for special ordering of hierarchical content types.
+     * A field used for ordering posts. This is typically used with nav menu
+     * items or for special ordering of hierarchical content types.
      */
     menuOrder?: InputMaybe<Scalars['Int']['input']>
     /** The password used to protect the content of the object */
@@ -11180,8 +11253,8 @@ export type UpdateSettingsInput = {
         Scalars['String']['input']
     >
     /**
-     * Allow link notifications from other blogs (pingbacks and trackbacks) on new
-     * articles.
+     * Allow link notifications from other blogs (pingbacks and trackbacks) on
+     * new articles.
      */
     discussionSettingsDefaultPingStatus?: InputMaybe<Scalars['String']['input']>
     /** A date format for all date strings. */
@@ -11259,10 +11332,10 @@ export type UpdateTagInput = {
      * If this argument exists then the slug will be checked to see if it is not
      * an existing valid term. If that check succeeds (it is not a valid term),
      * then it is added and the term id is given. If it fails, then a check is
-     * made to whether the taxonomy is hierarchical and the parent argument is not
-     * empty. If the second check succeeds, the term will be inserted and the term
-     * id will be given. If the slug argument is empty, then it will be calculated
-     * from the term name.
+     * made to whether the taxonomy is hierarchical and the parent argument is
+     * not empty. If the second check succeeds, the term will be inserted and
+     * the term id will be given. If the slug argument is empty, then it will be
+     * calculated from the term name.
      */
     slug?: InputMaybe<Scalars['String']['input']>
 }
@@ -11293,10 +11366,10 @@ export type UpdateUserInput = {
     /** A string containing content about the user. */
     description?: InputMaybe<Scalars['String']['input']>
     /**
-     * A string that will be shown on the site. Defaults to user's username. It is
-     * likely that you will want to change this, for both appearance and security
-     * through obscurity (that is if you dont use and delete the default admin
-     * user).
+     * A string that will be shown on the site. Defaults to user's username. It
+     * is likely that you will want to change this, for both appearance and
+     * security through obscurity (that is if you dont use and delete the
+     * default admin user).
      */
     displayName?: InputMaybe<Scalars['String']['input']>
     /** A string containing the user's email address. */
@@ -11312,8 +11385,8 @@ export type UpdateUserInput = {
     /** User's locale. */
     locale?: InputMaybe<Scalars['String']['input']>
     /**
-     * A string that contains a URL-friendly name for the user. The default is the
-     * user's username.
+     * A string that contains a URL-friendly name for the user. The default is
+     * the user's username.
      */
     nicename?: InputMaybe<Scalars['String']['input']>
     /** The user's nickname, defaults to the user's username. */
@@ -11322,7 +11395,10 @@ export type UpdateUserInput = {
     password?: InputMaybe<Scalars['String']['input']>
     /** The date the user registered. Format is Y-m-d H:i:s. */
     registered?: InputMaybe<Scalars['String']['input']>
-    /** A string for whether to enable the rich editor or not. False if not empty. */
+    /**
+     * A string for whether to enable the rich editor or not. False if not
+     * empty.
+     */
     richEditing?: InputMaybe<Scalars['String']['input']>
     /** An array of roles to be assigned to the user. */
     roles?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
@@ -11356,8 +11432,8 @@ export type User = Commenter &
     UniformResourceIdentifiable & {
         __typename: 'User'
         /**
-         * Avatar object for user. The avatar object can be retrieved in different
-         * sizes by specifying the size argument.
+         * Avatar object for user. The avatar object can be retrieved in
+         * different sizes by specifying the size argument.
          */
         avatar?: Maybe<Avatar>
         /** User metadata option name. Usually it will be "wp_capabilities". */
@@ -11371,8 +11447,8 @@ export type User = Commenter &
         /** Description of the user. */
         description?: Maybe<Scalars['String']['output']>
         /**
-         * Email address of the user. This is equivalent to the WP_User->user_email
-         * property.
+         * Email address of the user. This is equivalent to the
+         * WP_User->user_email property.
          */
         email?: Maybe<Scalars['String']['output']>
         /** Connection between the User type and the EnqueuedScript type */
@@ -11380,13 +11456,13 @@ export type User = Commenter &
         /** Connection between the User type and the EnqueuedStylesheet type */
         enqueuedStylesheets?: Maybe<UserToEnqueuedStylesheetConnection>
         /**
-         * A complete list of capabilities including capabilities inherited from a
-         * role. This is equivalent to the array keys of WP_User->allcaps.
+         * A complete list of capabilities including capabilities inherited from
+         * a role. This is equivalent to the array keys of WP_User->allcaps.
          */
         extraCapabilities?: Maybe<Array<Maybe<Scalars['String']['output']>>>
         /**
-         * First name of the user. This is equivalent to the WP_User->user_first_name
-         * property.
+         * First name of the user. This is equivalent to the
+         * WP_User->user_first_name property.
          */
         firstName?: Maybe<Scalars['String']['output']>
         /** The globally unique identifier for the user object. */
@@ -11404,8 +11480,8 @@ export type User = Commenter &
         /** Whether the node is a Term */
         isTermNode: Scalars['Boolean']['output']
         /**
-         * Last name of the user. This is equivalent to the WP_User->user_last_name
-         * property.
+         * Last name of the user. This is equivalent to the
+         * WP_User->user_last_name property.
          */
         lastName?: Maybe<Scalars['String']['output']>
         /**
@@ -11416,8 +11492,8 @@ export type User = Commenter &
         /** Connection between the User type and the mediaItem type */
         mediaItems?: Maybe<UserToMediaItemConnection>
         /**
-         * Display name of the user. This is equivalent to the WP_User->display_name
-         * property.
+         * Display name of the user. This is equivalent to the
+         * WP_User->display_name property.
          */
         name?: Maybe<Scalars['String']['output']>
         /**
@@ -11440,9 +11516,15 @@ export type User = Commenter &
         revisions?: Maybe<UserToRevisionsConnection>
         /** Connection between the User type and the UserRole type */
         roles?: Maybe<UserToUserRoleConnection>
-        /** Whether the Toolbar should be displayed when the user is viewing the site. */
+        /**
+         * Whether the Toolbar should be displayed when the user is viewing the
+         * site.
+         */
         shouldShowAdminToolbar?: Maybe<Scalars['Boolean']['output']>
-        /** The slug for the user. This field is equivalent to WP_User->user_nicename */
+        /**
+         * The slug for the user. This field is equivalent to
+         * WP_User->user_nicename
+         */
         slug?: Maybe<Scalars['String']['output']>
         /** The unique resource identifier path */
         uri?: Maybe<Scalars['String']['output']>
@@ -11454,7 +11536,10 @@ export type User = Commenter &
          * @deprecated Deprecated in favor of the databaseId field
          */
         userId?: Maybe<Scalars['Int']['output']>
-        /** Username for the user. This field is equivalent to WP_User->user_login. */
+        /**
+         * Username for the user. This field is equivalent to
+         * WP_User->user_login.
+         */
         username?: Maybe<Scalars['String']['output']>
     }
 
@@ -11583,8 +11668,8 @@ export type UserConnection = {
  */
 export type UserConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected User Node */
@@ -11662,8 +11747,8 @@ export type UserRoleConnection = {
  */
 export type UserRoleConnectionEdge = {
     /**
-     * Opaque reference to the nodes position in the connection. Value can be used
-     * with pagination args.
+     * Opaque reference to the nodes position in the connection. Value can be
+     * used with pagination args.
      */
     cursor?: Maybe<Scalars['String']['output']>
     /** The connected UserRole Node */
@@ -11784,18 +11869,18 @@ export type UserToCommentConnectionWhereArgs = {
     /** Content Object parent ID to retrieve affiliated comments for. */
     contentParent?: InputMaybe<Scalars['Int']['input']>
     /**
-     * Array of content object statuses to retrieve affiliated comments for. Pass
-     * 'any' to match any value.
+     * Array of content object statuses to retrieve affiliated comments for.
+     * Pass 'any' to match any value.
      */
     contentStatus?: InputMaybe<Array<InputMaybe<PostStatusEnum>>>
     /**
-     * Content object type or array of types to retrieve affiliated comments for.
-     * Pass 'any' to match any value.
+     * Content object type or array of types to retrieve affiliated comments
+     * for. Pass 'any' to match any value.
      */
     contentType?: InputMaybe<Array<InputMaybe<ContentTypeEnum>>>
     /**
-     * Array of IDs or email addresses of users whose unapproved comments will be
-     * returned by the query regardless of $status. Default empty
+     * Array of IDs or email addresses of users whose unapproved comments will
+     * be returned by the query regardless of $status. Default empty
      */
     includeUnapproved?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Karma score to retrieve matching comments for. */
@@ -11959,8 +12044,8 @@ export type UserToMediaItemConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -11974,8 +12059,8 @@ export type UserToMediaItemConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -12054,8 +12139,8 @@ export type UserToPageConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -12069,8 +12154,8 @@ export type UserToPageConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -12148,17 +12233,23 @@ export type UserToPostConnectionWhereArgs = {
     authorNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Category ID */
     categoryId?: InputMaybe<Scalars['Int']['input']>
-    /** Array of category IDs, used to display objects from one category OR another */
+    /**
+     * Array of category IDs, used to display objects from one category OR
+     * another
+     */
     categoryIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Use Category Slug */
     categoryName?: InputMaybe<Scalars['String']['input']>
-    /** Array of category IDs, used to display objects from one category OR another */
+    /**
+     * Array of category IDs, used to display objects from one category OR
+     * another
+     */
     categoryNotIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -12172,8 +12263,8 @@ export type UserToPostConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */
@@ -12256,8 +12347,8 @@ export type UserToRevisionsConnectionWhereArgs = {
     /** Filter the connection based on dates */
     dateQuery?: InputMaybe<DateQueryInput>
     /**
-     * True for objects with passwords; False for objects without passwords; null
-     * for all objects with or without passwords
+     * True for objects with passwords; False for objects without passwords;
+     * null for all objects with or without passwords
      */
     hasPassword?: InputMaybe<Scalars['Boolean']['input']>
     /** Specific database ID of the object */
@@ -12271,8 +12362,8 @@ export type UserToRevisionsConnectionWhereArgs = {
     /** Specify objects to retrieve. Use slugs */
     nameIn?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>
     /**
-     * Specify IDs NOT to retrieve. If this is used in the same query as "in", it
-     * will be ignored
+     * Specify IDs NOT to retrieve. If this is used in the same query as "in",
+     * it will be ignored
      */
     notIn?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>
     /** What parameter to use to order the objects by. */

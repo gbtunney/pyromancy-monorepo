@@ -27,6 +27,9 @@ $webroot_dir = $root_dir . '/web';
 /**
  * Use Dotenv to set required environment variables and load .env file in root
  * .env.local will override .env if it exists
+ * 
+ * Fallback: If .env doesn't exist, try to load bluehost-config.php
+ * (useful for Bluehost deployments where .env files might not work)
  */
 if (file_exists($root_dir . '/.env')) {
     $env_files = file_exists($root_dir . '/.env.local')
@@ -41,6 +44,9 @@ if (file_exists($root_dir . '/.env')) {
     if (!env('DATABASE_URL')) {
         $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD']);
     }
+} elseif (file_exists($root_dir . '/bluehost-config.php')) {
+    // Fallback for Bluehost or other hosts where .env files don't work
+    require_once $root_dir . '/bluehost-config.php';
 }
 
 /**
