@@ -186,5 +186,6 @@ apps/metaSDK
 
 .history
 bluehost-config.php
-.env.production
+.env
 .env.development
+.env.production
