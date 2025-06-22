@@ -48,7 +48,7 @@
         "composer:update": "pnpm composer:add",
         "composer:cache": "pnpm composer clear-cache",
         "composer:clean:lock": "rm -f composer.lock",
-        "composer:uninstall": "pnpm exec rm -rf vendor wep/wp && pnpm composer:clean:lock",
+        "composer:uninstall": "pnpm exec ./uninstall.sh all && pnpm composer:clean:lock",
         "\n========== LANDO >> ==========": "",
         "lando": "pnpm exec lando",
         "lando:install": "pnpm lando start --verbose",

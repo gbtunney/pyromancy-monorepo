@@ -33,11 +33,17 @@
             ]
         },
         {
-            "type": "composer",
-            "url": "https://composer.elementor.com",
-            "only": [
-                "elementor/elementor-pro"
-            ]
+            "type": "package",
+            "package": {
+                "name": "gbtunney/gbt-bricks",
+                "version": "dev-master",
+                "type": "wordpress-theme",
+                "source": {
+                    "url": "git@github.com:gbtunney/gbt-bricks.git",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
         }
     ],
     "require": {
@@ -50,14 +56,14 @@
         "roots/wordpress": "6.2.2",
         "roots/wp-config": "1.0.0",
         "wpackagist-theme/twentytwentythree": "^1.0",
-        "wpackagist-theme/hello-elementor": "2.8.1",
-        "wpackagist-plugin/elementor": "^3.28",
         "wpackagist-plugin/ninja-forms": "^3.10",
         "wpackagist-plugin/classic-editor": "^1.6",
         "wpackagist-plugin/advanced-custom-fields": "^6.4",
         "wpackagist-plugin/wp-graphql": "2.3.0",
         "wp-graphql/wp-graphql-custom-post-type-ui": "^1.2",
-        "elementor/elementor-pro": "^3.28"
+        "gbtunney/gbt-bricks": "dev-master",
+        "wpackagist-plugin/woocommerce": "^9.9",
+        "wpackagist-plugin/printful-shipping-for-woocommerce": "^2.2"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.7.1",
