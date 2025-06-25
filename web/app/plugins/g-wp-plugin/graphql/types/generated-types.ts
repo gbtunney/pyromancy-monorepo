@@ -2097,6 +2097,8 @@ export type CreatePageInput = {
      * input will use current date with timestamp 20:17
      */
     date?: InputMaybe<Scalars['String']['input']>
+    /** The excerpt of the object */
+    excerpt?: InputMaybe<Scalars['String']['input']>
     /**
      * A field used for ordering posts. This is typically used with nav menu
      * items or for special ordering of hierarchical content types.
@@ -3805,6 +3807,12 @@ export enum MediaItemSizeEnum {
     MediumLarge = 'MEDIUM_LARGE',
     /** Small image preview suitable for thumbnails and listings. (150x150) */
     Thumbnail = 'THUMBNAIL',
+    /** Custom Image Size. (100x100) */
+    WoocommerceGalleryThumbnail = 'WOOCOMMERCE_GALLERY_THUMBNAIL',
+    /** Custom Image Size. (600x0) */
+    WoocommerceSingle = 'WOOCOMMERCE_SINGLE',
+    /** Custom Image Size. (300x300) */
+    WoocommerceThumbnail = 'WOOCOMMERCE_THUMBNAIL',
     /** Custom Image Size. (1536x1536) */
     '1536X1536' = '_1536X1536',
     /** Custom Image Size. (2048x2048) */
@@ -4528,12 +4536,20 @@ export enum MimeTypeEnum {
     AudioXMsWma = 'AUDIO_X_MS_WMA',
     /** Audio/x-realaudio mime type. */
     AudioXRealaudio = 'AUDIO_X_REALAUDIO',
+    /** Image/avif mime type. */
+    ImageAvif = 'IMAGE_AVIF',
     /** Image/bmp mime type. */
     ImageBmp = 'IMAGE_BMP',
     /** Image/gif mime type. */
     ImageGif = 'IMAGE_GIF',
     /** Image/heic mime type. */
     ImageHeic = 'IMAGE_HEIC',
+    /** Image/heic-sequence mime type. */
+    ImageHeicSequence = 'IMAGE_HEIC_SEQUENCE',
+    /** Image/heif mime type. */
+    ImageHeif = 'IMAGE_HEIF',
+    /** Image/heif-sequence mime type. */
+    ImageHeifSequence = 'IMAGE_HEIF_SEQUENCE',
     /** Image/jpeg mime type. */
     ImageJpeg = 'IMAGE_JPEG',
     /** Image/png mime type. */
@@ -4852,6 +4868,7 @@ export type Page = ContentNode &
     NodeWithAuthor &
     NodeWithComments &
     NodeWithContentEditor &
+    NodeWithExcerpt &
     NodeWithFeaturedImage &
     NodeWithPageAttributes &
     NodeWithRevisions &
@@ -4915,6 +4932,8 @@ export type Page = ContentNode &
          * type
          */
         enqueuedStylesheets?: Maybe<ContentNodeToEnqueuedStylesheetConnection>
+        /** The excerpt of the post. */
+        excerpt?: Maybe<Scalars['String']['output']>
         /**
          * Connection between the NodeWithFeaturedImage type and the MediaItem
          * type
@@ -5085,6 +5104,14 @@ export type PageEnqueuedStylesheetsArgs = {
     before?: InputMaybe<Scalars['String']['input']>
     first?: InputMaybe<Scalars['Int']['input']>
     last?: InputMaybe<Scalars['Int']['input']>
+}
+
+/**
+ * A standalone content entry generally used for static, non-chronological
+ * content such as "About Us" or "Contact" pages.
+ */
+export type PageExcerptArgs = {
+    format?: InputMaybe<PostObjectFieldFormatEnum>
 }
 
 /**
@@ -6452,14 +6479,20 @@ export type PostPostFormatsNodeInput = {
  * state, or private.
  */
 export enum PostStatusEnum {
+    /** Objects with the acf-disabled status */
+    AcfDisabled = 'ACF_DISABLED',
     /** Automatically saved content that has not been manually saved */
     AutoDraft = 'AUTO_DRAFT',
     /** Content that is saved but not yet published or visible to the public */
     Draft = 'DRAFT',
+    /** Objects with the failed status */
+    Failed = 'FAILED',
     /** Objects with the future status */
     Future = 'FUTURE',
     /** Content that inherits its status from a parent object */
     Inherit = 'INHERIT',
+    /** Objects with the in-progress status */
+    InProgress = 'IN_PROGRESS',
     /** Content awaiting review before publication */
     Pending = 'PENDING',
     /** Content only visible to authorized users with appropriate permissions */
@@ -6476,6 +6509,22 @@ export enum PostStatusEnum {
     RequestPending = 'REQUEST_PENDING',
     /** Content marked for deletion but still recoverable */
     Trash = 'TRASH',
+    /** Objects with the wc-cancelled status */
+    WcCancelled = 'WC_CANCELLED',
+    /** Objects with the wc-checkout-draft status */
+    WcCheckoutDraft = 'WC_CHECKOUT_DRAFT',
+    /** Objects with the wc-completed status */
+    WcCompleted = 'WC_COMPLETED',
+    /** Objects with the wc-failed status */
+    WcFailed = 'WC_FAILED',
+    /** Objects with the wc-on-hold status */
+    WcOnHold = 'WC_ON_HOLD',
+    /** Objects with the wc-pending status */
+    WcPending = 'WC_PENDING',
+    /** Objects with the wc-processing status */
+    WcProcessing = 'WC_PROCESSING',
+    /** Objects with the wc-refunded status */
+    WcRefunded = 'WC_REFUNDED',
 }
 
 /** Set relationships between the post to tags */
@@ -10503,34 +10552,6 @@ export type TaxonomyToTermNodeConnectionPageInfo = PageInfo &
         startCursor?: Maybe<Scalars['String']['output']>
     }
 
-/** The template assigned to the node */
-export type Template_PageNoTitle = ContentTemplate & {
-    __typename: 'Template_PageNoTitle'
-    /** The name of the template */
-    templateName?: Maybe<Scalars['String']['output']>
-}
-
-/** The template assigned to the node */
-export type Template_PageWithSidebar = ContentTemplate & {
-    __typename: 'Template_PageWithSidebar'
-    /** The name of the template */
-    templateName?: Maybe<Scalars['String']['output']>
-}
-
-/** The template assigned to the node */
-export type Template_PageWithWideImage = ContentTemplate & {
-    __typename: 'Template_PageWithWideImage'
-    /** The name of the template */
-    templateName?: Maybe<Scalars['String']['output']>
-}
-
-/** The template assigned to the node */
-export type Template_SingleWithSidebar = ContentTemplate & {
-    __typename: 'Template_SingleWithSidebar'
-    /** The name of the template */
-    templateName?: Maybe<Scalars['String']['output']>
-}
-
 /**
  * Base interface for taxonomy terms such as categories and tags. Terms are used
  * to organize and classify content.
@@ -11069,6 +11090,8 @@ export type UpdatePageInput = {
      * input will use current date with timestamp 20:17
      */
     date?: InputMaybe<Scalars['String']['input']>
+    /** The excerpt of the object */
+    excerpt?: InputMaybe<Scalars['String']['input']>
     /** The ID of the page object */
     id: Scalars['ID']['input']
     /** Override the edit lock when another user is editing the post */
@@ -11754,7 +11777,11 @@ export enum UserRoleEnum {
     /** User role with specific capabilities */
     Contributor = 'CONTRIBUTOR',
     /** User role with specific capabilities */
+    Customer = 'CUSTOMER',
+    /** User role with specific capabilities */
     Editor = 'EDITOR',
+    /** User role with specific capabilities */
+    ShopManager = 'SHOP_MANAGER',
     /** User role with specific capabilities */
     Subscriber = 'SUBSCRIBER',
 }

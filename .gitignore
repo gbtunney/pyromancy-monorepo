@@ -176,6 +176,7 @@ pnpmfile.js
 *.log
 *.log.*
 
+*.sql
 #todo: figure out what to do with this
 *.test.js
 
