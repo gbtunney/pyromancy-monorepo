@@ -57,7 +57,7 @@
         "wpackagist-plugin/wp-graphql": "2.3.0",
         "wp-graphql/wp-graphql-custom-post-type-ui": "^1.2",
         "gbtunney/gbt-bricks": "2.0-rc",
-        "gbtunney/gbt-bricks-adv-themer": "^3.2",
+        "gbtunney/gbt-bricks-adv-themer": "^3.2.5",
         "wpackagist-plugin/woocommerce": "^9.4",
         "wpackagist-plugin/printful-shipping-for-woocommerce": "^2.2",
         "roots/wordpress-no-content": "^6.7"
