@@ -33,30 +33,12 @@
             ]
         },
         {
-            "type": "package",
-            "package": {
-                "name": "gbtunney/gbt-bricks",
-                "version": "dev-master",
-                "type": "wordpress-theme",
-                "source": {
-                    "url": "git@github.com:gbtunney/gbt-bricks.git",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
+            "type": "vcs",
+            "url": "git@github.com:gbtunney/gbt-bricks.git"
         },
         {
-            "type": "package",
-            "package": {
-                "name": "gbtunney/gbt-bricks-adv-themer",
-                "version": "dev-master",
-                "type": "wordpress-plugin",
-                "source": {
-                    "url": "git@github.com:gbtunney/gbt-bricks-adv-themer.git",
-                    "type": "git",
-                    "reference": "master"
-                }
-            }
+            "type": "vcs",
+            "url": "git@github.com:gbtunney/gbt-bricks-adv-themer.git"
         }
     ],
     "require": {
@@ -74,8 +56,8 @@
         "wpackagist-plugin/advanced-custom-fields": "^6.4",
         "wpackagist-plugin/wp-graphql": "2.3.0",
         "wp-graphql/wp-graphql-custom-post-type-ui": "^1.2",
-        "gbtunney/gbt-bricks": "dev-master",
-        "gbtunney/gbt-bricks-adv-themer": "dev-master",
+        "gbtunney/gbt-bricks": "2.0-rc",
+        "gbtunney/gbt-bricks-adv-themer": "^3.2",
         "wpackagist-plugin/woocommerce": "^9.4",
         "wpackagist-plugin/printful-shipping-for-woocommerce": "^2.2",
         "roots/wordpress-no-content": "^6.7"

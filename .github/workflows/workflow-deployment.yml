@@ -38,8 +38,8 @@ jobs:
                   git branch
 
             - name: Deploy to Staging server
-                uses: easingthemes/ssh-deploy@main
-                with:
+              uses: easingthemes/ssh-deploy@main
+              with:
                   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
                   ARGS: "-rlgoDzvc -i"
                   SOURCE: "web/"
