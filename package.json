@@ -109,7 +109,7 @@
         },
         "prettier": {
             "extensions": "sh,php,ts,js,cjs,mjs,cts,json,xml,yaml,yml,graphql,md",
-            "path": "config/**/*,notes/**/*,*"
+            "path": ".github/**/*,.husky/**/*,config/**/*,notes/**/*,*"
         },
         "commitizen": {
             "path": "@commitlint/cz-commitlint"

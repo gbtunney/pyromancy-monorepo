@@ -1,4 +1,4 @@
-name: pyromancy2023
+name: pyromancy2025
 recipe: wordpress
 config:
     webroot: web
