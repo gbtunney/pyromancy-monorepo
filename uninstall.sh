@@ -3,7 +3,7 @@
 # uninstall WordPress directories script
 # Usage: ./uninstall.sh [preview|all|plugins|mu-plugins|themes|vendor]
 
-set -e  # Exit on error
+set -e # Exit on error
 
 # Colors for output
 RED='\033[0;31m'
@@ -16,7 +16,7 @@ uninstall_plugins() {
     echo -e "${YELLOW}uninstalling plugins...${NC}"
     if [ -d "web/app/plugins" ]; then
         cd web/app/plugins
-        find . -maxdepth 1 -type d ! -name 'g-wp-plugin' ! -name '.' ! -name '.gitkeep' -exec rm -rf {} + 2>/dev/null || true
+        find . -maxdepth 1 -type d ! -name 'g-wp-plugin' ! -name '.' ! -name '.gitkeep' -exec rm -rf {} + 2> /dev/null || true
         cd - > /dev/null
         echo -e "${GREEN}✓ Plugins Uninstalled${NC}"
     else
@@ -29,7 +29,7 @@ uninstall_mu_plugins() {
     echo -e "${YELLOW}uninstalling mu-plugins...${NC}"
     if [ -d "web/app/mu-plugins" ]; then
         cd web/app/mu-plugins
-        find . -maxdepth 1 -type d ! -name 'g-wp-plugin' ! -name '.' ! -name '.gitkeep' -exec rm -rf {} + 2>/dev/null || true
+        find . -maxdepth 1 -type d ! -name 'g-wp-plugin' ! -name '.' ! -name '.gitkeep' -exec rm -rf {} + 2> /dev/null || true
         cd - > /dev/null
         echo -e "${GREEN}✓ MU-Plugins Uninstalled${NC}"
     else
@@ -42,7 +42,7 @@ uninstall_themes() {
     echo -e "${YELLOW}Uninstalling themes...${NC}"
     if [ -d "web/app/themes" ]; then
         cd web/app/themes
-        find . -maxdepth 1 -type d ! -name 'pyromancy*' ! -name '.' ! -name '.gitkeep' -exec rm -rf {} + 2>/dev/null || true
+        find . -maxdepth 1 -type d ! -name 'pyromancy*' ! -name '.' ! -name '.gitkeep' -exec rm -rf {} + 2> /dev/null || true
         cd - > /dev/null
         echo -e "${GREEN}✓ Themes uninstalled${NC}"
     else
@@ -64,7 +64,7 @@ uninstall_vendor() {
 # Function to preview what would be deleted
 preview_uninstall() {
     echo -e "${YELLOW}=== PREVIEW MODE ===${NC}"
-    
+
     echo -e "\n${YELLOW}Plugins to delete:${NC}"
     if [ -d "web/app/plugins" ]; then
         cd web/app/plugins
@@ -73,7 +73,7 @@ preview_uninstall() {
     else
         echo "No plugins directory"
     fi
-    
+
     echo -e "\n${YELLOW}MU-Plugins to delete:${NC}"
     if [ -d "web/app/mu-plugins" ]; then
         cd web/app/mu-plugins
@@ -82,7 +82,7 @@ preview_uninstall() {
     else
         echo "No mu-plugins directory"
     fi
-    
+
     echo -e "\n${YELLOW}Themes to delete:${NC}"
     if [ -d "web/app/themes" ]; then
         cd web/app/themes
@@ -91,7 +91,7 @@ preview_uninstall() {
     else
         echo "No themes directory"
     fi
-    
+
     echo -e "\n${YELLOW}Vendor directory:${NC}"
     if [ -d "vendor" ]; then
         echo "vendor/ (will be removed)"

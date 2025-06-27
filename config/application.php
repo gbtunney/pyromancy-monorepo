@@ -27,7 +27,7 @@ $webroot_dir = $root_dir . '/web';
 /**
  * Use Dotenv to set required environment variables and load .env file in root
  * .env.local will override .env if it exists
- * 
+ *
  * Fallback: If .env doesn't exist, try to load bluehost-config.php
  * (useful for Bluehost deployments where .env files might not work)
  */
@@ -36,7 +36,11 @@ if (file_exists($root_dir . '/.env')) {
         ? ['.env', '.env.local']
         : ['.env'];
 
-    $dotenv = Dotenv\Dotenv::createUnsafeImmutable($root_dir, $env_files, false);
+    $dotenv = Dotenv\Dotenv::createUnsafeImmutable(
+        $root_dir,
+        $env_files,
+        false
+    );
 
     $dotenv->load();
 
@@ -58,7 +62,10 @@ define('WP_ENV', env('WP_ENV') ?: 'production');
 /**
  * Infer WP_ENVIRONMENT_TYPE based on WP_ENV
  */
-if (!env('WP_ENVIRONMENT_TYPE') && in_array(WP_ENV, ['production', 'staging', 'development', 'local'])) {
+if (
+    !env('WP_ENVIRONMENT_TYPE') &&
+    in_array(WP_ENV, ['production', 'staging', 'development', 'local'])
+) {
     Config::define('WP_ENVIRONMENT_TYPE', WP_ENV);
 }
 
@@ -73,7 +80,10 @@ Config::define('WP_SITEURL', env('WP_SITEURL'));
  */
 Config::define('CONTENT_DIR', '/app');
 Config::define('WP_CONTENT_DIR', $webroot_dir . Config::get('CONTENT_DIR'));
-Config::define('WP_CONTENT_URL', Config::get('WP_HOME') . Config::get('CONTENT_DIR'));
+Config::define(
+    'WP_CONTENT_URL',
+    Config::get('WP_HOME') . Config::get('CONTENT_DIR')
+);
 
 /**
  * DB settings
@@ -96,7 +106,10 @@ if (env('DATABASE_URL')) {
     Config::define('DB_NAME', substr($dsn->path, 1));
     Config::define('DB_USER', $dsn->user);
     Config::define('DB_PASSWORD', isset($dsn->pass) ? $dsn->pass : null);
-    Config::define('DB_HOST', isset($dsn->port) ? "{$dsn->host}:{$dsn->port}" : $dsn->host);
+    Config::define(
+        'DB_HOST',
+        isset($dsn->port) ? "{$dsn->host}:{$dsn->port}" : $dsn->host
+    );
 }
 
 /**
@@ -133,19 +146,21 @@ Config::define('WP_DEBUG_DISPLAY', false);
 Config::define('WP_DEBUG_LOG', false);
 Config::define('SCRIPT_DEBUG', false);
 ini_set('display_errors', '0');
-ini_set('error_reporting', (E_ALL & ~E_STRICT &-E_DEPRECATED));
+ini_set('error_reporting', E_ALL & ~E_STRICT & -E_DEPRECATED);
 
 /**
  * GQL Plugin for generating types
  */
 Config::define('GRAPHQL_DEBUG', true);
 
-
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
  * See https://codex.wordpress.org/Function_Reference/is_ssl#Notes
  */
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+if (
+    isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+    $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https'
+) {
     $_SERVER['HTTPS'] = 'on';
 }
 
