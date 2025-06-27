@@ -6,8 +6,8 @@
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 # Configuration
-REMOTE_HOST="bluehost"  # Using your SSH config alias
-REMOTE_USER=""  # Empty since it's in your SSH config
+REMOTE_HOST="bluehost" # Using your SSH config alias
+REMOTE_USER=""         # Empty since it's in your SSH config
 REMOTE_PATH="~/pyr-staging.gilliantunney.com/"
 LOCAL_PATH="$PROJECT_ROOT/"
 
@@ -73,5 +73,5 @@ ssh $REMOTE_HOST "
     chmod 600 wp-config.php 2>/dev/null || true
 "
 
-   echo -e "${GREEN}🎉 Deployment complete!${NC}"
+echo -e "${GREEN}🎉 Deployment complete!${NC}"
 echo -e "${GREEN}Visit: https://pyr-staging.gilliantunney.com${NC}"

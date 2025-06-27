@@ -58,7 +58,7 @@
         "wpackagist-plugin/ninja-forms": "^3.10",
         "wpackagist-plugin/classic-editor": "^1.6",
         "wpackagist-plugin/advanced-custom-fields": "^6.4",
-        "wpackagist-plugin/wp-graphql": "2.3.0",
+        "wpackagist-plugin/wp-graphql": "^2.3.0",
         "wp-graphql/wp-graphql-custom-post-type-ui": "^1.2",
         "gbtunney/gbt-bricks": "^2.0-rc",
         "gbtunney/gbt-bricks-adv-themer": "^3.2.5",
