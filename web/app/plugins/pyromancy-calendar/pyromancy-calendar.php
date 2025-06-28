@@ -15,7 +15,7 @@ class PyromancyCalendar {
     public function __construct() {
         error_log('PyromancyCalendar: Constructor called');
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
-        add_action('init', [$this, 'register_bricks_element']);
+        add_action('init', [$this, 'register_bricks_element'], 11);
         add_shortcode('pyromancy_calendar', [$this, 'render_calendar_shortcode']);
     }
 
@@ -56,13 +56,13 @@ class PyromancyCalendar {
 
     public function register_bricks_element() {
         error_log('PyromancyCalendar: register_bricks_element called');
-        if (!class_exists('Bricks\Elements\Base')) {
-            error_log('PyromancyCalendar: Bricks Elements Base class not found');
+        if (!class_exists('Bricks\Elements')) {
+            error_log('PyromancyCalendar: Bricks Elements class not found');
             return;
         }
 
         error_log('PyromancyCalendar: Loading Bricks element');
-        require_once plugin_dir_path(__FILE__) . 'includes/bricks-calendar-element.php';
+        \Bricks\Elements::register_element(plugin_dir_path(__FILE__) . 'includes/bricks-calendar-element.php');
     }
 
     public function render_calendar_shortcode($atts) {
