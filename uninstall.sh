@@ -16,7 +16,7 @@ uninstall_plugins() {
     echo -e "${YELLOW}uninstalling plugins...${NC}"
     if [ -d "web/app/plugins" ]; then
         cd web/app/plugins
-        find . -maxdepth 1 -type d ! -name 'g-wp-plugin' ! -name '.' ! -name '.gitkeep' -exec rm -rf {} + 2> /dev/null || true
+        find . -maxdepth 1 -type d ! -name 'g-wp-plugin' ! -name 'pyromancy-bricks-calendar' ! -name '.' ! -name '.gitkeep' -exec rm -rf {} + 2> /dev/null || true
         cd - > /dev/null
         echo -e "${GREEN}✓ Plugins Uninstalled${NC}"
     else
@@ -68,7 +68,7 @@ preview_uninstall() {
     echo -e "\n${YELLOW}Plugins to delete:${NC}"
     if [ -d "web/app/plugins" ]; then
         cd web/app/plugins
-        find . -maxdepth 1 -type d ! -name 'g-wp-plugin' ! -name '.' ! -name '.gitkeep' -print || echo "None"
+        find . -maxdepth 1 -type d ! -name 'g-wp-plugin' ! -name 'pyromancy-bricks-calendar' ! -name '.' ! -name '.gitkeep' -print || echo "None"
         cd - > /dev/null
     else
         echo "No plugins directory"

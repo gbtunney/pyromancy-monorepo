@@ -1,6 +1,7 @@
 # Application
 web/app/plugins/*
 !web/app/plugins/.gitkeep
+!web/app/plugins/pyromancy*
 web/app/mu-plugins/*/
 web/app/themes/*
 !web/app/themes/pyromancy*
@@ -190,3 +191,4 @@ bluehost-config.php
 .env
 .env.development
 .env.production
+backups
