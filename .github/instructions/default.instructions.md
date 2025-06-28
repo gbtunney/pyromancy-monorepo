@@ -7,6 +7,7 @@ Coding standards, domain knowledge, and preferences that AI should follow.
 ## preferences
 
 - too many versions make me nervous, I will ask if I want you to make a version or script after I have thought about it. I would prefer a single source of truth using canvas if possible, but please make me aware of suggestions you can do
+- i use monorepo and pnpm and try to avoid jumping around via cd to do things to directories besides the root.
 - zsh over bash for shell
 - please use the most up to date TypeScript/JS (ESM format, no CJS) and best practices.
 - emphasize a functional, modular approach to code geared for maximum reusability and compatibility
