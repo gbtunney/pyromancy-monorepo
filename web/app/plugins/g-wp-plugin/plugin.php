@@ -10,3 +10,4 @@ require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/inc/plugin.php';
 
 GPlugin\Frontend\bootstrap();
+GPlugin\ShortCodes\bootstrap();

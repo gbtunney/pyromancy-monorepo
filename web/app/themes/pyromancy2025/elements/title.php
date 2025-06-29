@@ -27,7 +27,7 @@ class Element_Custom_Title extends \Bricks\Element {
   public function set_controls() {
     $this->controls['title'] = [
       'tab'            => 'content',
-      'label'          => esc_html__( 'Title', 'bricks' ),
+      'label'          => esc_html__( 'GILLTitle', 'bricks' ),
       'type'           => 'text',
 			'hasDynamicData' => 'text',
       'default'        => esc_html__( 'I am a custom element', 'bricks' ),

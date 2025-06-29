@@ -14,7 +14,8 @@ use Kucrut\Vite;
 function bootstrap(): void
 {
 	add_shortcode('recent-posts', __NAMESPACE__ . '\\recent_posts_function');
-	add_shortcode('you-tube', __NAMESPACE__ . '\\youtube_handler');
+	add_shortcode('g-calendar', __NAMESPACE__ . '\\g_calendar_shortcode');
+	add_shortcode('pyromancy_calendar', __NAMESPACE__ . '\\g_calendar_shortcode');
 }
 
 function youtube_handlerbk($atts, $content = null)
@@ -63,4 +64,33 @@ function shortcode_render_function($atts, $content)
 	if (!empty($custom_atts[id])) {
 		$id = $custom_atts[id];
 	}
+}
+
+function g_calendar_shortcode($atts, $content = null)
+{
+    $atts = shortcode_atts([
+        'height' => '600px',
+        'initial_view' => 'dayGridMonth',
+        'initial_date' => '2017-06-01',
+        'google_calendar_id' => 'k835hjhh885m3s2h77mochjtcc@group.calendar.google.com',
+        'api_key' => 'AIzaSyCnp0CB97FKH0bCHa_e5k3rbVT_f9rZpXI'
+    ], $atts, 'g-calendar');
+
+    Vite\enqueue_asset(__DIR__ . '/../dist', 'src/main.tsx', [
+        'handle' => 'g-calendar-' . uniqid(),
+        'dependencies' => ['react', 'react-dom'],
+        'in-footer' => true,
+    ]);
+
+    $calendar_id = 'g-calendar-' . uniqid();
+    
+    return sprintf(
+        '<div id="%s" class="g-calendar-container" data-height="%s" data-initial-view="%s" data-initial-date="%s" data-google-calendar-id="%s" data-api-key="%s"></div>',
+        esc_attr($calendar_id),
+        esc_attr($atts['height']),
+        esc_attr($atts['initial_view']),
+        esc_attr($atts['initial_date']),
+        esc_attr($atts['google_calendar_id']),
+        esc_attr($atts['api_key'])
+    );
 }

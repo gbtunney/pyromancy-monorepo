@@ -1,34 +1,27 @@
 import { defineConfig } from 'vite'
-
 import Unocss from 'unocss/vite'
-import path from 'path'
+import react from '@vitejs/plugin-react'
+import { v4wp } from '@kucrut/vite-for-wp'
 
-import vue from '@vitejs/plugin-vue'
-
-import { readFileSync } from 'node:fs'
-import { resolve } from 'node:path'
-import create_config from '@kucrut/vite-for-wp'
-
-export default create_config(
-    {
-        index: './src/index.ts',
-        vue: './src/main.ts',
+export default defineConfig({
+    plugins: [
+        v4wp({ 
+            input: 'src/main.tsx', 
+            outDir: 'dist' 
+        }), 
+        Unocss(), 
+        react()
+    ],
+    server: {
+        cors: true,
+        host: '0.0.0.0',
+        port: 5173,
+        hmr: {
+            host: 'localhost'
+        }
     },
-    'dist',
-    {
-        plugins: [Unocss(), vue()],
-        build: {
-            emptyOutDir: true,
-            minify: false,
-        },
+    build: {
+        emptyOutDir: true,
+        minify: false,
     },
-)
-/*import create_config from '@kucrut/vite-for-wp';
-
-export default create_config(
-	{
-		main: 'js/src/main.ts',
-		extra: 'js/src/extra.ts',
-	},
-	'js/dist',
-);*/
+})
