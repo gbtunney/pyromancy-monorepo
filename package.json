@@ -59,7 +59,7 @@
         "lando:cache": "pnpm lando --clear",
         "lando:destroy": "pnpm lando destroy",
         "\n========== WORDPRESS >> ==========": "",
-        "wp:export": "pnpm exec lando wp db export \"backup-$(date +%Y%m%d-%H%M%S).sql\"",
+        "wp:export": "pnpm exec ./config/db-manager.sh",
         "wp:update": "pnpm exec lando wp core update",
         "wp:users": "pnpm exec lando wp user list",
         "wp:cache": "pnpm exec lando wp cache flush",
