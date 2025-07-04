@@ -1,0 +1,11 @@
+{
+  "overrides": [
+    {
+      "files": "*.svg",
+      "options": {
+        "parser": "xml",
+        "plugins": ["@prettier/plugin-xml"]
+      }
+    }
+  ]
+}

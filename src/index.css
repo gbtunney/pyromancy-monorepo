@@ -1,0 +1,11 @@
+:root {
+  /* Custom OKLCH colors */
+  --color-test-sky: oklch(74.6% 0.16 232.661);
+  --color-test-indigo: oklch(87% 0.065 274.039);
+  --color-my-mint: oklch(85% 0.12 160);
+  --color-my-coral: oklch(70% 0.15 30);
+}
+
+/* Then use them with arbitrary values */
+/* bg-[var(--color-test-sky)] */
+/* text-[var(--color-test-indigo)] */
