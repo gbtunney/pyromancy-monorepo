@@ -12,6 +12,7 @@
     "format": "pnpm exec prettier --write *"
   },
   "dependencies": {
+    "@julr/unocss-preset-heropatterns": "^2.0.0",
     "@unocss/core": "^66.3.2",
     "@unocss/preset-wind4": "^66.3.2",
     "apcach": "^0.6.4",

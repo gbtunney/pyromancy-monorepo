@@ -1,24 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 
 const FontTester: React.FC = () => {
+  const [copiedText, setCopiedText] = useState<string>("");
+
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedText(text);
+      setTimeout(() => setCopiedText(""), 2000);
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  };
   return (
-    <div className="max-w-4xl mx-auto p-8 space-y-12">
+    <div className="max-w-4xl mx-auto p-8 space-y-12 relative">
+      {/* Copy Success Toast */}
+      {copiedText && (
+        <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate-bounce">
+          ✓ Copied: {copiedText}
+        </div>
+      )}
+
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Font Testing Lab</h1>
         <p className="text-gray-600">
-          Testing all custom font families with dummy content
+          Testing all custom font families with dummy content - Click buttons to
+          copy CSS classes
         </p>
       </div>
 
       {/* Font Heading */}
       <section className="border-b pb-8">
-        <div className="mb-4">
-          <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-            font-heading
-          </span>
-          <span className="ml-2 text-sm text-gray-500">
-            var(--font-heading)
-          </span>
+        <div className="mb-4 flex items-center justify-between">
+          <div>
+            <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+              font-heading
+            </span>
+            <span className="ml-2 text-sm text-gray-500">
+              var(--font-heading)
+            </span>
+          </div>
+          <div className="space-x-2">
+            <button
+              onClick={() => copyToClipboard("font-heading")}
+              className="text-xs bg-blue-100 hover:bg-blue-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "font-heading" ? "✓ Copied!" : "Copy CSS Class"}
+            </button>
+            <button
+              onClick={() => copyToClipboard("var(--font-heading)")}
+              className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "var(--font-heading)"
+                ? "✓ Copied!"
+                : "Copy CSS Variable"}
+            </button>
+          </div>
+        </div>
+        <div className="mb-4 text-sm text-gray-600">
+          <p>
+            <strong>Font Stack:</strong> mrs-eaves, ui-serif, Georgia, Cambria,
+            serif
+          </p>
         </div>
         <div className="font-heading space-y-4">
           <h1 className="text-5xl font-bold">The Great Gatsby</h1>
@@ -41,13 +84,39 @@ const FontTester: React.FC = () => {
 
       {/* Font Heading Alt */}
       <section className="border-b pb-8">
-        <div className="mb-4">
-          <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-            font-heading-alt
-          </span>
-          <span className="ml-2 text-sm text-gray-500">
-            var(--font-heading-alt)
-          </span>
+        <div className="mb-4 flex items-center justify-between">
+          <div>
+            <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+              font-heading-alt
+            </span>
+            <span className="ml-2 text-sm text-gray-500">
+              var(--font-heading-alt)
+            </span>
+          </div>
+          <div className="space-x-2">
+            <button
+              onClick={() => copyToClipboard("font-heading-alt")}
+              className="text-xs bg-green-100 hover:bg-green-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "font-heading-alt"
+                ? "✓ Copied!"
+                : "Copy CSS Class"}
+            </button>
+            <button
+              onClick={() => copyToClipboard("var(--font-heading-alt)")}
+              className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "var(--font-heading-alt)"
+                ? "✓ Copied!"
+                : "Copy CSS Variable"}
+            </button>
+          </div>
+        </div>
+        <div className="mb-4 text-sm text-gray-600">
+          <p>
+            <strong>Font Stack:</strong> mr-eaves-xl-sans-narrow, ui-sans-serif,
+            system-ui, sans-serif
+          </p>
         </div>
         <div className="font-heading-alt space-y-4">
           <h1 className="text-5xl font-bold">Pride and Prejudice</h1>
@@ -77,13 +146,37 @@ const FontTester: React.FC = () => {
 
       {/* Font Display */}
       <section className="border-b pb-8">
-        <div className="mb-4">
-          <span className="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
-            font-display
-          </span>
-          <span className="ml-2 text-sm text-gray-500">
-            var(--font-display)
-          </span>
+        <div className="mb-4 flex items-center justify-between">
+          <div>
+            <span className="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+              font-display
+            </span>
+            <span className="ml-2 text-sm text-gray-500">
+              var(--font-display)
+            </span>
+          </div>
+          <div className="space-x-2">
+            <button
+              onClick={() => copyToClipboard("font-display")}
+              className="text-xs bg-purple-100 hover:bg-purple-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "font-display" ? "✓ Copied!" : "Copy CSS Class"}
+            </button>
+            <button
+              onClick={() => copyToClipboard("var(--font-display)")}
+              className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "var(--font-display)"
+                ? "✓ Copied!"
+                : "Copy CSS Variable"}
+            </button>
+          </div>
+        </div>
+        <div className="mb-4 text-sm text-gray-600">
+          <p>
+            <strong>Font Stack:</strong> adorn-smooth-engraved, ui-sans-serif,
+            system-ui, sans-serif
+          </p>
         </div>
         <div className="font-display space-y-4">
           <h1 className="text-6xl font-black">LOREM IPSUM</h1>
@@ -103,11 +196,35 @@ const FontTester: React.FC = () => {
 
       {/* Font Body */}
       <section className="border-b pb-8">
-        <div className="mb-4">
-          <span className="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
-            font-body
-          </span>
-          <span className="ml-2 text-sm text-gray-500">var(--font-body)</span>
+        <div className="mb-4 flex items-center justify-between">
+          <div>
+            <span className="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
+              font-body
+            </span>
+            <span className="ml-2 text-sm text-gray-500">var(--font-body)</span>
+          </div>
+          <div className="space-x-2">
+            <button
+              onClick={() => copyToClipboard("font-body")}
+              className="text-xs bg-orange-100 hover:bg-orange-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "font-body" ? "✓ Copied!" : "Copy CSS Class"}
+            </button>
+            <button
+              onClick={() => copyToClipboard("var(--font-body)")}
+              className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "var(--font-body)"
+                ? "✓ Copied!"
+                : "Copy CSS Variable"}
+            </button>
+          </div>
+        </div>
+        <div className="mb-4 text-sm text-gray-600">
+          <p>
+            <strong>Font Stack:</strong> mrs-eaves, ui-serif, Georgia, Cambria,
+            serif
+          </p>
         </div>
         <div className="font-body space-y-4">
           <h1 className="text-3xl font-bold">The Art of Typography</h1>
@@ -145,6 +262,226 @@ const FontTester: React.FC = () => {
               </a>
             </li>
           </ul>
+        </div>
+      </section>
+
+      {/* Font Display Alt */}
+      <section className="border-b pb-8">
+        <div className="mb-4 flex items-center justify-between">
+          <div>
+            <span className="inline-block bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">
+              font-display-alt
+            </span>
+            <span className="ml-2 text-sm text-gray-500">
+              var(--font-display-alt)
+            </span>
+          </div>
+          <div className="space-x-2">
+            <button
+              onClick={() => copyToClipboard("font-display-alt")}
+              className="text-xs bg-indigo-100 hover:bg-indigo-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "font-display-alt"
+                ? "✓ Copied!"
+                : "Copy CSS Class"}
+            </button>
+            <button
+              onClick={() => copyToClipboard("var(--font-display-alt)")}
+              className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "var(--font-display-alt)"
+                ? "✓ Copied!"
+                : "Copy CSS Variable"}
+            </button>
+          </div>
+        </div>
+        <div className="mb-4 text-sm text-gray-600">
+          <p>
+            <strong>Font Stack:</strong> kopius-condensed, ui-sans-serif,
+            system-ui, sans-serif
+          </p>
+        </div>
+        <div className="font-display-alt space-y-4">
+          <h1 className="text-6xl font-black">MODERN DISPLAY</h1>
+          <h2 className="text-5xl font-bold">ALTERNATIVE STYLE</h2>
+          <h3 className="text-4xl font-semibold">Condensed Typography</h3>
+          <p className="text-2xl font-medium leading-tight">
+            CLEAN CONDENSED LETTERFORMS FOR HEADLINES
+          </p>
+          <div className="text-3xl space-y-2">
+            <p>Numbers: 0123456789</p>
+            <p>Special: !@#$%^&*()</p>
+            <p className="uppercase">CONDENSED DISPLAY TEXT</p>
+            <p className="lowercase">condensed display text</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Font Small Caps */}
+      <section className="border-b pb-8">
+        <div className="mb-4 flex items-center justify-between">
+          <div>
+            <span className="inline-block bg-rose-100 text-rose-800 px-3 py-1 rounded-full text-sm font-medium">
+              font-small-caps
+            </span>
+            <span className="ml-2 text-sm text-gray-500">
+              var(--font-small-caps)
+            </span>
+          </div>
+          <div className="space-x-2">
+            <button
+              onClick={() => copyToClipboard("font-small-caps")}
+              className="text-xs bg-rose-100 hover:bg-rose-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "font-small-caps"
+                ? "✓ Copied!"
+                : "Copy CSS Class"}
+            </button>
+            <button
+              onClick={() => copyToClipboard("var(--font-small-caps)")}
+              className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "var(--font-small-caps)"
+                ? "✓ Copied!"
+                : "Copy CSS Variable"}
+            </button>
+          </div>
+        </div>
+        <div className="mb-4 text-sm text-gray-600">
+          <p>
+            <strong>Font Stack:</strong> mrs-eaves-roman-all-small-ca, ui-serif,
+            Georgia, Cambria, serif
+          </p>
+        </div>
+        <div className="font-small-caps space-y-4">
+          <h1 className="text-5xl font-bold">Small Caps Typography</h1>
+          <h2 className="text-4xl font-semibold">
+            Chapter One: The Art of Small Capitals
+          </h2>
+          <h3 className="text-3xl font-medium">
+            Traditional Elegance in Modern Design
+          </h3>
+          <p className="text-xl leading-relaxed">
+            Small caps provide a refined typographic treatment that maintains
+            readability while adding sophistication to headlines and emphasis
+            text. This font variant is perfect for luxury brands and editorial
+            design.
+          </p>
+          <blockquote className="text-2xl italic border-l-4 border-rose-500 pl-4">
+            "Typography is the craft of endowing human language with a durable
+            visual form."
+          </blockquote>
+        </div>
+      </section>
+
+      {/* Additional Custom Fonts */}
+      <section className="border-b pb-8">
+        <div className="mb-4 flex items-center justify-between">
+          <div>
+            <span className="inline-block bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">
+              font-adorn-engraved
+            </span>
+            <span className="ml-2 text-sm text-gray-500">
+              Adorn Smooth Engraved
+            </span>
+          </div>
+          <div className="space-x-2">
+            <button
+              onClick={() => copyToClipboard("font-adorn-engraved")}
+              className="text-xs bg-teal-100 hover:bg-teal-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "font-adorn-engraved"
+                ? "✓ Copied!"
+                : "Copy CSS Class"}
+            </button>
+          </div>
+        </div>
+        <div className="mb-4 text-sm text-gray-600">
+          <p>
+            <strong>Font Stack:</strong> adorn-smooth-engraved,
+            mr-eaves-xl-sans-narrow, ui-sans-serif, system-ui, sans-serif
+          </p>
+        </div>
+        <div className="font-adorn-engraved space-y-4">
+          <h1 className="text-5xl font-bold">DECORATIVE DISPLAY</h1>
+          <h2 className="text-4xl font-semibold">Elegant Typography</h2>
+          <h3 className="text-3xl font-medium">Art Nouveau Inspired</h3>
+          <p className="text-xl leading-relaxed">
+            This is the decorative Adorn Smooth Engraved font, perfect for
+            headlines, logos, and artistic applications where you need something
+            more distinctive than standard typography.
+          </p>
+        </div>
+      </section>
+
+      {/* Mrs Eaves Font */}
+      <section className="border-b pb-8">
+        <div className="mb-4 flex items-center justify-between">
+          <div>
+            <span className="inline-block bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+              font-mrs-eaves
+            </span>
+            <span className="ml-2 text-sm text-gray-500">Mrs Eaves</span>
+          </div>
+          <div className="space-x-2">
+            <button
+              onClick={() => copyToClipboard("font-mrs-eaves")}
+              className="text-xs bg-amber-100 hover:bg-amber-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "font-mrs-eaves" ? "✓ Copied!" : "Copy CSS Class"}
+            </button>
+          </div>
+        </div>
+        <div className="mb-4 text-sm text-gray-600">
+          <p>
+            <strong>Font Stack:</strong> mrs-eaves, ui-serif, Georgia, Cambria,
+            serif
+          </p>
+        </div>
+        <div className="font-mrs-eaves space-y-4">
+          <h1 className="text-5xl font-bold">Transitional Serif</h1>
+          <h2 className="text-4xl font-semibold">Based on Baskerville</h2>
+          <h3 className="text-3xl font-medium">Warm & Inviting</h3>
+          <p className="text-xl leading-relaxed">
+            Mrs Eaves is a revival of Baskerville with a warmer, more friendly
+            character. It features generous proportions and a comfortable
+            reading experience.
+          </p>
+        </div>
+      </section>
+
+      {/* Kopius Font */}
+      <section className="border-b pb-8">
+        <div className="mb-4 flex items-center justify-between">
+          <div>
+            <span className="inline-block bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">
+              font-kopius
+            </span>
+            <span className="ml-2 text-sm text-gray-500">Kopius</span>
+          </div>
+          <div className="space-x-2">
+            <button
+              onClick={() => copyToClipboard("font-kopius")}
+              className="text-xs bg-indigo-100 hover:bg-indigo-200 px-3 py-1 rounded transition-colors"
+            >
+              {copiedText === "font-kopius" ? "✓ Copied!" : "Copy CSS Class"}
+            </button>
+          </div>
+        </div>
+        <div className="mb-4 text-sm text-gray-600">
+          <p>
+            <strong>Font Stack:</strong> kopius, mrs-eaves, ui-serif, Georgia,
+            Cambria, serif
+          </p>
+        </div>
+        <div className="font-kopius space-y-4">
+          <h1 className="text-5xl font-bold">Contemporary Serif</h1>
+          <h2 className="text-4xl font-semibold">Modern Editorial Style</h2>
+          <h3 className="text-3xl font-medium">Sophisticated Typography</h3>
+          <p className="text-xl leading-relaxed">
+            Kopius brings a contemporary edge to serif typography with refined
+            proportions and modern sensibilities. Perfect for editorial design.
+          </p>
         </div>
       </section>
 
@@ -192,7 +529,12 @@ const FontTester: React.FC = () => {
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="font-heading space-y-2">
-            <h4 className="text-lg font-bold mb-3">Heading Font Weights</h4>
+            <h4 className="text-lg font-bold mb-3">
+              Heading Font Weights{" "}
+              <span className="text-sm font-normal text-gray-500">
+                (mrs-eaves)
+              </span>
+            </h4>
             <p className="font-thin">Thin (100) - The quick brown fox</p>
             <p className="font-extralight">
               Extra Light (200) - jumps over the lazy dog
@@ -208,7 +550,12 @@ const FontTester: React.FC = () => {
             <p className="font-black">Black (900) - TYPOGRAPHY TEST</p>
           </div>
           <div className="font-body space-y-2">
-            <h4 className="text-lg font-bold mb-3">Body Font Weights</h4>
+            <h4 className="text-lg font-bold mb-3">
+              Body Font Weights{" "}
+              <span className="text-sm font-normal text-gray-500">
+                (mrs-eaves)
+              </span>
+            </h4>
             <p className="font-thin">Thin (100) - The five boxing wizards</p>
             <p className="font-extralight">Extra Light (200) - jump quickly</p>
             <p className="font-light">Light (300) - How vexingly quick</p>
@@ -231,7 +578,7 @@ const FontTester: React.FC = () => {
             Side-by-Side Comparison
           </span>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
           <div className="p-4 border rounded-lg">
             <h4 className="font-heading text-xl font-bold mb-3">
               Heading Font
@@ -240,6 +587,7 @@ const FontTester: React.FC = () => {
               The quick brown fox jumps over the lazy dog. Pack my box with five
               dozen liquor jugs.
             </p>
+            <span className="text-xs text-gray-500 mt-2 block">mrs-eaves</span>
           </div>
           <div className="p-4 border rounded-lg">
             <h4 className="font-heading-alt text-xl font-bold mb-3">
@@ -249,6 +597,9 @@ const FontTester: React.FC = () => {
               The quick brown fox jumps over the lazy dog. Pack my box with five
               dozen liquor jugs.
             </p>
+            <span className="text-xs text-gray-500 mt-2 block">
+              mr-eaves-xl-sans-narrow
+            </span>
           </div>
           <div className="p-4 border rounded-lg">
             <h4 className="font-display text-xl font-bold mb-3">
@@ -258,6 +609,33 @@ const FontTester: React.FC = () => {
               The quick brown fox jumps over the lazy dog. Pack my box with five
               dozen liquor jugs.
             </p>
+            <span className="text-xs text-gray-500 mt-2 block">
+              adorn-smooth-engraved
+            </span>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-display-alt text-xl font-bold mb-3">
+              Display Alt
+            </h4>
+            <p className="font-display-alt text-sm">
+              The quick brown fox jumps over the lazy dog. Pack my box with five
+              dozen liquor jugs.
+            </p>
+            <span className="text-xs text-gray-500 mt-2 block">
+              kopius-condensed
+            </span>
+          </div>
+          <div className="p-4 border rounded-lg">
+            <h4 className="font-small-caps text-xl font-bold mb-3">
+              Small Caps
+            </h4>
+            <p className="font-small-caps text-sm">
+              The quick brown fox jumps over the lazy dog. Pack my box with five
+              dozen liquor jugs.
+            </p>
+            <span className="text-xs text-gray-500 mt-2 block">
+              mrs-eaves-roman-all-small-ca
+            </span>
           </div>
           <div className="p-4 border rounded-lg">
             <h4 className="font-body text-xl font-bold mb-3">Body Font</h4>
@@ -265,6 +643,7 @@ const FontTester: React.FC = () => {
               The quick brown fox jumps over the lazy dog. Pack my box with five
               dozen liquor jugs.
             </p>
+            <span className="text-xs text-gray-500 mt-2 block">mrs-eaves</span>
           </div>
         </div>
       </section>

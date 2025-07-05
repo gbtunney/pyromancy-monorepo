@@ -1,16 +1,15 @@
 import type { Theme } from "unocss/preset-uno";
 import { colors as tailwindColors } from "@unocss/preset-wind4/colors";
 
+//@ts-expect-error no types available for apcach package
+import { apcach, crToBg, crToFg } from "apcach";
+
 // import { Map } from 'immutable' // Commented out - not currently used
 import { convertColorsToOklch } from "./../../utilities.ts";
 /*
 $gordons-green: #2a322a
-$astra: #f0d    rules: [
-        // fg-{color} alias for text-{color} - using direct class mapping
-        [/^fg-(.+)$/, ([, color]) => {
-            return [['color', `var(--un-text-${color})`]]
-        }],
-    ],oral-tree: #b66368
+$astra: #f0dba4
+$coral-tree: #b66368
 $sepia-black: #2b0007
 $pohutukawa: #651325
 $jacko-bean: #2e1c08
@@ -50,20 +49,43 @@ const DEFAULT_COLORS = {
   madras: "#46371a", // 🎨 metallic-bronze
   corn: "#efc618", // 🎨 Bright yellow
   gumleaf: "#afd3c2", // 🎨 Mint green
+
+  //
   grey: tailwindColors.gray,
 };
+
+// Testing contrast calculations - both background and foreground
+const testColor = "#2e1c08"; // jacko-bean
+const lightness = 60;
+const chroma = 0.04250523737282097;
+const hue = 66.37640269656488;
+
+const bgResult = apcach(crToBg(testColor, lightness), chroma, hue);
+const fgResult = apcach(crToFg(testColor, lightness), chroma, hue);
+
+console.log("=== CONTRAST TEST RESULTS ===");
+console.log("Original color:", testColor);
+console.log("Background OKLCH:", `oklch(${bgResult})`);
+console.log("Foreground OKLCH:", `oklch(${fgResult})`);
+
+// Test multiple colors
+console.log("\n=== MORE TEST VALUES ===");
+Object.entries(DEFAULT_COLORS)
+  .slice(0, 3)
+  .forEach(([name, hex]) => {
+    if (typeof hex === "string") {
+      const bg = apcach(crToBg(hex, 50), 0.05, 120);
+      const fg = apcach(crToFg(hex, 70), 0.08, 240);
+      console.log(`${name}:`, hex);
+      console.log(`  Background: oklch(${bg})`);
+      console.log(`  Foreground: oklch(${fg})`);
+    }
+  });
 
 export const colors: Exclude<Theme["colors"], undefined> =
   convertColorsToOklch(DEFAULT_COLORS);
 
 export default colors;
-
-// assign default color
-// Object.values(colo
-// rs as Required<Theme>['colors']).forEach((color) => {
-//   if (typeof color !== 'string' && color !== undefined && color.DEFAULT === undefined)
-//     color.DEFAULT = color.DEFAULT || color[600] as string
-// })
 /*
   primary: {
     DEFAULT: 'rgba(var(--c-primary) / <alpha-value>)',

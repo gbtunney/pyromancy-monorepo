@@ -30,7 +30,7 @@ const HomePage: React.FC = () => {
           <h3 className="text-xl font-semibold font-heading mb-2">
             Button Components
           </h3>
-          <p className="text-gray-600 font-body">
+          <p className="text-gray-600 font-serif font-body">
             Comprehensive button styles, states, and interaction testing.
           </p>
         </div>

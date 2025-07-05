@@ -4,7 +4,6 @@ import {
   transformerVariantGroup,
   presetWind3,
   presetIcons,
-  presetWebFonts,
 } from "unocss";
 import { tailwindOKLCHColorsPreset } from "./src/presets/tailwind-oklch-colors-preset";
 import { gbtPreset } from "./src/presets/index.js";
@@ -21,42 +20,6 @@ export default defineConfig({
     presetIcons({}),
   ],
 
-  // Add theme configuration for font families
-  theme: {
-    fontFamily: {
-      // Define font families that can be used with utilities
-      heading: [
-        "var(--font-heading)",
-        "adorn-smooth-engraved",
-        "mr-eaves-xl-sans-narrow",
-        "ui-serif",
-        "serif",
-      ],
-      "heading-alt": [
-        "var(--font-heading-alt)",
-        "mr-eaves-xl-sans-narrow",
-        "adorn-smooth-engraved",
-        "ui-sans-serif",
-        "sans-serif",
-      ],
-      display: [
-        "var(--font-display)",
-        "adorn-smooth-engraved",
-        "ui-serif",
-        "serif",
-      ],
-      body: ["var(--font-body)", "ui-sans-serif", "system-ui", "sans-serif"],
-      // Override default sans/serif
-      sans: ["var(--font-body)", "ui-sans-serif", "system-ui", "sans-serif"],
-      serif: [
-        "var(--font-heading)",
-        "adorn-smooth-engraved",
-        "ui-serif",
-        "serif",
-      ],
-    },
-  },
-
   transformers: [transformerVariantGroup()],
 
   // Simplified content detection - UnoCSS will scan all files by default
@@ -66,10 +29,67 @@ export default defineConfig({
 
   // Safelist to ensure custom colors are always available
   safelist: [
-    "to-my-coral",
+    // Custom colors from _base.ts
+    "bg-gordons-green",
     "text-gordons-green",
-    "from-gordons-green",
-    "to-gordons-green",
+    "border-gordons-green",
+    "bg-astra",
+    "text-astra",
+    "border-astra",
+    "bg-coral-tree",
+    "text-coral-tree",
+    "border-coral-tree",
+    "bg-sepia-black",
+    "text-sepia-black",
+    "border-sepia-black",
+    "bg-pohutukawa",
+    "text-pohutukawa",
+    "border-pohutukawa",
+    "bg-mirage",
+    "text-mirage",
+    "border-mirage",
+    "bg-tana",
+    "text-tana",
+    "border-tana",
+    "bg-spice",
+    "text-spice",
+    "border-spice",
+    "bg-highball",
+    "text-highball",
+    "border-highball",
+    "bg-west-coast",
+    "text-west-coast",
+    "border-west-coast",
+    "bg-jacko-bean",
+    "text-jacko-bean",
+    "border-jacko-bean",
+    "bg-sandstone",
+    "text-sandstone",
+    "border-sandstone",
+    "bg-schooner",
+    "text-schooner",
+    "border-schooner",
+    "bg-ironside-gray",
+    "text-ironside-gray",
+    "border-ironside-gray",
+    "bg-crowshead",
+    "text-crowshead",
+    "border-crowshead",
+    "bg-onion",
+    "text-onion",
+    "border-onion",
+    "bg-madras",
+    "text-madras",
+    "border-madras",
+    "bg-corn",
+    "text-corn",
+    "border-corn",
+    "bg-gumleaf",
+    "text-gumleaf",
+    "border-gumleaf",
+
+    // Legacy custom colors
+    "to-my-coral",
     "bg-oklch-green",
     "text-oklch-green",
     "from-oklch-green",
@@ -77,6 +97,29 @@ export default defineConfig({
     "bg-oklch-mint",
     "from-oklch-mint",
     "to-oklch-mint",
+
+    // Add all color combinations that might be used dynamically
+    ...[
+      "red",
+      "orange",
+      "yellow",
+      "lime",
+      "green",
+      "emerald",
+      "teal",
+      "cyan",
+      "sky",
+      "blue",
+      "indigo",
+      "purple",
+      "pink",
+      "rose",
+    ].flatMap((color) =>
+      [50, 100, 200, 300, 400, 500, 600, 700, 800, 900].map(
+        (shade) => `bg-${color}-${shade}`,
+      ),
+    ),
+
     // Standard colors (now forced to OKLCH)
     "bg-lime-500",
     "from-lime-500",
@@ -100,6 +143,8 @@ export default defineConfig({
     "font-heading",
     "font-heading-alt",
     "font-display",
+    "font-display-alt",
+    "font-small-caps",
     "font-body",
     // Icon classes
     "i-ph-anchor-simple-thin",
