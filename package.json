@@ -28,6 +28,12 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
+    "@iconify-json/carbon": "^1.2.10",
+    "@iconify-json/heroicons": "^1.2.2",
+    "@iconify-json/logos": "^1.2.4",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/ph": "^1.2.2",
+    "@iconify-json/twemoji": "^1.2.2",
     "@prettier/plugin-xml": "^3.4.1",
     "@types/culori": "^4.0.0",
     "@types/react": "^19.1.8",

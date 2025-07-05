@@ -1,6 +1,26 @@
 import React from "react";
 
 const IconsPage: React.FC = () => {
+  const [isDark, setIsDark] = React.useState(false);
+  const [heartClicked, setHeartClicked] = React.useState(false);
+  const [starSpinning, setStarSpinning] = React.useState(false);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+    // Toggle dark class on document
+    document.documentElement.classList.toggle("dark");
+  };
+
+  const handleHeartClick = () => {
+    setHeartClicked(!heartClicked);
+    setTimeout(() => setHeartClicked(false), 1000);
+  };
+
+  const handleStarClick = () => {
+    setStarSpinning(true);
+    setTimeout(() => setStarSpinning(false), 1000);
+  };
+
   return (
     <div className="max-w-6xl mx-auto p-8 space-y-12">
       <div className="text-center mb-12">
@@ -289,7 +309,7 @@ const IconsPage: React.FC = () => {
           </div>
 
           <div className="text-center space-y-2">
-            <div className="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy text-4xl mx-auto transition-all cursor-pointer"></div>
+            <button className="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy text-4xl mx-auto transition-all cursor-pointer"></button>
             <p className="text-sm">Emoji Hover</p>
             <code className="text-xs bg-gray-100 px-2 py-1 rounded">
               hover:i-twemoji-face-with-tears-of-joy
