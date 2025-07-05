@@ -1,3 +1,5 @@
+//import 'https://use.typekit.net/qld2bql.css'
+
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "uno.css";

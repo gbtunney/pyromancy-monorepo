@@ -11,6 +11,45 @@ const TypographySample: React.FC = () => {
       />
       <div className="absolute inset-0 bg-[url(/img/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
       <div className="relative w-full px-6 py-12 bg-white shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5 md:max-w-3xl md:mx-auto lg:max-w-4xl lg:pt-16 lg:pb-28">
+        {/* Test typography with and without prose classes */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-heading mb-4 text-gray-800">
+            Typography Test (Custom Styles)
+          </h2>
+          <div className="prose prose-slate max-w-none">
+            <h1>Custom Typography with CSS Variables</h1>
+            <p>
+              This content uses the custom typography configuration with OKLCH
+              colors and CSS font variables.
+            </p>
+
+            <h2>Heading Level 2 with Custom Font</h2>
+            <p>
+              This paragraph demonstrates the <strong>custom body font</strong>{" "}
+              and <a href="#">green link styling</a> that we configured in the
+              UnoCSS theme.
+            </p>
+
+            <h3>Code Examples</h3>
+            <p>
+              Here's some inline <code>code styling</code> that uses our custom
+              colors.
+            </p>
+
+            <blockquote>
+              This is a blockquote that should use our custom styling with OKLCH
+              colors and proper typography hierarchy.
+            </blockquote>
+
+            <ul>
+              <li>Custom list styling</li>
+              <li>With proper spacing</li>
+              <li>And font inheritance</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Original content with manual styling */}
         <div className="max-w-prose mx-auto lg:text-lg">
           <svg className="h-6" fill="none" viewBox="0 0 297 24">
             <path

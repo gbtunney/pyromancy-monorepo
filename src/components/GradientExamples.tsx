@@ -48,7 +48,7 @@ const GradientExamples: React.FC = () => {
         <div className="h-20 bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 rounded flex items-center justify-center text-white">
           3-Color Diagonal Gradient
         </div>
-        <div className="h-20 bg-gradient-to-r from-gordons-green to-white rounded flex items-center justify-center text-white">
+        <div className="h-20 bg-gradient-to-r from-gordons-green to-corn rounded flex items-center justify-center text-white">
           Gordons green Custom Colors Gradient
         </div>
 

@@ -28,12 +28,24 @@ importers:
       react-dom:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
+      react-router-dom:
+        specifier: ^7.6.3
+        version: 7.6.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      ts-deepmerge:
+        specifier: ^7.0.3
+        version: 7.0.3
+      type-fest:
+        specifier: ^4.41.0
+        version: 4.41.0
       unocss-preset-advance-gradients:
         specifier: ^0.0.2
         version: 0.0.2
       unocss-preset-gradient-fn:
         specifier: 0.0.1-beta-1.0
         version: 0.0.1-beta-1.0(typescript@5.8.3)
+      unocss-preset-theme:
+        specifier: ^0.14.1
+        version: 0.14.1(@unocss/core@66.3.2)
     devDependencies:
       "@eslint/js":
         specifier: ^9.29.0
@@ -50,6 +62,9 @@ importers:
       "@types/react-dom":
         specifier: ^19.1.6
         version: 19.1.6(@types/react@19.1.8)
+      "@types/react-router-dom":
+        specifier: ^5.3.3
+        version: 5.3.3
       "@unocss/vite":
         specifier: ^66.3.2
         version: 66.3.2(vite@7.0.1(jiti@2.4.2))(vue@3.5.17(typescript@5.8.3))
@@ -857,6 +872,12 @@ packages:
         integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==,
       }
 
+  "@types/history@4.7.11":
+    resolution:
+      {
+        integrity: sha512-qjDJRrmvBMiTx+jyLxvLfJU7UznFuokDv4f3WRuriHKERccVpFU+8XMQUAbDzoiJCsmexxRExQeMwwCdamSKDA==,
+      }
+
   "@types/json-schema@7.0.15":
     resolution:
       {
@@ -870,6 +891,18 @@ packages:
       }
     peerDependencies:
       "@types/react": ^19.0.0
+
+  "@types/react-router-dom@5.3.3":
+    resolution:
+      {
+        integrity: sha512-kpqnYK4wcdm5UaWI3fLcELopqLrHgLqNsdpHauzlQktfkHL3npOSwtj1Uz9oKBAzs7lFtVkV8j83voAz2D8fhw==,
+      }
+
+  "@types/react-router@5.1.20":
+    resolution:
+      {
+        integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==,
+      }
 
   "@types/react@19.1.8":
     resolution:
@@ -998,6 +1031,12 @@ packages:
       }
     engines: { node: ">=14" }
 
+  "@unocss/core@0.63.6":
+    resolution:
+      {
+        integrity: sha512-Q4QPgJ271Up89+vIqqOKgtdCKkFpHqvHN8W1LUlKPqtYnOvVYaOIVNAZowaIdEhPuc83yLc6Tg2+7riK18QKEw==,
+      }
+
   "@unocss/core@0.64.1":
     resolution:
       {
@@ -1108,6 +1147,13 @@ packages:
       {
         integrity: sha512-3Q6ND9ifUGXgY0+bkFNjYXhftIKCQYIsaeHKjfTjhuZukB8SSmnl7Vo9hn0rDeFGF+3mAo6PVv3/uJbJGQ2+IA==,
       }
+
+  "@unocss/rule-utils@0.63.6":
+    resolution:
+      {
+        integrity: sha512-moeDEq5d9mB8gSYeoqHMkXWWekaFFdhg7QCuwwCbxCc+NPMOgGkmfAoafz+y2tdvK7pEuT191RWOiHQ0MkA5oQ==,
+      }
+    engines: { node: ">=14" }
 
   "@unocss/rule-utils@0.64.1":
     resolution:
@@ -1433,6 +1479,13 @@ packages:
       {
         integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==,
       }
+
+  cookie@1.0.2:
+    resolution:
+      {
+        integrity: sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==,
+      }
+    engines: { node: ">=18" }
 
   cross-spawn@7.0.6:
     resolution:
@@ -2202,6 +2255,29 @@ packages:
       }
     engines: { node: ">=0.10.0" }
 
+  react-router-dom@7.6.3:
+    resolution:
+      {
+        integrity: sha512-DiWJm9qdUAmiJrVWaeJdu4TKu13+iB/8IEi0EW/XgaHCjW/vWGrwzup0GVvaMteuZjKnh5bEvJP/K0MDnzawHw==,
+      }
+    engines: { node: ">=20.0.0" }
+    peerDependencies:
+      react: ">=18"
+      react-dom: ">=18"
+
+  react-router@7.6.3:
+    resolution:
+      {
+        integrity: sha512-zf45LZp5skDC6I3jDLXQUu0u26jtuP4lEGbc7BbdyxenBN1vJSTA18czM2D+h5qyMBuMrD+9uB+mU37HIoKGRA==,
+      }
+    engines: { node: ">=20.0.0" }
+    peerDependencies:
+      react: ">=18"
+      react-dom: ">=18"
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+
   react@19.1.0:
     resolution:
       {
@@ -2276,6 +2352,12 @@ packages:
       }
     engines: { node: ">=10" }
     hasBin: true
+
+  set-cookie-parser@2.7.1:
+    resolution:
+      {
+        integrity: sha512-IOc8uWeOZgnb3ptbCURJWNjWUPcO3ZnTTdzsurqERrP6nPyv+paC55vJM0LpOlT2ne+Ix+9+CRG1MNLlyZ4GjQ==,
+      }
 
   shebang-command@2.0.0:
     resolution:
@@ -2355,12 +2437,26 @@ packages:
     peerDependencies:
       typescript: ">=4.8.4"
 
+  ts-deepmerge@7.0.3:
+    resolution:
+      {
+        integrity: sha512-Du/ZW2RfwV/D4cmA5rXafYjBQVuvu4qGiEEla4EmEHVHgRdx68Gftx7i66jn2bzHPwSVZY36Ae6OuDn9el4ZKA==,
+      }
+    engines: { node: ">=14.13.1" }
+
   type-check@0.4.0:
     resolution:
       {
         integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==,
       }
     engines: { node: ">= 0.8.0" }
+
+  type-fest@4.41.0:
+    resolution:
+      {
+        integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==,
+      }
+    engines: { node: ">=16" }
 
   typescript-eslint@8.35.1:
     resolution:
@@ -2405,6 +2501,14 @@ packages:
         integrity: sha512-Nt2YcuFK6YdqYBSGZU0MG4lG+zEC9IaWpxtmXPqPLupK5Ip07Xgk8w5Ks8c9Ld/opvsO+GuV6hIjD0S1hdy6BQ==,
       }
     engines: { node: ">=18" }
+
+  unocss-preset-theme@0.14.1:
+    resolution:
+      {
+        integrity: sha512-j2sFIUeKy0FC3DejIZ/+tyiKEszoMiAAsuOyZBubw7XErHL5ZvpwBmLM5Qj/czbfKbv1TdeJW5RO4PRKACiRGw==,
+      }
+    peerDependencies:
+      "@unocss/core": ">= 0.52.0"
 
   unocss@66.3.2:
     resolution:
@@ -2939,10 +3043,23 @@ snapshots:
 
   "@types/estree@1.0.8": {}
 
+  "@types/history@4.7.11": {}
+
   "@types/json-schema@7.0.15": {}
 
   "@types/react-dom@19.1.6(@types/react@19.1.8)":
     dependencies:
+      "@types/react": 19.1.8
+
+  "@types/react-router-dom@5.3.3":
+    dependencies:
+      "@types/history": 4.7.11
+      "@types/react": 19.1.8
+      "@types/react-router": 5.1.20
+
+  "@types/react-router@5.1.20":
+    dependencies:
+      "@types/history": 4.7.11
       "@types/react": 19.1.8
 
   "@types/react@19.1.8":
@@ -3074,6 +3191,8 @@ snapshots:
       "@unocss/core": 66.3.2
       unconfig: 7.3.2
 
+  "@unocss/core@0.63.6": {}
+
   "@unocss/core@0.64.1": {}
 
   "@unocss/core@66.3.2": {}
@@ -3168,6 +3287,11 @@ snapshots:
       "@unocss/preset-wind3": 66.3.2
 
   "@unocss/reset@66.3.2": {}
+
+  "@unocss/rule-utils@0.63.6":
+    dependencies:
+      "@unocss/core": 0.63.6
+      magic-string: 0.30.17
 
   "@unocss/rule-utils@0.64.1":
     dependencies:
@@ -3403,6 +3527,8 @@ snapshots:
   consola@3.4.2: {}
 
   convert-source-map@2.0.0: {}
+
+  cookie@1.0.2: {}
 
   cross-spawn@7.0.6:
     dependencies:
@@ -3813,6 +3939,20 @@ snapshots:
 
   react-refresh@0.17.0: {}
 
+  react-router-dom@7.6.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+      react-router: 7.6.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+
+  react-router@7.6.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      cookie: 1.0.2
+      react: 19.1.0
+      set-cookie-parser: 2.7.1
+    optionalDependencies:
+      react-dom: 19.1.0(react@19.1.0)
+
   react@19.1.0: {}
 
   readdirp@3.6.0:
@@ -3865,6 +4005,8 @@ snapshots:
 
   semver@7.7.2: {}
 
+  set-cookie-parser@2.7.1: {}
+
   shebang-command@2.0.0:
     dependencies:
       shebang-regex: 3.0.0
@@ -3902,9 +4044,13 @@ snapshots:
     dependencies:
       typescript: 5.8.3
 
+  ts-deepmerge@7.0.3: {}
+
   type-check@0.4.0:
     dependencies:
       prelude-ls: 1.2.1
+
+  type-fest@4.41.0: {}
 
   typescript-eslint@8.35.1(eslint@9.30.1(jiti@2.4.2))(typescript@5.8.3):
     dependencies:
@@ -3937,6 +4083,11 @@ snapshots:
       culori: 4.0.2
     transitivePeerDependencies:
       - typescript
+
+  unocss-preset-theme@0.14.1(@unocss/core@66.3.2):
+    dependencies:
+      "@unocss/core": 66.3.2
+      "@unocss/rule-utils": 0.63.6
 
   unocss@66.3.2(postcss@8.5.6)(vite@7.0.1(jiti@2.4.2))(vue@3.5.17(typescript@5.8.3)):
     dependencies:
