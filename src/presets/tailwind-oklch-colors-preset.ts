@@ -6,7 +6,8 @@ export const tailwindOKLCHColorsPreset = () => {
     theme: {
       colors: {
         ...tailwindColors,
-        // Custom OKLCH colors
+        // Define primary color as blue for button consistency
+        primary: tailwindColors.blue,
       },
     },
   }

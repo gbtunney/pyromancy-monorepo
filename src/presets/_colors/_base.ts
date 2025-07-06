@@ -39,8 +39,11 @@ const DEFAULT_COLORS = {
   highball: '#90813b', // 🎨 Olive
   'west-coast': '#64551f', // 🎨 Dark olive
   'jacko-bean': '#2e1c08', // 🎨 Dark brown
-
+  kumera: '#846529',
+  dallas: '#645623',
   ///muteds
+
+  'lisbon-brown': '#4C3B25',
   sandstone: '#7b6d5c', // 🎨 Medium brown
   schooner: '#8b8378', // 🎨 Gray brown
   'ironside-gray': '#756f68', // 🎨 Medium gray

@@ -5,8 +5,8 @@ const DEFAULT_FONTS: {
   serif: string[]
   mono: string[]
 } = {
-  sans: ['mr-eaves-xl-sans-narrow', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-  serif: ['mrs-eaves', 'ui-serif', 'Georgia', 'Cambria', 'serif'], // Use Mrs Eaves as default serif
+  sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],
+  serif: ['ui-serif', 'Georgia', 'Cambria', 'serif'], // Use Mrs Eaves as default serif
   mono: [
     'ui-monospace',
     'SFMono-Regular',

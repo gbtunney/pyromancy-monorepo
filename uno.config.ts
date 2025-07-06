@@ -7,7 +7,7 @@ import {
 } from 'unocss'
 import { tailwindOKLCHColorsPreset } from './src/presets/tailwind-oklch-colors-preset'
 import { gbtPreset } from './src/presets/index.js'
-console.log('colors', gbtPreset())
+
 export default defineConfig({
   presets: [
     presetWind3({
@@ -15,7 +15,17 @@ export default defineConfig({
       dark: 'class',
     }),
     tailwindOKLCHColorsPreset(),
-    presetTypography(),
+    presetTypography({
+      cssExtend: {
+        //this should be replaced with dark:prose-invert
+        'h1,h2,h3,h4,h5,h6,a': {
+          'font-weight': '400',
+        },
+        'a:hover': {
+          color: '#53c7a1',
+        },
+      },
+    }),
     gbtPreset(),
     presetIcons({}),
   ],
@@ -135,17 +145,79 @@ export default defineConfig({
     'to-blue-500',
     'bg-yellow-300',
     'via-yellow-300',
+
+    // Focus ring colors for buttons
+    'ring-blue-500',
+    'ring-gray-500',
+    'ring-primary-500',
+    'focus-visible:ring-blue-500',
+    'focus-visible:ring-gray-500',
+    'focus-visible:ring-primary-500',
+
+    // Primary color variations - using blue as primary fallback
+    'bg-primary-50',
+    'bg-primary-100',
+    'bg-primary-400',
+    'bg-primary-500',
+    'bg-primary-600',
+    'bg-primary-950',
+    'text-primary-400',
+    'text-primary-500',
+    'text-primary-600',
+    'ring-primary-400',
+    'ring-primary-500',
+    'hover:bg-primary-50',
+    'hover:bg-primary-100',
+    'hover:bg-primary-400',
+    'hover:bg-primary-500',
+    'hover:bg-primary-900',
+    'hover:bg-primary-950',
+    'hover:text-primary-400',
+    'hover:text-primary-500',
+    'dark:bg-primary-400',
+    'dark:bg-primary-500',
+    'dark:bg-primary-900',
+    'dark:bg-primary-950',
+    'dark:text-primary-400',
+    'dark:text-primary-500',
+    'dark:ring-primary-400',
+    'dark:hover:bg-primary-400',
+    'dark:hover:bg-primary-900',
+    'dark:hover:text-primary-400',
     // Typography and font classes
     'prose',
     'prose-slate',
     'prose-lg',
     'prose-dark',
+    // Default UnoCSS font classes
+    'font-sans',
+    'font-serif',
+    'font-mono',
+    // Custom theme font classes
     'font-heading',
     'font-heading-alt',
     'font-display',
     'font-display-alt',
     'font-small-caps',
     'font-body',
+    // Individual Typekit font classes
+    'font-adorn-engraved',
+    'font-adorn-serif',
+    'font-mr-eaves',
+    'font-mrs-eaves',
+    'font-kopius',
+    'font-kopius-condensed',
+    'font-mrs-eaves-small-caps',
+    // Font weight classes
+    'font-thin',
+    'font-extralight',
+    'font-light',
+    'font-normal',
+    'font-medium',
+    'font-semibold',
+    'font-bold',
+    'font-extrabold',
+    'font-black',
     // Icon classes
     'i-ph-anchor-simple-thin',
     'i-mdi-alarm',

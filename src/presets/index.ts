@@ -7,6 +7,7 @@ import fontFamily, {
   fontFamily as baseFonts,
   fontWeight as baseFontWeight,
 } from './_theme/_fonts.js'
+import { shortcuts } from './_shortcuts/index.js'
 
 export type PresetOptions = {
   colors?: Theme['colors']
@@ -30,14 +31,15 @@ export const gbtPreset = definePreset<PresetOptions>(
       name: 'gbt-preset',
       preflights: [
         {
-          getCSS: () => `
+          getCSS: () => `` /*`
         h1,h2,h3,h4,h5 {
-          font-family: ${options.fontFamily?.display}
+         font-family: ${mytheme.fontFamily?.display}
         }
-      `,
+      `*/,
         },
       ],
       theme: mytheme,
+      shortcuts,
       rules: [
         // ...
       ],
