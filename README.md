@@ -19,6 +19,19 @@ Bedrock is a WordPress boilerplate for developers that want to manage their proj
 
 See the [Bedrock installation documentation](https://roots.io/bedrock/docs/installation/).
 
+## Tech Stack
+
+- Monorepo managed with pnpm
+- Node.js (v21+), TypeScript (ESM)
+- Vite for web and component builds
+- Rollup for libraries/CLI
+- Docker for local development
+- WordPress (Bedrock, custom theme)
+- Prisma for API (TypeScript, Dockerized)
+- Google Apps Script utility
+- PHP Composer for backend dependencies
+- zsh shell, macOS primary environment
+
 ## Helpful Links
 
 - [Lando Docs](https://docs.lando.dev/)

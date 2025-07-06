@@ -4,4 +4,3 @@ packages:
     #- 'apps/*'
     - 'web/app/themes/*'
     - 'web/app/plugins/g-wp-plugin'
-    - 'web/app/plugins/pyromancy-calendar'

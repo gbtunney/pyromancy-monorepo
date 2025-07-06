@@ -43,6 +43,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:gbtunney/gbt-acf-pro.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:gbtunney/gbt-bricksforge.git"
         }
     ],
     "require": {
@@ -63,6 +67,7 @@
         "gbtunney/gbt-bricks": "^2.0-rc",
         "gbtunney/gbt-bricks-adv-themer": "^3.2.5",
         "gbtunney/gbt-acf-pro": "^6.3.9",
+        "gbtunney/gbt-bricksforge": "^3.1.0",
         "wpackagist-plugin/woocommerce": "^9.4",
         "wpackagist-plugin/printful-shipping-for-woocommerce": "^2.2",
         "roots/wordpress-no-content": "^6.7",
