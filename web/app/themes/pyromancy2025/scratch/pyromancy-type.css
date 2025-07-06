@@ -1,0 +1,71 @@
+.gbt-mrs-eaves-heading {
+    font-family: mrs-eaves;
+    font-size: 47px;
+    letter-spacing: -0.23px;
+}
+.gbt-mrs-eaves-sm-caps {
+    font-family: mrs-eaves-roman-all-small-ca;
+    font-size: 47px;
+    letter-spacing: 3.53px;
+    text-transform: uppercase;
+}
+.gbt-mr-eaves-italic {
+    font-family: mr-eaves-xl-sans-narrow;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 42px;
+    letter-spacing: 2.1px;
+}
+.gbt-mrs-eaves{
+    font-family: mrs-eaves;
+    font-size: 31px;
+    letter-spacing: -0.31px;
+}
+.gbt-mr-eaves-cnd {
+    font-family: mr-eaves-xl-sans-narrow;
+    font-size: 31px;
+    line-height: 1.03;
+    letter-spacing: 0.62px;
+}
+/*31.  32
+1.  1.03*/
+.gbt-engraved-caps{
+    font-family: adorn-smooth-engraved,serif;
+    font-size: 53px;
+    letter-spacing: 5.3px;
+    text-transform: uppercase;
+    color: #000000;
+    color: rgb(0, 0, 0);
+}
+.gbt-adorn-caps {
+    font-family: adorn-smooth-serif,serif;
+    font-size: 53px;
+    letter-spacing: 1.33px;
+    text-transform: uppercase;
+    color: #000000;
+    color: rgb(0, 0, 0);
+}
+.gbt-mrs-eaves-caps {
+    font-family:  mrs-eaves-roman-all-small-ca,serif;
+    font-size: 67px;
+    line-height: 73.49px;
+    letter-spacing: 1.68px;
+    text-transform: uppercase;
+    color: #000000;
+    color: rgb(0, 0, 0);
+}
+/*67.  73.49
+1. 1.09*/
+.gbt-kopius-caps
+{
+  font-family :  "kopius",serif;
+  font-size : 47px;
+  letter-spacing : 3.53px;
+  text-transform : uppercase;
+}
+.gbt-kopius
+{
+  font-family :  "kopius-condensed",sans-serif;
+  font-size : 31px;
+  line-height: 1.19; /* 1.19*/
+}

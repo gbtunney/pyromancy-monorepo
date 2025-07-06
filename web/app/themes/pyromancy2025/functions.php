@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Register/enqueue custom scripts and styles
  */
@@ -8,6 +8,25 @@ add_action( 'wp_enqueue_scripts', function() {
 		wp_enqueue_style( 'bricks-child', get_stylesheet_uri(), ['bricks-frontend'], filemtime( get_stylesheet_directory() . '/style.css' ) );
 	}
 } );
+require_once __DIR__ . '/vendor/autoload.php';
+use Kucrut\Vite;
+
+
+add_action( 'wp_enqueue_scripts', function (): void {
+	Vite\enqueue_asset(
+		__DIR__ . '/dist',
+		'src/index.ts',
+		[
+			'handle' => 'my-script-handle',
+			//'dependencies' => [ 'wp-components', 'some-registered-script-handle' ], // Optional script dependencies. Defaults to empty array.
+			///'css-dependencies' => [ 'wp-components', 'some-registered-style-handle' ], // Optional style dependencies. Defaults to empty array.
+			'css-media' => 'all', // Optional.
+			'css-only' => false, // Optional. Set to true to only load style assets in production mode.
+			'in-footer' => true, // Optional. Defaults to false.
+		]
+	);
+} );
+
 
 /**
  * Register custom elements
