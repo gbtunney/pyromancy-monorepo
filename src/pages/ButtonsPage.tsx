@@ -1,8 +1,8 @@
-import React from "react";
-import ButtonTester from "../components/ButtonTester";
+import React from 'react'
+import ButtonTester from '../components/ButtonTester'
 
 const ButtonsPage: React.FC = () => {
-  return <ButtonTester />;
-};
+  return <ButtonTester />
+}
 
-export default ButtonsPage;
+export default ButtonsPage

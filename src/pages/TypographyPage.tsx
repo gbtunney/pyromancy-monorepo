@@ -1,34 +1,34 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 const TypographyPage: React.FC = () => {
-  const [copiedText, setCopiedText] = useState<string>("");
+  const [copiedText, setCopiedText] = useState<string>('')
 
   const copyToClipboard = async (text: string) => {
     try {
-      await navigator.clipboard.writeText(text);
-      setCopiedText(text);
-      setTimeout(() => setCopiedText(""), 2000);
+      await navigator.clipboard.writeText(text)
+      setCopiedText(text)
+      setTimeout(() => setCopiedText(''), 2000)
     } catch (err) {
-      console.error("Failed to copy: ", err);
+      console.error('Failed to copy: ', err)
     }
-  };
+  }
   return (
-    <div className="min-h-screen bg-gray-50 py-8 relative">
+    <div className="relative min-h-screen bg-gray-50 py-8">
       {/* Copy Success Toast */}
       {copiedText && (
-        <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate-bounce">
+        <div className="fixed right-4 top-4 z-50 animate-bounce rounded-lg bg-green-500 px-4 py-2 text-white shadow-lg">
           ✓ Copied: {copiedText}
         </div>
       )}
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-6 py-12 bg-white shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5 rounded-lg">
+      <div className="mx-auto max-w-4xl rounded-lg bg-white px-6 py-12 shadow-xl shadow-slate-700/10 ring-1 ring-gray-900/5">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold font-heading mb-4 text-gray-800">
+        <div className="mb-12 text-center">
+          <h1 className="font-heading mb-4 text-4xl font-bold text-gray-800">
             Typography Showcase
           </h1>
-          <p className="text-lg text-gray-600 font-body">
+          <p className="font-body text-lg text-gray-600">
             Exploring our custom typography system with OKLCH colors and CSS
             variables - Click buttons to copy CSS classes
           </p>
@@ -45,14 +45,14 @@ const TypographyPage: React.FC = () => {
 
           <h2>Heading Level 2 with Custom Font</h2>
           <p>
-            This paragraph demonstrates the <strong>custom body font</strong>{" "}
-            and{" "}
+            This paragraph demonstrates the <strong>custom body font</strong>{' '}
+            and{' '}
             <a
               href="#"
               className="text-gordons-green hover:text-gordons-green/80"
             >
               green link styling
-            </a>{" "}
+            </a>{' '}
             that we configured in the UnoCSS theme. The typography system
             ensures proper hierarchy and readability.
           </p>
@@ -95,37 +95,37 @@ const TypographyPage: React.FC = () => {
 
           <h2>Typography Variations</h2>
 
-          <div className="not-prose grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+          <div className="not-prose my-8 grid grid-cols-1 gap-8 md:grid-cols-2">
             {/* Font Family Examples */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-800 font-heading">
+              <h3 className="font-heading text-lg font-semibold text-gray-800">
                 Font Families
               </h3>
 
               <div className="space-y-3">
-                <div className="p-4 border rounded-lg">
-                  <div className="flex items-center justify-between mb-2">
+                <div className="rounded-lg border p-4">
+                  <div className="mb-2 flex items-center justify-between">
                     <p className="font-heading text-lg">Heading Font Family</p>
                     <button
-                      onClick={() => copyToClipboard("font-heading")}
-                      className="text-xs bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded transition-colors"
+                      onClick={() => copyToClipboard('font-heading')}
+                      className="rounded bg-blue-100 px-2 py-1 text-xs transition-colors hover:bg-blue-200"
                     >
-                      {copiedText === "font-heading" ? "✓" : "📋"}
+                      {copiedText === 'font-heading' ? '✓' : '📋'}
                     </button>
                   </div>
                   <code className="text-sm text-gray-600">font-heading</code>
                 </div>
 
-                <div className="p-4 border rounded-lg">
-                  <div className="flex items-center justify-between mb-2">
+                <div className="rounded-lg border p-4">
+                  <div className="mb-2 flex items-center justify-between">
                     <p className="font-heading-alt text-lg">
                       Heading Alt Font Family
                     </p>
                     <button
-                      onClick={() => copyToClipboard("font-heading-alt")}
-                      className="text-xs bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded transition-colors"
+                      onClick={() => copyToClipboard('font-heading-alt')}
+                      className="rounded bg-blue-100 px-2 py-1 text-xs transition-colors hover:bg-blue-200"
                     >
-                      {copiedText === "font-heading-alt" ? "✓" : "📋"}
+                      {copiedText === 'font-heading-alt' ? '✓' : '📋'}
                     </button>
                   </div>
                   <code className="text-sm text-gray-600">
@@ -133,27 +133,27 @@ const TypographyPage: React.FC = () => {
                   </code>
                 </div>
 
-                <div className="p-4 border rounded-lg">
-                  <div className="flex items-center justify-between mb-2">
+                <div className="rounded-lg border p-4">
+                  <div className="mb-2 flex items-center justify-between">
                     <p className="font-display text-lg">Display Font Family</p>
                     <button
-                      onClick={() => copyToClipboard("font-display")}
-                      className="text-xs bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded transition-colors"
+                      onClick={() => copyToClipboard('font-display')}
+                      className="rounded bg-blue-100 px-2 py-1 text-xs transition-colors hover:bg-blue-200"
                     >
-                      {copiedText === "font-display" ? "✓" : "📋"}
+                      {copiedText === 'font-display' ? '✓' : '📋'}
                     </button>
                   </div>
                   <code className="text-sm text-gray-600">font-display</code>
                 </div>
 
-                <div className="p-4 border rounded-lg">
-                  <div className="flex items-center justify-between mb-2">
+                <div className="rounded-lg border p-4">
+                  <div className="mb-2 flex items-center justify-between">
                     <p className="font-body text-lg">Body Font Family</p>
                     <button
-                      onClick={() => copyToClipboard("font-body")}
-                      className="text-xs bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded transition-colors"
+                      onClick={() => copyToClipboard('font-body')}
+                      className="rounded bg-blue-100 px-2 py-1 text-xs transition-colors hover:bg-blue-200"
                     >
-                      {copiedText === "font-body" ? "✓" : "📋"}
+                      {copiedText === 'font-body' ? '✓' : '📋'}
                     </button>
                   </div>
                   <code className="text-sm text-gray-600">font-body</code>
@@ -163,84 +163,84 @@ const TypographyPage: React.FC = () => {
 
             {/* Size Examples */}
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-800 font-heading">
+              <h3 className="font-heading text-lg font-semibold text-gray-800">
                 Text Sizes
               </h3>
 
               <div className="space-y-3">
-                <div className="p-4 border rounded-lg">
+                <div className="rounded-lg border p-4">
                   <div className="flex items-center justify-between">
                     <p className="text-xs">Extra Small Text</p>
                     <button
-                      onClick={() => copyToClipboard("text-xs")}
-                      className="text-xs bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded transition-colors"
+                      onClick={() => copyToClipboard('text-xs')}
+                      className="rounded bg-blue-100 px-2 py-1 text-xs transition-colors hover:bg-blue-200"
                     >
-                      {copiedText === "text-xs" ? "✓" : "📋"}
+                      {copiedText === 'text-xs' ? '✓' : '📋'}
                     </button>
                   </div>
                   <code className="text-xs text-gray-600">text-xs</code>
                 </div>
 
-                <div className="p-4 border rounded-lg">
+                <div className="rounded-lg border p-4">
                   <div className="flex items-center justify-between">
                     <p className="text-sm">Small Text</p>
                     <button
-                      onClick={() => copyToClipboard("text-sm")}
-                      className="text-xs bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded transition-colors"
+                      onClick={() => copyToClipboard('text-sm')}
+                      className="rounded bg-blue-100 px-2 py-1 text-xs transition-colors hover:bg-blue-200"
                     >
-                      {copiedText === "text-sm" ? "✓" : "📋"}
+                      {copiedText === 'text-sm' ? '✓' : '📋'}
                     </button>
                   </div>
                   <code className="text-xs text-gray-600">text-sm</code>
                 </div>
 
-                <div className="p-4 border rounded-lg">
+                <div className="rounded-lg border p-4">
                   <div className="flex items-center justify-between">
                     <p className="text-base">Base Text</p>
                     <button
-                      onClick={() => copyToClipboard("text-base")}
-                      className="text-xs bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded transition-colors"
+                      onClick={() => copyToClipboard('text-base')}
+                      className="rounded bg-blue-100 px-2 py-1 text-xs transition-colors hover:bg-blue-200"
                     >
-                      {copiedText === "text-base" ? "✓" : "📋"}
+                      {copiedText === 'text-base' ? '✓' : '📋'}
                     </button>
                   </div>
                   <code className="text-xs text-gray-600">text-base</code>
                 </div>
 
-                <div className="p-4 border rounded-lg">
+                <div className="rounded-lg border p-4">
                   <div className="flex items-center justify-between">
                     <p className="text-lg">Large Text</p>
                     <button
-                      onClick={() => copyToClipboard("text-lg")}
-                      className="text-xs bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded transition-colors"
+                      onClick={() => copyToClipboard('text-lg')}
+                      className="rounded bg-blue-100 px-2 py-1 text-xs transition-colors hover:bg-blue-200"
                     >
-                      {copiedText === "text-lg" ? "✓" : "📋"}
+                      {copiedText === 'text-lg' ? '✓' : '📋'}
                     </button>
                   </div>
                   <code className="text-xs text-gray-600">text-lg</code>
                 </div>
 
-                <div className="p-4 border rounded-lg">
+                <div className="rounded-lg border p-4">
                   <div className="flex items-center justify-between">
                     <p className="text-xl">Extra Large Text</p>
                     <button
-                      onClick={() => copyToClipboard("text-xl")}
-                      className="text-xs bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded transition-colors"
+                      onClick={() => copyToClipboard('text-xl')}
+                      className="rounded bg-blue-100 px-2 py-1 text-xs transition-colors hover:bg-blue-200"
                     >
-                      {copiedText === "text-xl" ? "✓" : "📋"}
+                      {copiedText === 'text-xl' ? '✓' : '📋'}
                     </button>
                   </div>
                   <code className="text-xs text-gray-600">text-xl</code>
                 </div>
 
-                <div className="p-4 border rounded-lg">
+                <div className="rounded-lg border p-4">
                   <div className="flex items-center justify-between">
                     <p className="text-2xl">2XL Text</p>
                     <button
-                      onClick={() => copyToClipboard("text-2xl")}
-                      className="text-xs bg-blue-100 hover:bg-blue-200 px-2 py-1 rounded transition-colors"
+                      onClick={() => copyToClipboard('text-2xl')}
+                      className="rounded bg-blue-100 px-2 py-1 text-xs transition-colors hover:bg-blue-200"
                     >
-                      {copiedText === "text-2xl" ? "✓" : "📋"}
+                      {copiedText === 'text-2xl' ? '✓' : '📋'}
                     </button>
                   </div>
                   <code className="text-xs text-gray-600">text-2xl</code>
@@ -255,12 +255,12 @@ const TypographyPage: React.FC = () => {
             consistency across different states.
           </p>
 
-          <div className="not-prose space-y-4 my-6">
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+          <div className="not-prose my-6 space-y-4">
+            <button className="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700">
               Primary Button
             </button>
 
-            <button className="bg-gordons-green text-white px-6 py-3 rounded-lg font-medium hover:bg-gordons-green/90 transition-colors ml-4">
+            <button className="bg-gordons-green hover:bg-gordons-green/90 ml-4 rounded-lg px-6 py-3 font-medium text-white transition-colors">
               Custom Color Button
             </button>
           </div>
@@ -271,23 +271,23 @@ const TypographyPage: React.FC = () => {
             palette, providing consistent and accessible color combinations.
           </p>
 
-          <div className="not-prose grid grid-cols-2 md:grid-cols-4 gap-4 my-6">
-            <div className="p-4 bg-blue-100 text-blue-900 rounded-lg text-center">
+          <div className="not-prose my-6 grid grid-cols-2 gap-4 md:grid-cols-4">
+            <div className="rounded-lg bg-blue-100 p-4 text-center text-blue-900">
               <p className="font-semibold">Blue Accent</p>
               <p className="text-sm">OKLCH Color</p>
             </div>
 
-            <div className="p-4 bg-green-100 text-green-900 rounded-lg text-center">
+            <div className="rounded-lg bg-green-100 p-4 text-center text-green-900">
               <p className="font-semibold">Green Accent</p>
               <p className="text-sm">OKLCH Color</p>
             </div>
 
-            <div className="p-4 bg-purple-100 text-purple-900 rounded-lg text-center">
+            <div className="rounded-lg bg-purple-100 p-4 text-center text-purple-900">
               <p className="font-semibold">Purple Accent</p>
               <p className="text-sm">OKLCH Color</p>
             </div>
 
-            <div className="p-4 bg-orange-100 text-orange-900 rounded-lg text-center">
+            <div className="rounded-lg bg-orange-100 p-4 text-center text-orange-900">
               <p className="font-semibold">Orange Accent</p>
               <p className="text-sm">OKLCH Color</p>
             </div>
@@ -313,8 +313,8 @@ const TypographyPage: React.FC = () => {
             compliance.
           </p>
 
-          <div className="not-prose bg-yellow-50 border border-yellow-200 rounded-lg p-6 my-6">
-            <h3 className="text-lg font-semibold text-yellow-800 mb-2">
+          <div className="not-prose my-6 rounded-lg border border-yellow-200 bg-yellow-50 p-6">
+            <h3 className="mb-2 text-lg font-semibold text-yellow-800">
               Accessibility Note
             </h3>
             <p className="text-yellow-700">
@@ -325,7 +325,7 @@ const TypographyPage: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TypographyPage;
+export default TypographyPage

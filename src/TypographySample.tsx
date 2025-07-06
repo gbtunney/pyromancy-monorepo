@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const TypographySample: React.FC = () => {
   return (
@@ -25,7 +25,7 @@ const TypographySample: React.FC = () => {
 
             <h2>Heading Level 2 with Custom Font</h2>
             <p>
-              This paragraph demonstrates the <strong>custom body font</strong>{" "}
+              This paragraph demonstrates the <strong>custom body font</strong>{' '}
               and <a href="#">green link styling</a> that we configured in the
               UnoCSS theme.
             </p>
@@ -88,7 +88,7 @@ const TypographySample: React.FC = () => {
           </p>
           <blockquote>
             <p>
-              Why is Tailwind removing the default styles on my <code>h1</code>{" "}
+              Why is Tailwind removing the default styles on my <code>h1</code>{' '}
               elements? How do I disable this? What do you mean I lose all the
               other base styles too?
             </p>
@@ -98,7 +98,7 @@ const TypographySample: React.FC = () => {
             styles is what you really want. You don't want to have to remove
             annoying margins every time you use a <code>p</code> element in a
             piece of your dashboard UI. And I doubt you really want your blog
-            posts to use the user-agent styles either — you want them to look{" "}
+            posts to use the user-agent styles either — you want them to look{' '}
             <em>awesome</em>, not awful.
           </p>
           <p>
@@ -126,7 +126,7 @@ const TypographySample: React.FC = () => {
           </pre>
           <p>
             For more information about how to use the plugin and the features it
-            includes,{" "}
+            includes,{' '}
             <a href="https://github.com/tailwindcss/typography/blob/master/README.md">
               read the documentation
             </a>
@@ -137,7 +137,7 @@ const TypographySample: React.FC = () => {
           <p>
             What follows from here is just a bunch of absolute nonsense I've
             written to dogfood the plugin itself. It includes every sensible
-            typographic element I could think of, like{" "}
+            typographic element I could think of, like{' '}
             <strong>bold text</strong>, unordered lists, ordered lists, code
             blocks, block quotes, <em>and even italics</em>.
           </p>
@@ -258,10 +258,10 @@ const TypographySample: React.FC = () => {
           </p>
           <h2>Code should look okay by default.</h2>
           <p>
-            I think most people are going to use{" "}
-            <a href="https://highlightjs.org/">highlight.js</a> or{" "}
+            I think most people are going to use{' '}
+            <a href="https://highlightjs.org/">highlight.js</a> or{' '}
             <a href="https://prismjs.com/">Prism</a> or something if they want
-            to style their code blocks but it wouldn't hurt to make them look{" "}
+            to style their code blocks but it wouldn't hurt to make them look{' '}
             <em>okay</em> out of the box, even with no syntax highlighting.
           </p>
           <p>
@@ -335,8 +335,8 @@ const TypographySample: React.FC = () => {
             </li>
           </ol>
           <p>
-            The most annoying thing about lists in Markdown is that{" "}
-            <code>&lt;li&gt;</code> elements aren't given a child{" "}
+            The most annoying thing about lists in Markdown is that{' '}
+            <code>&lt;li&gt;</code> elements aren't given a child{' '}
             <code>&lt;p&gt;</code> tag unless there are multiple paragraphs in
             the list item. That means I have to worry about styling that
             annoying situation too.
@@ -388,7 +388,7 @@ const TypographySample: React.FC = () => {
           <p>And finally a sentence to close off this section.</p>
           <h2>There are other elements we need to style</h2>
           <p>
-            I almost forgot to mention links, like{" "}
+            I almost forgot to mention links, like{' '}
             <a href="https://tailwindcss.com">
               this link to the Tailwind CSS website
             </a>
@@ -442,16 +442,16 @@ const TypographySample: React.FC = () => {
           </h3>
           <p>
             Even though it's probably a bad idea, and historically I've had a
-            hard time making it look good. This{" "}
+            hard time making it look good. This{' '}
             <em>"wrap the code blocks in backticks"</em> trick works pretty well
             though really.
           </p>
           <p>
             Another thing I've done in the past is put a <code>code</code> tag
-            inside of a link, like if I wanted to tell you about the{" "}
+            inside of a link, like if I wanted to tell you about the{' '}
             <a href="https://github.com/tailwindcss/docs">
               <code>tailwindcss/docs</code>
-            </a>{" "}
+            </a>{' '}
             repository. I don't love that there is an underline below the
             backticks but it is absolutely not worth the madness it would
             require to avoid it.
@@ -460,21 +460,21 @@ const TypographySample: React.FC = () => {
             We haven't used an <code>h4</code> yet
           </h4>
           <p>
-            But now we have. Please don't use <code>h5</code> or <code>h6</code>{" "}
+            But now we have. Please don't use <code>h5</code> or <code>h6</code>{' '}
             in your content, Medium only supports two heading levels for a
-            reason, you animals. I honestly considered using a{" "}
-            <code>before</code> pseudo-element to scream at you if you use an{" "}
+            reason, you animals. I honestly considered using a{' '}
+            <code>before</code> pseudo-element to scream at you if you use an{' '}
             <code>h5</code> or <code>h6</code>.
           </p>
           <p>
-            We don't style them at all out of the box because <code>h4</code>{" "}
+            We don't style them at all out of the box because <code>h4</code>{' '}
             elements are already so small that they are the same size as the
             body copy. What are we supposed to do with an <code>h5</code>, make
             it <em>smaller</em> than the body copy? No thanks.
           </p>
           <h3>We still need to think about stacked headings though.</h3>
           <h4>
-            Let's make sure we don't screw that up with <code>h4</code>{" "}
+            Let's make sure we don't screw that up with <code>h4</code>{' '}
             elements, either.
           </h4>
           <p>
@@ -495,7 +495,7 @@ const TypographySample: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TypographySample;
+export default TypographySample

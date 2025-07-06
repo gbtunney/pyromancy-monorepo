@@ -1,8 +1,8 @@
-import React from "react";
-import GradientExamples from "../components/GradientExamples";
+import React from 'react'
+import GradientExamples from '../components/GradientExamples'
 
 const GradientsPage: React.FC = () => {
-  return <GradientExamples />;
-};
+  return <GradientExamples />
+}
 
-export default GradientsPage;
+export default GradientsPage

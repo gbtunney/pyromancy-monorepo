@@ -48,13 +48,13 @@
 #### **OKLCH Color Generation:**
 
 ```typescript
-import { oklch, formatCss } from "culori";
+import { oklch, formatCss } from 'culori'
 
 const OKLCH_COLORS = {
-  "oklch-green": formatCss(oklch("#2a322a")), // Converts hex to OKLCH
-  "oklch-mint": formatCss(oklch("#afd3c2")),
+  'oklch-green': formatCss(oklch('#2a322a')), // Converts hex to OKLCH
+  'oklch-mint': formatCss(oklch('#afd3c2')),
   // ... more colors
-};
+}
 ```
 
 #### **Custom UnoCSS Rules:**

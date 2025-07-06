@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const ButtonTester: React.FC = () => {
   return (
@@ -284,7 +284,7 @@ const ButtonTester: React.FC = () => {
               <button>Default Button</button>
               <button className="text-blue-500">With Color</button>
               <button className="font-bold">With Font Weight</button>
-              <button style={{ all: "unset", cursor: "pointer" }}>
+              <button style={{ all: 'unset', cursor: 'pointer' }}>
                 Manual Reset
               </button>
             </div>
@@ -296,7 +296,7 @@ const ButtonTester: React.FC = () => {
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default ButtonTester;
+export default ButtonTester

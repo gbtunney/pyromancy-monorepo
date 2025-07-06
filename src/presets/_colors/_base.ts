@@ -1,11 +1,11 @@
-import type { Theme } from "unocss/preset-uno";
-import { colors as tailwindColors } from "@unocss/preset-wind4/colors";
+import type { Theme } from 'unocss/preset-uno'
+import { colors as tailwindColors } from '@unocss/preset-wind4/colors'
 
 //@ts-expect-error no types available for apcach package
-import { apcach, crToBg, crToFg } from "apcach";
+import { apcach, crToBg, crToFg } from 'apcach'
 
 // import { Map } from 'immutable' // Commented out - not currently used
-import { convertColorsToOklch } from "./../../utilities.ts";
+import { convertColorsToOklch } from './../../utilities.ts'
 /*
 $gordons-green: #2a322a
 $astra: #f0dba4
@@ -27,65 +27,65 @@ $ironside-gray: #756f68
 $highball: #90813b */
 
 const DEFAULT_COLORS = {
-  "gordons-green": "#2a322a", // 🎨 Dark green
-  astra: "#f0dba4", // 🎨 Light gold
-  "coral-tree": "#b66368", // 🎨 Coral pink
-  "sepia-black": "#2b0007", // 🎨 Dark red
-  pohutukawa: "#651325", // 🎨 Dark burgundy
-  mirage: "#14222b", // 🎨 Dark blue
+  'gordons-green': '#2a322a', // 🎨 Dark green
+  astra: '#f0dba4', // 🎨 Light gold
+  'coral-tree': '#b66368', // 🎨 Coral pink
+  'sepia-black': '#2b0007', // 🎨 Dark red
+  pohutukawa: '#651325', // 🎨 Dark burgundy
+  mirage: '#14222b', // 🎨 Dark blue
 
-  tana: "#f0dba4", // 🎨 Light gold
-  spice: "#66543e", // 🎨 Brown
-  highball: "#90813b", // 🎨 Olive
-  "west-coast": "#64551f", // 🎨 Dark olive
-  "jacko-bean": "#2e1c08", // 🎨 Dark brown
+  tana: '#f0dba4', // 🎨 Light gold
+  spice: '#66543e', // 🎨 Brown
+  highball: '#90813b', // 🎨 Olive
+  'west-coast': '#64551f', // 🎨 Dark olive
+  'jacko-bean': '#2e1c08', // 🎨 Dark brown
 
   ///muteds
-  sandstone: "#7b6d5c", // 🎨 Medium brown
-  schooner: "#8b8378", // 🎨 Gray brown
-  "ironside-gray": "#756f68", // 🎨 Medium gray
-  crowshead: "#1a130a", // 🎨 Very dark brown
-  onion: "#33250d", // 🎨 Dark brown
-  madras: "#46371a", // 🎨 metallic-bronze
-  corn: "#efc618", // 🎨 Bright yellow
-  gumleaf: "#afd3c2", // 🎨 Mint green
+  sandstone: '#7b6d5c', // 🎨 Medium brown
+  schooner: '#8b8378', // 🎨 Gray brown
+  'ironside-gray': '#756f68', // 🎨 Medium gray
+  crowshead: '#1a130a', // 🎨 Very dark brown
+  onion: '#33250d', // 🎨 Dark brown
+  madras: '#46371a', // 🎨 metallic-bronze
+  corn: '#efc618', // 🎨 Bright yellow
+  gumleaf: '#afd3c2', // 🎨 Mint green
 
   //
   grey: tailwindColors.gray,
-};
+}
 
 // Testing contrast calculations - both background and foreground
-const testColor = "#2e1c08"; // jacko-bean
-const lightness = 60;
-const chroma = 0.04250523737282097;
-const hue = 66.37640269656488;
+const testColor = '#2e1c08' // jacko-bean
+const lightness = 60
+const chroma = 0.04250523737282097
+const hue = 66.37640269656488
 
-const bgResult = apcach(crToBg(testColor, lightness), chroma, hue);
-const fgResult = apcach(crToFg(testColor, lightness), chroma, hue);
+const bgResult = apcach(crToBg(testColor, lightness), chroma, hue)
+const fgResult = apcach(crToFg(testColor, lightness), chroma, hue)
 
-console.log("=== CONTRAST TEST RESULTS ===");
-console.log("Original color:", testColor);
-console.log("Background OKLCH:", `oklch(${bgResult})`);
-console.log("Foreground OKLCH:", `oklch(${fgResult})`);
+console.log('=== CONTRAST TEST RESULTS ===')
+console.log('Original color:', testColor)
+console.log('Background OKLCH:', `oklch(${bgResult})`)
+console.log('Foreground OKLCH:', `oklch(${fgResult})`)
 
 // Test multiple colors
-console.log("\n=== MORE TEST VALUES ===");
+console.log('\n=== MORE TEST VALUES ===')
 Object.entries(DEFAULT_COLORS)
   .slice(0, 3)
   .forEach(([name, hex]) => {
-    if (typeof hex === "string") {
-      const bg = apcach(crToBg(hex, 50), 0.05, 120);
-      const fg = apcach(crToFg(hex, 70), 0.08, 240);
-      console.log(`${name}:`, hex);
-      console.log(`  Background: oklch(${bg})`);
-      console.log(`  Foreground: oklch(${fg})`);
+    if (typeof hex === 'string') {
+      const bg = apcach(crToBg(hex, 50), 0.05, 120)
+      const fg = apcach(crToFg(hex, 70), 0.08, 240)
+      console.log(`${name}:`, hex)
+      console.log(`  Background: oklch(${bg})`)
+      console.log(`  Foreground: oklch(${fg})`)
     }
-  });
+  })
 
-export const colors: Exclude<Theme["colors"], undefined> =
-  convertColorsToOklch(DEFAULT_COLORS);
+export const colors: Exclude<Theme['colors'], undefined> =
+  convertColorsToOklch(DEFAULT_COLORS)
 
-export default colors;
+export default colors
 /*
   primary: {
     DEFAULT: 'rgba(var(--c-primary) / <alpha-value>)',

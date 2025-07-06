@@ -1,14 +1,13 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import HomePage from "./pages/HomePage";
-import FontsPage from "./pages/FontsPage";
-import ButtonsPage from "./pages/ButtonsPage";
-import IconsPage from "./pages/IconsPage";
-import ColorsPage from "./pages/ColorsPage";
-import GradientsPage from "./pages/GradientsPage";
-import TypographyPage from "./pages/TypographyPage";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import HomePage from './pages/HomePage'
+import FontsPage from './pages/FontsPage'
+import ButtonsPage from './pages/ButtonsPage'
+import IconsPage from './pages/IconsPage'
+import ColorsPage from './pages/ColorsPage'
+import GradientsPage from './pages/GradientsPage'
+import TypographyPage from './pages/TypographyPage'
+import './App.css'
 
 function App() {
   return (
@@ -25,7 +24,7 @@ function App() {
         </Routes>
       </Layout>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App

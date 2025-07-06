@@ -1,28 +1,28 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 
 const FontTester: React.FC = () => {
-  const [copiedText, setCopiedText] = useState<string>("");
+  const [copiedText, setCopiedText] = useState<string>('')
 
   const copyToClipboard = async (text: string) => {
     try {
-      await navigator.clipboard.writeText(text);
-      setCopiedText(text);
-      setTimeout(() => setCopiedText(""), 2000);
+      await navigator.clipboard.writeText(text)
+      setCopiedText(text)
+      setTimeout(() => setCopiedText(''), 2000)
     } catch (err) {
-      console.error("Failed to copy: ", err);
+      console.error('Failed to copy: ', err)
     }
-  };
+  }
   return (
-    <div className="max-w-4xl mx-auto p-8 space-y-12 relative">
+    <div className="relative mx-auto max-w-4xl space-y-12 p-8">
       {/* Copy Success Toast */}
       {copiedText && (
-        <div className="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate-bounce">
+        <div className="fixed right-4 top-4 z-50 animate-bounce rounded-lg bg-green-500 px-4 py-2 text-white shadow-lg">
           ✓ Copied: {copiedText}
         </div>
       )}
 
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">Font Testing Lab</h1>
+      <div className="mb-12 text-center">
+        <h1 className="mb-4 text-4xl font-bold">Font Testing Lab</h1>
         <p className="text-gray-600">
           Testing all custom font families with dummy content - Click buttons to
           copy CSS classes
@@ -33,7 +33,7 @@ const FontTester: React.FC = () => {
       <section className="border-b pb-8">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+            <span className="inline-block rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
               font-heading
             </span>
             <span className="ml-2 text-sm text-gray-500">
@@ -42,18 +42,18 @@ const FontTester: React.FC = () => {
           </div>
           <div className="space-x-2">
             <button
-              onClick={() => copyToClipboard("font-heading")}
-              className="text-xs bg-blue-100 hover:bg-blue-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('font-heading')}
+              className="rounded bg-blue-100 px-3 py-1 text-xs transition-colors hover:bg-blue-200"
             >
-              {copiedText === "font-heading" ? "✓ Copied!" : "Copy CSS Class"}
+              {copiedText === 'font-heading' ? '✓ Copied!' : 'Copy CSS Class'}
             </button>
             <button
-              onClick={() => copyToClipboard("var(--font-heading)")}
-              className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('var(--font-heading)')}
+              className="rounded bg-gray-100 px-3 py-1 text-xs transition-colors hover:bg-gray-200"
             >
-              {copiedText === "var(--font-heading)"
-                ? "✓ Copied!"
-                : "Copy CSS Variable"}
+              {copiedText === 'var(--font-heading)'
+                ? '✓ Copied!'
+                : 'Copy CSS Variable'}
             </button>
           </div>
         </div>
@@ -75,7 +75,7 @@ const FontTester: React.FC = () => {
             remember that all the people in this world haven't had the
             advantages that you've had."
           </p>
-          <blockquote className="text-2xl italic border-l-4 border-blue-500 pl-4">
+          <blockquote className="border-l-4 border-blue-500 pl-4 text-2xl italic">
             "So we beat on, boats against the current, borne back ceaselessly
             into the past."
           </blockquote>
@@ -86,7 +86,7 @@ const FontTester: React.FC = () => {
       <section className="border-b pb-8">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+            <span className="inline-block rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800">
               font-heading-alt
             </span>
             <span className="ml-2 text-sm text-gray-500">
@@ -95,20 +95,20 @@ const FontTester: React.FC = () => {
           </div>
           <div className="space-x-2">
             <button
-              onClick={() => copyToClipboard("font-heading-alt")}
-              className="text-xs bg-green-100 hover:bg-green-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('font-heading-alt')}
+              className="rounded bg-green-100 px-3 py-1 text-xs transition-colors hover:bg-green-200"
             >
-              {copiedText === "font-heading-alt"
-                ? "✓ Copied!"
-                : "Copy CSS Class"}
+              {copiedText === 'font-heading-alt'
+                ? '✓ Copied!'
+                : 'Copy CSS Class'}
             </button>
             <button
-              onClick={() => copyToClipboard("var(--font-heading-alt)")}
-              className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('var(--font-heading-alt)')}
+              className="rounded bg-gray-100 px-3 py-1 text-xs transition-colors hover:bg-gray-200"
             >
-              {copiedText === "var(--font-heading-alt)"
-                ? "✓ Copied!"
-                : "Copy CSS Variable"}
+              {copiedText === 'var(--font-heading-alt)'
+                ? '✓ Copied!'
+                : 'Copy CSS Variable'}
             </button>
           </div>
         </div>
@@ -132,7 +132,7 @@ const FontTester: React.FC = () => {
             may be on his first entering a neighbourhood, this truth is so well
             fixed in the minds of the surrounding families.
           </p>
-          <div className="text-lg space-y-2">
+          <div className="space-y-2 text-lg">
             <p>
               <strong>Character Names:</strong> Elizabeth Bennet, Mr. Darcy,
               Jane Bennet
@@ -148,7 +148,7 @@ const FontTester: React.FC = () => {
       <section className="border-b pb-8">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <span className="inline-block bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+            <span className="inline-block rounded-full bg-purple-100 px-3 py-1 text-sm font-medium text-purple-800">
               font-display
             </span>
             <span className="ml-2 text-sm text-gray-500">
@@ -157,18 +157,18 @@ const FontTester: React.FC = () => {
           </div>
           <div className="space-x-2">
             <button
-              onClick={() => copyToClipboard("font-display")}
-              className="text-xs bg-purple-100 hover:bg-purple-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('font-display')}
+              className="rounded bg-purple-100 px-3 py-1 text-xs transition-colors hover:bg-purple-200"
             >
-              {copiedText === "font-display" ? "✓ Copied!" : "Copy CSS Class"}
+              {copiedText === 'font-display' ? '✓ Copied!' : 'Copy CSS Class'}
             </button>
             <button
-              onClick={() => copyToClipboard("var(--font-display)")}
-              className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('var(--font-display)')}
+              className="rounded bg-gray-100 px-3 py-1 text-xs transition-colors hover:bg-gray-200"
             >
-              {copiedText === "var(--font-display)"
-                ? "✓ Copied!"
-                : "Copy CSS Variable"}
+              {copiedText === 'var(--font-display)'
+                ? '✓ Copied!'
+                : 'Copy CSS Variable'}
             </button>
           </div>
         </div>
@@ -185,7 +185,7 @@ const FontTester: React.FC = () => {
           <p className="text-2xl font-medium leading-tight">
             THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
           </p>
-          <div className="text-3xl space-y-2">
+          <div className="space-y-2 text-3xl">
             <p>Numbers: 0123456789</p>
             <p>Special: !@#$%^&*()</p>
             <p className="uppercase">Uppercase Display Text</p>
@@ -198,25 +198,25 @@ const FontTester: React.FC = () => {
       <section className="border-b pb-8">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <span className="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
+            <span className="inline-block rounded-full bg-orange-100 px-3 py-1 text-sm font-medium text-orange-800">
               font-body
             </span>
             <span className="ml-2 text-sm text-gray-500">var(--font-body)</span>
           </div>
           <div className="space-x-2">
             <button
-              onClick={() => copyToClipboard("font-body")}
-              className="text-xs bg-orange-100 hover:bg-orange-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('font-body')}
+              className="rounded bg-orange-100 px-3 py-1 text-xs transition-colors hover:bg-orange-200"
             >
-              {copiedText === "font-body" ? "✓ Copied!" : "Copy CSS Class"}
+              {copiedText === 'font-body' ? '✓ Copied!' : 'Copy CSS Class'}
             </button>
             <button
-              onClick={() => copyToClipboard("var(--font-body)")}
-              className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('var(--font-body)')}
+              className="rounded bg-gray-100 px-3 py-1 text-xs transition-colors hover:bg-gray-200"
             >
-              {copiedText === "var(--font-body)"
-                ? "✓ Copied!"
-                : "Copy CSS Variable"}
+              {copiedText === 'var(--font-body)'
+                ? '✓ Copied!'
+                : 'Copy CSS Variable'}
             </button>
           </div>
         </div>
@@ -248,15 +248,15 @@ const FontTester: React.FC = () => {
               Extra small text for legal disclaimers and micro-copy.
             </p>
           </div>
-          <ul className="list-disc list-inside space-y-1">
+          <ul className="list-inside list-disc space-y-1">
             <li>First list item with body font</li>
             <li>Second item showing readability</li>
             <li>
-              Third item with <strong>bold text</strong> and{" "}
+              Third item with <strong>bold text</strong> and{' '}
               <em>italic emphasis</em>
             </li>
             <li>
-              Fourth item with{" "}
+              Fourth item with{' '}
               <a href="#" className="text-blue-600 underline">
                 a link example
               </a>
@@ -269,7 +269,7 @@ const FontTester: React.FC = () => {
       <section className="border-b pb-8">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <span className="inline-block bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">
+            <span className="inline-block rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-800">
               font-display-alt
             </span>
             <span className="ml-2 text-sm text-gray-500">
@@ -278,20 +278,20 @@ const FontTester: React.FC = () => {
           </div>
           <div className="space-x-2">
             <button
-              onClick={() => copyToClipboard("font-display-alt")}
-              className="text-xs bg-indigo-100 hover:bg-indigo-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('font-display-alt')}
+              className="rounded bg-indigo-100 px-3 py-1 text-xs transition-colors hover:bg-indigo-200"
             >
-              {copiedText === "font-display-alt"
-                ? "✓ Copied!"
-                : "Copy CSS Class"}
+              {copiedText === 'font-display-alt'
+                ? '✓ Copied!'
+                : 'Copy CSS Class'}
             </button>
             <button
-              onClick={() => copyToClipboard("var(--font-display-alt)")}
-              className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('var(--font-display-alt)')}
+              className="rounded bg-gray-100 px-3 py-1 text-xs transition-colors hover:bg-gray-200"
             >
-              {copiedText === "var(--font-display-alt)"
-                ? "✓ Copied!"
-                : "Copy CSS Variable"}
+              {copiedText === 'var(--font-display-alt)'
+                ? '✓ Copied!'
+                : 'Copy CSS Variable'}
             </button>
           </div>
         </div>
@@ -308,7 +308,7 @@ const FontTester: React.FC = () => {
           <p className="text-2xl font-medium leading-tight">
             CLEAN CONDENSED LETTERFORMS FOR HEADLINES
           </p>
-          <div className="text-3xl space-y-2">
+          <div className="space-y-2 text-3xl">
             <p>Numbers: 0123456789</p>
             <p>Special: !@#$%^&*()</p>
             <p className="uppercase">CONDENSED DISPLAY TEXT</p>
@@ -321,7 +321,7 @@ const FontTester: React.FC = () => {
       <section className="border-b pb-8">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <span className="inline-block bg-rose-100 text-rose-800 px-3 py-1 rounded-full text-sm font-medium">
+            <span className="inline-block rounded-full bg-rose-100 px-3 py-1 text-sm font-medium text-rose-800">
               font-small-caps
             </span>
             <span className="ml-2 text-sm text-gray-500">
@@ -330,20 +330,20 @@ const FontTester: React.FC = () => {
           </div>
           <div className="space-x-2">
             <button
-              onClick={() => copyToClipboard("font-small-caps")}
-              className="text-xs bg-rose-100 hover:bg-rose-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('font-small-caps')}
+              className="rounded bg-rose-100 px-3 py-1 text-xs transition-colors hover:bg-rose-200"
             >
-              {copiedText === "font-small-caps"
-                ? "✓ Copied!"
-                : "Copy CSS Class"}
+              {copiedText === 'font-small-caps'
+                ? '✓ Copied!'
+                : 'Copy CSS Class'}
             </button>
             <button
-              onClick={() => copyToClipboard("var(--font-small-caps)")}
-              className="text-xs bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('var(--font-small-caps)')}
+              className="rounded bg-gray-100 px-3 py-1 text-xs transition-colors hover:bg-gray-200"
             >
-              {copiedText === "var(--font-small-caps)"
-                ? "✓ Copied!"
-                : "Copy CSS Variable"}
+              {copiedText === 'var(--font-small-caps)'
+                ? '✓ Copied!'
+                : 'Copy CSS Variable'}
             </button>
           </div>
         </div>
@@ -367,7 +367,7 @@ const FontTester: React.FC = () => {
             text. This font variant is perfect for luxury brands and editorial
             design.
           </p>
-          <blockquote className="text-2xl italic border-l-4 border-rose-500 pl-4">
+          <blockquote className="border-l-4 border-rose-500 pl-4 text-2xl italic">
             "Typography is the craft of endowing human language with a durable
             visual form."
           </blockquote>
@@ -378,7 +378,7 @@ const FontTester: React.FC = () => {
       <section className="border-b pb-8">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <span className="inline-block bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">
+            <span className="inline-block rounded-full bg-teal-100 px-3 py-1 text-sm font-medium text-teal-800">
               font-adorn-engraved
             </span>
             <span className="ml-2 text-sm text-gray-500">
@@ -387,12 +387,12 @@ const FontTester: React.FC = () => {
           </div>
           <div className="space-x-2">
             <button
-              onClick={() => copyToClipboard("font-adorn-engraved")}
-              className="text-xs bg-teal-100 hover:bg-teal-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('font-adorn-engraved')}
+              className="rounded bg-teal-100 px-3 py-1 text-xs transition-colors hover:bg-teal-200"
             >
-              {copiedText === "font-adorn-engraved"
-                ? "✓ Copied!"
-                : "Copy CSS Class"}
+              {copiedText === 'font-adorn-engraved'
+                ? '✓ Copied!'
+                : 'Copy CSS Class'}
             </button>
           </div>
         </div>
@@ -418,17 +418,17 @@ const FontTester: React.FC = () => {
       <section className="border-b pb-8">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <span className="inline-block bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+            <span className="inline-block rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-800">
               font-mrs-eaves
             </span>
             <span className="ml-2 text-sm text-gray-500">Mrs Eaves</span>
           </div>
           <div className="space-x-2">
             <button
-              onClick={() => copyToClipboard("font-mrs-eaves")}
-              className="text-xs bg-amber-100 hover:bg-amber-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('font-mrs-eaves')}
+              className="rounded bg-amber-100 px-3 py-1 text-xs transition-colors hover:bg-amber-200"
             >
-              {copiedText === "font-mrs-eaves" ? "✓ Copied!" : "Copy CSS Class"}
+              {copiedText === 'font-mrs-eaves' ? '✓ Copied!' : 'Copy CSS Class'}
             </button>
           </div>
         </div>
@@ -454,17 +454,17 @@ const FontTester: React.FC = () => {
       <section className="border-b pb-8">
         <div className="mb-4 flex items-center justify-between">
           <div>
-            <span className="inline-block bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">
+            <span className="inline-block rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-800">
               font-kopius
             </span>
             <span className="ml-2 text-sm text-gray-500">Kopius</span>
           </div>
           <div className="space-x-2">
             <button
-              onClick={() => copyToClipboard("font-kopius")}
-              className="text-xs bg-indigo-100 hover:bg-indigo-200 px-3 py-1 rounded transition-colors"
+              onClick={() => copyToClipboard('font-kopius')}
+              className="rounded bg-indigo-100 px-3 py-1 text-xs transition-colors hover:bg-indigo-200"
             >
-              {copiedText === "font-kopius" ? "✓ Copied!" : "Copy CSS Class"}
+              {copiedText === 'font-kopius' ? '✓ Copied!' : 'Copy CSS Class'}
             </button>
           </div>
         </div>
@@ -488,7 +488,7 @@ const FontTester: React.FC = () => {
       {/* CSS Variable Direct Usage */}
       <section className="border-b pb-8">
         <div className="mb-4">
-          <span className="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
+          <span className="inline-block rounded-full bg-red-100 px-3 py-1 text-sm font-medium text-red-800">
             Direct CSS Variables
           </span>
           <span className="ml-2 text-sm text-gray-500">
@@ -497,21 +497,21 @@ const FontTester: React.FC = () => {
         </div>
         <div className="space-y-6">
           <div className="font-[var(--font-heading)]">
-            <h3 className="text-2xl font-bold mb-2">Direct Heading Variable</h3>
+            <h3 className="mb-2 text-2xl font-bold">Direct Heading Variable</h3>
             <p className="text-lg">
               This text uses font-[var(--font-heading)] directly with arbitrary
               values.
             </p>
           </div>
           <div className="font-[var(--font-display)]">
-            <h3 className="text-2xl font-bold mb-2">Direct Display Variable</h3>
+            <h3 className="mb-2 text-2xl font-bold">Direct Display Variable</h3>
             <p className="text-lg">
               This text uses font-[var(--font-display)] for testing the display
               font.
             </p>
           </div>
           <div className="font-[var(--font-body)]">
-            <h3 className="text-2xl font-bold mb-2">Direct Body Variable</h3>
+            <h3 className="mb-2 text-2xl font-bold">Direct Body Variable</h3>
             <p className="text-lg">
               This text uses font-[var(--font-body)] to test the body font
               variable.
@@ -523,14 +523,14 @@ const FontTester: React.FC = () => {
       {/* Font Weight and Style Variations */}
       <section className="border-b pb-8">
         <div className="mb-4">
-          <span className="inline-block bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">
+          <span className="inline-block rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-800">
             Weight & Style Tests
           </span>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid gap-8 md:grid-cols-2">
           <div className="font-heading space-y-2">
-            <h4 className="text-lg font-bold mb-3">
-              Heading Font Weights{" "}
+            <h4 className="mb-3 text-lg font-bold">
+              Heading Font Weights{' '}
               <span className="text-sm font-normal text-gray-500">
                 (mrs-eaves)
               </span>
@@ -550,8 +550,8 @@ const FontTester: React.FC = () => {
             <p className="font-black">Black (900) - TYPOGRAPHY TEST</p>
           </div>
           <div className="font-body space-y-2">
-            <h4 className="text-lg font-bold mb-3">
-              Body Font Weights{" "}
+            <h4 className="mb-3 text-lg font-bold">
+              Body Font Weights{' '}
               <span className="text-sm font-normal text-gray-500">
                 (mrs-eaves)
               </span>
@@ -574,81 +574,81 @@ const FontTester: React.FC = () => {
       {/* Mixed Font Comparison */}
       <section>
         <div className="mb-4">
-          <span className="inline-block bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm font-medium">
+          <span className="inline-block rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-800">
             Side-by-Side Comparison
           </span>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
-          <div className="p-4 border rounded-lg">
-            <h4 className="font-heading text-xl font-bold mb-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          <div className="rounded-lg border p-4">
+            <h4 className="font-heading mb-3 text-xl font-bold">
               Heading Font
             </h4>
             <p className="font-heading text-sm">
               The quick brown fox jumps over the lazy dog. Pack my box with five
               dozen liquor jugs.
             </p>
-            <span className="text-xs text-gray-500 mt-2 block">mrs-eaves</span>
+            <span className="mt-2 block text-xs text-gray-500">mrs-eaves</span>
           </div>
-          <div className="p-4 border rounded-lg">
-            <h4 className="font-heading-alt text-xl font-bold mb-3">
+          <div className="rounded-lg border p-4">
+            <h4 className="font-heading-alt mb-3 text-xl font-bold">
               Heading Alt
             </h4>
             <p className="font-heading-alt text-sm">
               The quick brown fox jumps over the lazy dog. Pack my box with five
               dozen liquor jugs.
             </p>
-            <span className="text-xs text-gray-500 mt-2 block">
+            <span className="mt-2 block text-xs text-gray-500">
               mr-eaves-xl-sans-narrow
             </span>
           </div>
-          <div className="p-4 border rounded-lg">
-            <h4 className="font-display text-xl font-bold mb-3">
+          <div className="rounded-lg border p-4">
+            <h4 className="font-display mb-3 text-xl font-bold">
               Display Font
             </h4>
             <p className="font-display text-sm">
               The quick brown fox jumps over the lazy dog. Pack my box with five
               dozen liquor jugs.
             </p>
-            <span className="text-xs text-gray-500 mt-2 block">
+            <span className="mt-2 block text-xs text-gray-500">
               adorn-smooth-engraved
             </span>
           </div>
-          <div className="p-4 border rounded-lg">
-            <h4 className="font-display-alt text-xl font-bold mb-3">
+          <div className="rounded-lg border p-4">
+            <h4 className="font-display-alt mb-3 text-xl font-bold">
               Display Alt
             </h4>
             <p className="font-display-alt text-sm">
               The quick brown fox jumps over the lazy dog. Pack my box with five
               dozen liquor jugs.
             </p>
-            <span className="text-xs text-gray-500 mt-2 block">
+            <span className="mt-2 block text-xs text-gray-500">
               kopius-condensed
             </span>
           </div>
-          <div className="p-4 border rounded-lg">
-            <h4 className="font-small-caps text-xl font-bold mb-3">
+          <div className="rounded-lg border p-4">
+            <h4 className="font-small-caps mb-3 text-xl font-bold">
               Small Caps
             </h4>
             <p className="font-small-caps text-sm">
               The quick brown fox jumps over the lazy dog. Pack my box with five
               dozen liquor jugs.
             </p>
-            <span className="text-xs text-gray-500 mt-2 block">
+            <span className="mt-2 block text-xs text-gray-500">
               mrs-eaves-roman-all-small-ca
             </span>
           </div>
-          <div className="p-4 border rounded-lg">
-            <h4 className="font-body text-xl font-bold mb-3">Body Font</h4>
+          <div className="rounded-lg border p-4">
+            <h4 className="font-body mb-3 text-xl font-bold">Body Font</h4>
             <p className="font-body text-sm">
               The quick brown fox jumps over the lazy dog. Pack my box with five
               dozen liquor jugs.
             </p>
-            <span className="text-xs text-gray-500 mt-2 block">mrs-eaves</span>
+            <span className="mt-2 block text-xs text-gray-500">mrs-eaves</span>
           </div>
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default FontTester;
+export default FontTester

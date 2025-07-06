@@ -1,4 +1,4 @@
-@import "https://use.typekit.net/qld2bql.css";
+@import 'https://use.typekit.net/qld2bql.css';
 
 /* Manual button reset since UnoCSS preflight isn't working */
 button {
@@ -32,23 +32,23 @@ button:focus {
 
   /* Heading font variables */
   --font-heading:
-    "adorn-smooth-engraved", "mr-eaves-xl-sans-narrow", ui-serif, serif;
+    'adorn-smooth-engraved', 'mr-eaves-xl-sans-narrow', ui-serif, serif;
   --font-heading-alt:
-    "mr-eaves-xl-sans-narrow", "adorn-smooth-engraved", ui-sans-serif,
+    'mr-eaves-xl-sans-narrow', 'adorn-smooth-engraved', ui-sans-serif,
     sans-serif;
-  --font-display: "adorn-smooth-engraved", ui-serif, serif;
+  --font-display: 'adorn-smooth-engraved', ui-serif, serif;
   --font-body: ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Theme variations */
 .theme-elegant {
-  --font-heading: "adorn-smooth-engraved", ui-serif, serif;
-  --font-display: "adorn-smooth-engraved", ui-serif, serif;
+  --font-heading: 'adorn-smooth-engraved', ui-serif, serif;
+  --font-display: 'adorn-smooth-engraved', ui-serif, serif;
 }
 
 .theme-modern {
-  --font-heading: "mr-eaves-xl-sans-narrow", ui-sans-serif, sans-serif;
-  --font-display: "mr-eaves-xl-sans-narrow", ui-sans-serif, sans-serif;
+  --font-heading: 'mr-eaves-xl-sans-narrow', ui-sans-serif, sans-serif;
+  --font-display: 'mr-eaves-xl-sans-narrow', ui-sans-serif, sans-serif;
 }
 
 .theme-system {
