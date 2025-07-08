@@ -4,9 +4,9 @@ config:
     webroot: web
 services:
     appserver:
-        type: php:8.1 # Bedrock requires PHP >= 8.0
+        type: php:8.1
     phpmyadmin:
         type: phpmyadmin
-proxy:
-    sqlmyproject:
-        - phpmyadmin.lndo.site
+tooling:
+    wp:
+        service: appserver
