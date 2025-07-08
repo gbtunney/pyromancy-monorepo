@@ -17,7 +17,8 @@ Bedrock is a WordPress boilerplate for developers that want to manage their proj
 
 ## Getting Started
 
-See the [Bedrock installation documentation](https://roots.io/bedrock/docs/installation/).
+1. Install Lando `$ sh /bin/bash -c "$(curl -fsSL https://get.lando.dev/setup-lando.sh)"`
+2. Install Composer [ Composer](https://getcomposer.org/doc/00-intro.md)
 
 ## Tech Stack
 
@@ -27,16 +28,23 @@ See the [Bedrock installation documentation](https://roots.io/bedrock/docs/insta
 - Rollup for libraries/CLI
 - Docker for local development
 - WordPress (Bedrock, custom theme)
-- Prisma for API (TypeScript, Dockerized)
-- Google Apps Script utility
 - PHP Composer for backend dependencies
 - zsh shell, macOS primary environment
 
 ## Helpful Links
 
 - [Lando Docs](https://docs.lando.dev/)
-- [Bedrock | Modern WordPress Boilerplate | Roots](https://roots.io/bedrock/)
-- [Bedrock with Lando | Bedrock Docs | Roots](https://roots.io/bedrock/docs/bedrock-with-lando/)
+- [Bedrock | Modern WordPress Boilerplate ](https://roots.io/bedrock/)
+- [Bedrock with Lando | Bedrock Docs ](https://roots.io/bedrock/docs/bedrock-with-lando/)
 - [WordPress Packagist: Manage your plugins and themes with Composer](https://wpackagist.org/)
 - [Docker Docs: How to build, share, and run applications](https://docs.docker.com/)
-- [Google APIs Explorer  |  Google for Developers](https://developers.google.com/apis-explorer)
+
+## CMS Stack
+
+- [WordPress.org](https://wordpress.org/)
+- [Bricks – Visual Site Builder for WordPress](https://bricksbuilder.io/)
+- [Advanced Themer](https://advancedthemer.com/)
+- [Bricksforge](https://bricksforge.io/)
+- [ACF | Advanced Custom Fields Plugin](https://www.advancedcustomfields.com/)
+- [WooCommerce](https://woocommerce.com/)
+- [Printful: Custom Print On Demand](https://www.printful.com/)
