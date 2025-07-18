@@ -192,3 +192,4 @@ bluehost-config.php
 .env.development
 .env.production
 backups
+assets
