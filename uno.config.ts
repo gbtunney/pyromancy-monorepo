@@ -5,6 +5,7 @@ import {
   presetWind3,
   presetIcons,
 } from 'unocss'
+import { presetHeroPatterns} from '@julr/unocss-preset-heropatterns'
 import { tailwindOKLCHColorsPreset } from './src/presets/tailwind-oklch-colors-preset'
 import { gbtPreset } from './src/presets/index.js'
 
@@ -28,6 +29,7 @@ export default defineConfig({
     }),
     gbtPreset(),
     presetIcons({}),
+    presetHeroPatterns(),
   ],
 
   transformers: [transformerVariantGroup()],
@@ -208,6 +210,9 @@ export default defineConfig({
     'font-kopius',
     'font-kopius-condensed',
     'font-mrs-eaves-small-caps',
+    'dark:prose-invert',
+    'prose-invert',
+    'prose-stone',
     // Font weight classes
     'font-thin',
     'font-extralight',

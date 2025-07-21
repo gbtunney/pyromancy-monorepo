@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 import Layout from './components/Layout'
 import HomePage from './pages/HomePage'
 import FontsPage from './pages/FontsPage'
@@ -7,6 +8,7 @@ import IconsPage from './pages/IconsPage'
 import ColorsPage from './pages/ColorsPage'
 import GradientsPage from './pages/GradientsPage'
 import TypographyPage from './pages/TypographyPage'
+import PatternsPage from './pages/PatternsPage'
 import './App.css'
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
           <Route path="/colors" element={<ColorsPage />} />
           <Route path="/gradients" element={<GradientsPage />} />
           <Route path="/typography" element={<TypographyPage />} />
+          <Route path="/patterns" element={<PatternsPage />} />
         </Routes>
       </Layout>
     </Router>

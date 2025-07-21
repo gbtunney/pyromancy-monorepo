@@ -26,7 +26,7 @@ $schooner: #8b8378
 $ironside-gray: #756f68
 $highball: #90813b */
 
-const DEFAULT_COLORS = {
+export const DEFAULT_COLORS = {
   'gordons-green': '#2a322a', // 🎨 Dark green
   astra: '#f0dba4', // 🎨 Light gold
   'coral-tree': '#b66368', // 🎨 Coral pink
@@ -55,6 +55,22 @@ const DEFAULT_COLORS = {
 
   //
   grey: tailwindColors.gray,
+
+
+    'pyr-neutral': {
+      50: '#fcf8ef',
+      100: '#faf2e2',
+      200: '#e1d2bd',
+      300: '#bcae9f',
+      400: '#9a8772',
+      500: '#7b6a56',
+      600: '#5f4d37',
+      700: '#453116',
+      800: '#2e190d',
+      900: '#1c0c0d',
+      950: '#050605',
+    },
+  
 }
 
 // Testing contrast calculations - both background and foreground

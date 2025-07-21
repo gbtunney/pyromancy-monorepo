@@ -16,6 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     { path: '/colors', label: 'Colors', icon: '🎨' },
     { path: '/gradients', label: 'Gradients', icon: '🌈' },
     { path: '/typography', label: 'Typography', icon: '📝' },
+    { path: '/patterns', label: 'Patterns', icon: '🟪' },
   ]
 
   const isActive = (path: string) => {
@@ -39,11 +40,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium transition-colors ${
-                      isActive(item.path)
+                    className={`inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium transition-colors ${isActive(item.path)
                         ? 'border-blue-500 text-gray-900'
                         : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                    }`}
+                      }`}
                   >
                     <span className="mr-2">{item.icon}</span>
                     {item.label}
@@ -67,11 +67,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium transition-colors ${
-                  isActive(item.path)
+                className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium transition-colors ${isActive(item.path)
                     ? 'border-blue-500 bg-blue-50 text-blue-700'
                     : 'border-transparent text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800'
-                }`}
+                  }`}
               >
                 <span className="mr-2">{item.icon}</span>
                 {item.label}
