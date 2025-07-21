@@ -2,7 +2,7 @@
 
 ## 🔥 Full Lando Destruction Workflow
 
-### .25 Backup
+### .25 Backup and Uninstall
 
 ```sh
 # backup all the envs and db
@@ -12,14 +12,6 @@ pnpm wp:cache
 # uninstall full repository
 pnpm run uninstall
 ```
-
-### .5 Uninstall full repository
-
-```sh
-pnpm run uninstall
-pnpm lando:cache
-```
-
 ---
 
 ```sh
