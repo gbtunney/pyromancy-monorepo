@@ -6,9 +6,11 @@
   "scripts": {
     "dev:ts": "tsc -b -w",
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "build:all":"pnpm build && pnpm build:lib",
+    "build:ts": "tsc -b",
+    "build":"pnpm build:ts && pnpm build:site &&  pnpm build:lib",
+    "build:site":"vite build",
     "build:lib": "vite build --config vite.lib.config.ts",
+   "clean":"tsc -b --clean && rm -rf dist types",
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "pnpm exec prettier --write *",

@@ -1,5 +1,5 @@
 
-} from 'unocss'
+
 import { gbtPreset } from 'vite-uno-project'
 import {
   defineConfig,
@@ -8,7 +8,7 @@ import {
   presetWind3,
   presetIcons,
 } from 'unocss'
-import { presetHeroPatterns} from '@julr/unocss-preset-heropatterns'
+//import { presetHeroPatterns} from '@julr/unocss-preset-heropatterns'
 
 //import presetUna from '@una-ui/preset'
 //import prefixes from '@una-ui/preset/prefixes'
@@ -56,7 +56,7 @@ export default defineConfig({
     }),
     gbtPreset(),
     presetIcons({}),
-    presetHeroPatterns(),
+   // presetHeroPatterns(),
         //presetUno(),
 //        presetAttributify(),
        /* presetIcons({

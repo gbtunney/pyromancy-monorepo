@@ -21,7 +21,7 @@
         "composer:update": "pnpm composer:add",
         "composer:cache": "pnpm composer clear-cache",
         "composer:clean:lock": "pnpm exec rm -rf composer.lock",
-        "composer:uninstall": "pnpm exec rm -rf vendor && pnpm composer:clean:lock",
+        "composer:uninstall": "pnpm exec rm -rf vendor && pnpm composer:cache",
         "\n========== PUBLISH >> ==========": "",
         "release": "pnpm prerelease && pnpm publish --access public --report-summary --no-git-checks",
         "prerelease": "pnpm clean && pnpm build && pnpm fix && pnpm check && pnpm test",
