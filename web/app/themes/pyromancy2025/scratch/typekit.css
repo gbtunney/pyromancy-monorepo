@@ -1,0 +1,186 @@
+/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * adorn-smooth-engraved:
+ *   - http://typekit.com/eulas/00000000000000007735b42b
+ * adorn-smooth-serif:
+ *   - http://typekit.com/eulas/00000000000000007735b429
+ * kopius:
+ *   - http://typekit.com/eulas/00000000000000007735d2e4
+ * kopius-condensed:
+ *   - http://typekit.com/eulas/00000000000000007735d2dd
+ * mr-eaves-xl-sans-narrow:
+ *   - http://typekit.com/eulas/00000000000000007735b302
+ *   - http://typekit.com/eulas/00000000000000007735b315
+ *   - http://typekit.com/eulas/00000000000000007735b322
+ *   - http://typekit.com/eulas/00000000000000007735b329
+ * mrs-eaves:
+ *   - http://typekit.com/eulas/00000000000000007735b2ff
+ *   - http://typekit.com/eulas/00000000000000007735b301
+ * mrs-eaves-roman-all-small-ca:
+ *   - http://typekit.com/eulas/00000000000000007735b2fa
+ *
+ * © 2009-2025 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2025-07-01 02:18:02 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=qld2bql&ht=tk&f=28085.28090.28464.28469.28472.28474.28484.28486.29995.35041.28479&a=9720935&app=typekit&e=css");
+
+@font-face {
+font-family:"adorn-smooth-engraved";
+src:url("https://use.typekit.net/af/c89455/00000000000000007735b42b/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/c89455/00000000000000007735b42b/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/c89455/00000000000000007735b42b/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"adorn-smooth-serif";
+src:url("https://use.typekit.net/af/01091d/00000000000000007735b429/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/01091d/00000000000000007735b429/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/01091d/00000000000000007735b429/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"mr-eaves-xl-sans-narrow";
+src:url("https://use.typekit.net/af/e67c48/00000000000000007735b302/31/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/e67c48/00000000000000007735b302/31/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/e67c48/00000000000000007735b302/31/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i7&v=3") format("opentype");
+font-display:auto;font-style:italic;font-weight:700;font-stretch:normal;
+}
+
+@font-face {
+font-family:"mr-eaves-xl-sans-narrow";
+src:url("https://use.typekit.net/af/0ff1d3/00000000000000007735b315/31/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/0ff1d3/00000000000000007735b315/31/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/0ff1d3/00000000000000007735b315/31/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n3&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:300;font-stretch:normal;
+}
+
+@font-face {
+font-family:"mr-eaves-xl-sans-narrow";
+src:url("https://use.typekit.net/af/29b2fb/00000000000000007735b322/31/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i3&v=3") format("woff2"),url("https://use.typekit.net/af/29b2fb/00000000000000007735b322/31/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i3&v=3") format("woff"),url("https://use.typekit.net/af/29b2fb/00000000000000007735b322/31/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=i3&v=3") format("opentype");
+font-display:auto;font-style:italic;font-weight:300;font-stretch:normal;
+}
+
+@font-face {
+font-family:"mr-eaves-xl-sans-narrow";
+src:url("https://use.typekit.net/af/2a2157/00000000000000007735b329/31/l?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/2a2157/00000000000000007735b329/31/d?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/2a2157/00000000000000007735b329/31/a?primer=7fa3915bdafdf03041871920a205bef951d72bf64dd4c4460fb992e3ecc3a862&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"mrs-eaves";
+src:url("https://use.typekit.net/af/633665/00000000000000007735b2ff/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/633665/00000000000000007735b2ff/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/633665/00000000000000007735b2ff/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"mrs-eaves";
+src:url("https://use.typekit.net/af/2622bf/00000000000000007735b301/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/2622bf/00000000000000007735b301/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/2622bf/00000000000000007735b301/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-display:auto;font-style:italic;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"kopius";
+src:url("https://use.typekit.net/af/14aff8/00000000000000007735d2e4/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/14aff8/00000000000000007735d2e4/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/14aff8/00000000000000007735d2e4/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"kopius-condensed";
+src:url("https://use.typekit.net/af/198c2f/00000000000000007735d2dd/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"),url("https://use.typekit.net/af/198c2f/00000000000000007735d2dd/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"),url("https://use.typekit.net/af/198c2f/00000000000000007735d2dd/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:300;font-stretch:normal;
+}
+
+@font-face {
+font-family:"mrs-eaves-roman-all-small-ca";
+src:url("https://use.typekit.net/af/db5877/00000000000000007735b2fa/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/db5877/00000000000000007735b2fa/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/db5877/00000000000000007735b2fa/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+.tk-freight-sans-compressed-pro { font-family: "freight-sans-compressed-pro",sans-serif; }
+.tk-adorn-smooth-engraved { font-family: "adorn-smooth-engraved",sans-serif; }
+.tk-adorn-smooth-serif { font-family: "adorn-smooth-serif",serif; }
+.tk-mr-eaves-xl-sans-narrow { font-family: "mr-eaves-xl-sans-narrow",sans-serif; }
+.tk-mrs-eaves { font-family: "mrs-eaves",serif; }
+.tk-kopius { font-family: "kopius",serif; }
+.tk-kopius-condensed { font-family: "kopius-condensed",sans-serif; }
+.tk-mrs-eaves-roman-all-small-ca { font-family: "mrs-eaves-roman-all-small-ca",serif; }
+:root {
+    --tk-freight-sans-compressed-pro: "freight-sans-compressed-pro",sans-serif;
+    --tk-adorn-smooth-engraved: "adorn-smooth-engraved",sans-serif;
+    --tk-adorn-smooth-serif: "adorn-smooth-serif",serif;
+    --tk-mr-eaves-xl-sans-narrow: "mr-eaves-xl-sans-narrow",sans-serif;
+    --tk-mrs-eaves: "mrs-eaves",serif;
+    --tk-kopius: "kopius",serif;
+    --tk-kopius-condensed: "kopius-condensed",sans-serif;
+    --tk-mrs-eaves-roman-all-small-ca: "mrs-eaves-roman-all-small-ca",serif;
+}
+.gbt-mrs-eaves-heading {
+    font-family: mrs-eaves;
+    font-size: 47px;
+    letter-spacing: -0.23px;
+}
+.gbt-mrs-eaves-sm-caps {
+    font-family: mrs-eaves-roman-all-small-ca;
+    font-size: 47px;
+    letter-spacing: 3.53px;
+    text-transform: uppercase;
+}
+.gbt-mr-eaves-italic {
+    font-family: mr-eaves-xl-sans-narrow;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 42px;
+    letter-spacing: 2.1px;
+}
+.gbt-mrs-eaves{
+    font-family: mrs-eaves;
+    font-size: 31px;
+    letter-spacing: -0.31px;
+}
+.gbt-mr-eaves-cnd {
+    font-family: mr-eaves-xl-sans-narrow;
+    font-size: 31px;
+    line-height: 1.03;
+    letter-spacing: 0.62px;
+}
+/*31.  32
+1.  1.03*/
+.gbt-engraved-caps{
+    font-family: adorn-smooth-engraved,serif;
+    font-size: 53px;
+    letter-spacing: 5.3px;
+    text-transform: uppercase;
+    color: #000000;
+    color: rgb(0, 0, 0);
+}
+.gbt-adorn-caps {
+    font-family: adorn-smooth-serif,serif;
+    font-size: 53px;
+    letter-spacing: 1.33px;
+    text-transform: uppercase;
+    color: #000000;
+    color: rgb(0, 0, 0);
+}
+.gbt-mrs-eaves-caps {
+    font-family:  mrs-eaves-roman-all-small-ca,serif;
+    font-size: 67px;
+    line-height: 73.49px;
+    letter-spacing: 1.68px;
+    text-transform: uppercase;
+    color: #000000;
+    color: rgb(0, 0, 0);
+}
+/*67.  73.49
+1. 1.09*/
+.gbt-kopius-caps
+{
+  font-family :  "kopius",serif;
+  font-size : 47px;
+  letter-spacing : 3.53px;
+  text-transform : uppercase;
+}
+.gbt-kopius
+{
+  font-family :  "kopius-condensed",sans-serif;
+  font-size : 31px;
+  line-height: 1.19; /* 1.19*/
+}

@@ -1,19 +1,14 @@
 {
-    "name": "roots/bedrock",
+    "name": "snailicide/pyromancy2023",
     "type": "project",
     "license": "MIT",
-    "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
+    "description": "Pyromancy Website 2023",
     "homepage": "https://roots.io/bedrock/",
     "authors": [
         {
-            "name": "Scott Walkinshaw",
-            "email": "scott.walkinshaw@gmail.com",
+            "name": "Gillian Tunney",
+            "email": "gbtunney@gmail.com",
             "homepage": "https://github.com/swalkinshaw"
-        },
-        {
-            "name": "Ben Word",
-            "email": "ben@benword.com",
-            "homepage": "https://github.com/retlehs"
         }
     ],
     "keywords": [
@@ -36,6 +31,22 @@
                 "wpackagist-plugin/*",
                 "wpackagist-theme/*"
             ]
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:gbtunney/gbt-bricks.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:gbtunney/gbt-bricks-adv-themer.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:gbtunney/gbt-acf-pro.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:gbtunney/gbt-bricksforge.git"
         }
     ],
     "require": {
@@ -45,10 +56,23 @@
         "oscarotero/env": "^2.1",
         "roots/bedrock-autoloader": "^1.0",
         "roots/bedrock-disallow-indexing": "^2.0",
-        "roots/wordpress": "6.2.2",
+        "roots/wordpress": "^6.8.2",
         "roots/wp-config": "1.0.0",
-        "roots/wp-password-bcrypt": "1.1.0",
-        "wpackagist-theme/twentytwentythree": "^1.0"
+        "wpackagist-theme/twentytwentythree": "^1.0",
+        "wpackagist-plugin/ninja-forms": "^3.10",
+        "wpackagist-plugin/classic-editor": "^1.6",
+        "wpackagist-plugin/advanced-custom-fields": "^6.4",
+        "wpackagist-plugin/wp-graphql": "^2.3.0",
+        "wp-graphql/wp-graphql-custom-post-type-ui": "^1.2",
+        "gbtunney/gbt-bricks": "^2.0-rc",
+        "gbtunney/gbt-bricks-adv-themer": "^3.2.5",
+        "gbtunney/gbt-acf-pro": "^6.3.9",
+        "gbtunney/gbt-bricksforge": "^3.1.0",
+        "wpackagist-plugin/woocommerce": "^10.0",
+        "wpackagist-plugin/printful-shipping-for-woocommerce": "^2.2",
+        "roots/wordpress-no-content": "^6.8",
+        "wpackagist-plugin/wpgraphql-acf": "^2.4",
+        "roots/wordpress-core-installer": "^3.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.7.1",

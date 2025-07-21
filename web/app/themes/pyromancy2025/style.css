@@ -1,0 +1,136 @@
+/*
+ Theme Name:   Pyromancy 2025
+ Theme URI:    https://pyromancy.org/
+ Description:  Pyromancy 2025 custom theme built on Bricks Builder
+ Author:       Gillian Tunney
+ Author URI:   https://github.com/gbtunney
+ Template:     gbt-bricks
+ Version:      1.0.0
+ Text Domain:  pyromancy2025
+*/
+
+@import "https://use.typekit.net/qld2bql.css";
+:root{
+  --pyr-neutral-50: oklch(0.9797488745714319 0.012628766714206366 86.82847339586249);
+  --pyr-neutral-100: oklch(0.9630943458817031 0.022808007222995703 84.59205593715272);
+  --pyr-neutral-200: oklch(0.8703771659547401 0.03283155690627307 76.42112000004823);
+  --pyr-neutral-300: oklch(0.7584734458441323 0.026490992614550693 69.33645510855985);
+  --pyr-neutral-400: oklch(0.6348574703417015 0.03807699971044066 69.857998684046);
+  --pyr-neutral-500: oklch(0.5348864347548153 0.03686188252296274 71.44294467661841);
+  --pyr-neutral-600: oklch(0.4327334988122026 0.041610603575551935 71.97161002057305);
+  --pyr-neutral-700: oklch(0.32978161759772145 0.050093266494879184 72.77121354845218);
+  --pyr-neutral-800: oklch(0.23880363565707946 0.03972507534259049 49.74222635140504);
+  --pyr-neutral-900: oklch(0.17871012445639856 0.02783163283104202 16.235326840355885);
+  --pyr-neutral-950: oklch(0.119709121812158 0.004040214516708586 145.31718872357035);
+}
+.brxe-section  .brxe-container > .brxe-block:only-of-type{
+    background-color: yellow!important;
+  /* boxedd conttent */
+}
+.brxe-section:has(>  .brxe-container > * ) {
+   padding-top: 2rem;
+  /* padded conttent */
+}
+.brxe-section  .brxe-container:has(  > * ) {
+   padding-left: 1rem;
+  /* padded conttent on mobile only */
+}
+.brxe-section  .brxe-container > .brxe-block:not(:first-of-type){
+  padding-left: 20px;
+  /* paddding left column conttent */
+}
+.brxe-section  .brxe-container > .brxe-block:not(:last-of-type){
+    background-color: green!important;
+  padding-right:20px;
+  /* paddding rightt boxedd conttent */
+}
+
+
+
+.gbt-body{
+  font-family: var(--Body-font-family, "Mrs Eaves OT");
+font-size: var(--Body-size, 1.1875rem);
+font-style: normal;
+font-weight: 400;
+line-height: var(--Body-line-height, 2rem); /* 168.421% */
+letter-spacing: -0.01188rem;
+
+
+}
+
+.gbt-body-sans{
+font-family: var(--Body-2-font-family, "Mr Eaves XL San Nar OT");
+
+letter-spacing: 0.0125rem;
+}
+
+
+.gbt-h1{
+  font-family: var(--H1-font-family, "Mrs Eaves OT");
+font-size: var(--H1-size, 2.5rem);
+font-style: normal;
+font-weight: 400;
+line-height: var(--H1-line-height, 3.5rem); /* 140% */
+letter-spacing:   -.005em
+}
+
+.gbt-h2{
+  color: #000;
+
+/* Peppercorn Typography Scale/H2 */
+font-family: var(--H2-font-family, "Mr Eaves XL San Nar OT");
+font-size: var(--H2-size, 2.0625rem);
+font-style: italic;
+font-weight: 700;
+line-height: var(--H2-line-height, 3rem); /* 145.455% */
+letter-spacing: 0.0625rem;
+}
+
+
+h3{
+  color: #000;
+
+/* Peppercorn Typography Scale/H3 */
+font-family: var(--H3-font-family, "Mrs Eaves OT");
+font-size: var(--H3-size, 1.4375rem);
+font-style: normal;
+font-weight: 400;
+line-height: var(--H3-line-height, 2rem); /* 139.13% */
+letter-spacing: .1304em;/*0.1875rem;*/
+text-transform: uppercase;
+}
+
+.brxe-block:first-child + .brxe-block {
+
+}
+.brxe-block:not(:first-of-type){
+  background-color: blue;
+  padding-left:30px ;
+}
+
+.brxe-section:has(.brxe-container + * ) {
+  background-color: yellow!important;
+}
+
+.brxe-block:first-child + .brxe-block {
+
+}
+.brxe-block:not(:first-of-type){
+  background-color: blue;
+  padding-left:30px ;
+}
+
+.brxe-section  .brxe-container .brxe-block:only-of-type {
+    background-color: yellow!important;
+
+}
+
+
+.brxe-section:has( .brxe-container > .brxe-block:only-of-type:first-child) {
+    background-color: yellow!important;
+
+}
+
+.brxe-section:has(.brxe-container + * ) {
+  background-color: yellow!important;
+}

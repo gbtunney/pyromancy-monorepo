@@ -1,3 +1,6 @@
 packages:
     # all packages in subdirs of packages/ and components/
-    - 'packages/*'
+    - 'packages/vite-uno-project'
+    #- 'apps/*'
+    - 'web/app/themes/*'
+    - 'web/app/plugins/g-wp-plugin'
