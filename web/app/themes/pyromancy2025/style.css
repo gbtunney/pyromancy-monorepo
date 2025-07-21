@@ -23,3 +23,114 @@
   --pyr-neutral-900: oklch(0.17871012445639856 0.02783163283104202 16.235326840355885);
   --pyr-neutral-950: oklch(0.119709121812158 0.004040214516708586 145.31718872357035);
 }
+.brxe-section  .brxe-container > .brxe-block:only-of-type{
+    background-color: yellow!important;
+  /* boxedd conttent */
+}
+.brxe-section:has(>  .brxe-container > * ) {
+   padding-top: 2rem;
+  /* padded conttent */
+}
+.brxe-section  .brxe-container:has(  > * ) {
+   padding-left: 1rem;
+  /* padded conttent on mobile only */
+}
+.brxe-section  .brxe-container > .brxe-block:not(:first-of-type){
+  padding-left: 20px;
+  /* paddding left column conttent */
+}
+.brxe-section  .brxe-container > .brxe-block:not(:last-of-type){
+    background-color: green!important;
+  padding-right:20px;
+  /* paddding rightt boxedd conttent */
+}
+
+
+
+.gbt-body{
+  font-family: var(--Body-font-family, "Mrs Eaves OT");
+font-size: var(--Body-size, 1.1875rem);
+font-style: normal;
+font-weight: 400;
+line-height: var(--Body-line-height, 2rem); /* 168.421% */
+letter-spacing: -0.01188rem;
+
+
+}
+
+.gbt-body-sans{
+font-family: var(--Body-2-font-family, "Mr Eaves XL San Nar OT");
+
+letter-spacing: 0.0125rem;
+}
+
+
+.gbt-h1{
+  font-family: var(--H1-font-family, "Mrs Eaves OT");
+font-size: var(--H1-size, 2.5rem);
+font-style: normal;
+font-weight: 400;
+line-height: var(--H1-line-height, 3.5rem); /* 140% */
+letter-spacing:   -.005em
+}
+
+.gbt-h2{
+  color: #000;
+
+/* Peppercorn Typography Scale/H2 */
+font-family: var(--H2-font-family, "Mr Eaves XL San Nar OT");
+font-size: var(--H2-size, 2.0625rem);
+font-style: italic;
+font-weight: 700;
+line-height: var(--H2-line-height, 3rem); /* 145.455% */
+letter-spacing: 0.0625rem;
+}
+
+
+h3{
+  color: #000;
+
+/* Peppercorn Typography Scale/H3 */
+font-family: var(--H3-font-family, "Mrs Eaves OT");
+font-size: var(--H3-size, 1.4375rem);
+font-style: normal;
+font-weight: 400;
+line-height: var(--H3-line-height, 2rem); /* 139.13% */
+letter-spacing: .1304em;/*0.1875rem;*/
+text-transform: uppercase;
+}
+
+.brxe-block:first-child + .brxe-block {
+
+}
+.brxe-block:not(:first-of-type){
+  background-color: blue;
+  padding-left:30px ;
+}
+
+.brxe-section:has(.brxe-container + * ) {
+  background-color: yellow!important;
+}
+
+.brxe-block:first-child + .brxe-block {
+
+}
+.brxe-block:not(:first-of-type){
+  background-color: blue;
+  padding-left:30px ;
+}
+
+.brxe-section  .brxe-container .brxe-block:only-of-type {
+    background-color: yellow!important;
+
+}
+
+
+.brxe-section:has( .brxe-container > .brxe-block:only-of-type:first-child) {
+    background-color: yellow!important;
+
+}
+
+.brxe-section:has(.brxe-container + * ) {
+  background-color: yellow!important;
+}

@@ -51,3 +51,25 @@ add_filter('bricks/builder/i18n', function ($i18n) {
 
     return $i18n;
 });
+
+// Register the dynamic tag in Bricks
+add_filter( 'bricks/dynamic_tags_list', function( $tags ) {
+  $tags[] = [
+    'name'  => 'current_year',
+    'label' => 'Current Year',
+    'group' => 'Custom Tags',
+  ];
+  return $tags;
+});
+
+// Render the tag's output
+add_filter( 'bricks/dynamic_data/render_tag', function( $tag, $post, $context = 'text' ) {
+  return $tag === 'current_year' ? date('Y') : $tag;
+}, 20, 3);
+
+// Handle tag rendering in mixed content
+function render_current_year_in_content( $content ) {
+  return str_replace( '{current_year}', date('Y'), $content );
+}
+add_filter( 'bricks/dynamic_data/render_content', 'render_current_year_in_content', 20 );
+add_filter( 'bricks/frontend/render_data', 'render_current_year_in_content', 20 );
