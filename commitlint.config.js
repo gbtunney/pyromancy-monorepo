@@ -1,9 +1,3 @@
-/**
- * @file Commitlint configuration for the Monorepo.
- * @author Gillian Tunney
- * @see [commitlint - Lint commit messages](https://commitlint.js.org/#/)
- */
-
 module.exports = {
     extends: ['@commitlint/config-conventional'],
     rules: {
@@ -11,7 +5,16 @@ module.exports = {
         'scope-enum': [
             2,
             'always',
-            ['root', 'release', 'google-calendar-util', 'theme-pyromancy2014'],
+            [
+                'root',
+                'release',
+                'theme-pyromancy2025',
+                'vite-uno-project',
+                'g-wp-plugin',
+                'pyromancy-calendar',
+                'theme-pyromancy2014',
+                'google-calendar-util',
+            ],
         ],
     },
 }

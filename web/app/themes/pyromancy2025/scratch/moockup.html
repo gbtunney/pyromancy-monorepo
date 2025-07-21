@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Palette UI Showcase</title>
+  <style>
+    body {
+      background: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 2rem;
+      color: #333;
+    }
+    h2 {
+      margin-top: 3rem;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+    .button, .card {
+      display: inline-block;
+      margin: 1rem;
+      vertical-align: top;
+    }
+    .button {
+      border: none;
+      border-radius: 6px;
+      padding: 12px 24px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+    .card {
+      border-radius: 12px;
+      padding: 20px;
+      width: 280px;
+      box-sizing: border-box;
+    }
+
+    /* Warm Earthy */
+    .button-warm {
+      background: #6c4022;
+      color: #f1e3c7;
+    }
+    .button-warm:hover {
+      background: #b47a3e;
+    }
+    .card-warm {
+      background: #f1e3c7;
+      border: 1px solid #d6a866;
+      color: #2b1b12;
+    }
+
+    /* Cool Greens */
+    .button-green {
+      background: #226648;
+      color: white;
+    }
+    .button-green:hover {
+      background: #4d9c7f;
+    }
+    .card-green {
+      background: #cde4d7;
+      border: 1px solid #4d9c7f;
+      color: #0d3930;
+    }
+
+    /* Neutrals & Soft Pinks */
+    .button-pink {
+      background: #d8a896;
+      color: #221a1a;
+    }
+    .button-pink:hover {
+      background: #f6e8d8;
+    }
+    .card-pink {
+      background: #f6e8d8;
+      border: 1px solid #d8a896;
+      color: #221a1a;
+    }
+  </style>
+</head>
+<body>
+  <h1>Palette UI Showcase</h1>
+
+  <h2>Warm Earthy Palette</h2>
+  <button class="button button-warm">Read More</button>
+  <div class="card card-warm">
+    <h3>Warm Earthy Card</h3>
+    <p>Earthy tones create a warm, inviting feel.</p>
+  </div>
+
+  <h2>Cool Greens Palette</h2>
+  <button class="button button-green">Primary Action</button>
+  <div class="card card-green">
+    <h3>Cool Green Card</h3>
+    <p>This is some card content styled with the cool palette.</p>
+  </div>
+
+  <h2>Neutrals & Soft Pinks Palette</h2>
+  <button class="button button-pink">Contact Us</button>
+  <div class="card card-pink">
+    <h3>Soft Touch Card</h3>
+    <p>Neutral and blush colors for a gentle aesthetic.</p>
+  </div>
+</body>
+</html>

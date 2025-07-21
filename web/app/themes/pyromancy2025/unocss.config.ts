@@ -1,0 +1,357 @@
+
+
+import { gbtPreset } from 'vite-uno-project'
+import {
+  defineConfig,
+  presetTypography,
+  transformerVariantGroup,
+  presetWind3,
+  presetIcons,
+} from 'unocss'
+//import { presetHeroPatterns} from '@julr/unocss-preset-heropatterns'
+
+//import presetUna from '@una-ui/preset'
+//import prefixes from '@una-ui/preset/prefixes'
+//import presetGillian from './src/presets/custom-theme-preset.js'
+/*export default defineConfig({
+  shortcuts: [
+    ['root', 'selector-[:root]:[--varname:200,0,0]']
+  ],
+  theme: {
+    colors: {
+      cv: 'rgb(var(--varname))',
+    },
+  },
+})
+*/
+
+export default defineConfig({
+    shortcuts: [
+        [
+            'btn',
+            'px-4 py-1 rounded inline-block bg-teal-700 text-white cursor-pointer hover:bg-teal-800 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50',
+        ],
+        [
+            'icon-btn',
+            'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600',
+        ],
+        //CSS ROOT VARIABLES!!
+        ['root', 'selector-[:root]:[--glass-blur:blur(3px)]'],
+    ],
+    presets: [
+         presetWind3({
+      preflight: true,
+      dark: 'class',
+    }),
+    presetTypography({
+      cssExtend: {
+        //this should be replaced with dark:prose-invert
+        'h1,h2,h3,h4,h5,h6,a': {
+          'font-weight': '400',
+        },
+        'a:hover': {
+          color: '#53c7a1',
+        },
+      },
+    }),
+    gbtPreset(),
+    presetIcons({}),
+   // presetHeroPatterns(),
+        //presetUno(),
+//        presetAttributify(),
+       /* presetIcons({
+            scale: 1.2,
+            warn: true,
+            collections: {
+                'my-icons': {
+                    // load your custom icon lazily
+                    resume: () =>
+                        fs.readFile('./src/svg/resume-icon.svg', 'utf-8'),
+                },
+                'carbon': () =>
+                    import('@iconify-json/carbon/icons.json').then(
+                        (i) => i.default,
+                    ),
+            },
+        }),*/
+      /*  presetTypography({
+            selectorName: 'prose', // now use like `markdown markdown-gray`, `not-markdown`
+            // cssExtend is an object with CSS selector as key and
+            // CSS declaration block as value like writing normal CSS.
+            cssExtend: {
+                //this should be replaced with dark:prose-invert
+                'h1,h2,h3,h4,h5,h6,a': {
+                    'color': '#10b981',
+                    'font-weight': '400',
+                },
+                'a:hover': {
+                    color: '#53c7a1',
+                },
+            },
+        }),
+        presetWebFonts({
+            fonts: {
+                //  sans: 'DM Sans',
+                // serif: 'DM Serif Display',
+                mono: 'DM Mono',
+            },
+        }),*/
+       /* presetIcons({
+            scale: 1.2,
+            extraProperties: {
+                'display': 'inline-block',
+                'vertical-align': 'middle',
+            },
+        }),*/
+    //    presetUna(),
+     //   presetGillian(),
+    ],
+    //transformers: [transformerDirectives(), transformerVariantGroup()],
+    //safelist: 'root prose prose-sm m-auto text-left'.split(' '),
+
+
+transformers: [transformerVariantGroup()],
+
+  // Simplified content detection - UnoCSS will scan all files by default
+  content: {
+    filesystem: ['./index.html', './src/**/*.{html,js,ts,jsx,tsx}'],
+  },
+
+  // Safelist to ensure custom colors are always available
+  safelist: [
+    // Custom colors from _base.ts
+    'bg-gordons-green',
+    'text-gordons-green',
+    'border-gordons-green',
+    'bg-astra',
+    'text-astra',
+    'border-astra',
+    'bg-coral-tree',
+    'text-coral-tree',
+    'border-coral-tree',
+    'bg-sepia-black',
+    'text-sepia-black',
+    'border-sepia-black',
+    'bg-pohutukawa',
+    'text-pohutukawa',
+    'border-pohutukawa',
+    'bg-mirage',
+    'text-mirage',
+    'border-mirage',
+    'bg-tana',
+    'text-tana',
+    'border-tana',
+    'bg-spice',
+    'text-spice',
+    'border-spice',
+    'bg-highball',
+    'text-highball',
+    'border-highball',
+    'bg-west-coast',
+    'text-west-coast',
+    'border-west-coast',
+    'bg-jacko-bean',
+    'text-jacko-bean',
+    'border-jacko-bean',
+    'bg-sandstone',
+    'text-sandstone',
+    'border-sandstone',
+    'bg-schooner',
+    'text-schooner',
+    'border-schooner',
+    'bg-ironside-gray',
+    'text-ironside-gray',
+    'border-ironside-gray',
+    'bg-crowshead',
+    'text-crowshead',
+    'border-crowshead',
+    'bg-onion',
+    'text-onion',
+    'border-onion',
+    'bg-madras',
+    'text-madras',
+    'border-madras',
+    'bg-corn',
+    'text-corn',
+    'border-corn',
+    'bg-gumleaf',
+    'text-gumleaf',
+    'border-gumleaf',
+
+    // Legacy custom colors
+    'to-my-coral',
+    'bg-oklch-green',
+    'text-oklch-green',
+    'from-oklch-green',
+    'to-oklch-green',
+    'bg-oklch-mint',
+    'from-oklch-mint',
+    'to-oklch-mint',
+
+    // Add all color combinations that might be used dynamically
+    ...[
+      'red',
+      'orange',
+      'yellow',
+      'lime',
+      'green',
+      'emerald',
+      'teal',
+      'cyan',
+      'sky',
+      'blue',
+      'indigo',
+      'purple',
+      'pink',
+      'rose',
+    ].flatMap((color) =>
+      [50, 100, 200, 300, 400, 500, 600, 700, 800, 900].map(
+        (shade) => `bg-${color}-${shade}`
+      )
+    ),
+
+    // Standard colors (now forced to OKLCH)
+    'bg-lime-500',
+    'from-lime-500',
+    'from-lime-600',
+    'to-lime-500',
+    'to-lime-300',
+    'bg-red-500',
+    'from-red-500',
+    'to-red-500',
+    'to-red-600',
+    'bg-blue-500',
+    'from-blue-500',
+    'to-blue-500',
+    'bg-yellow-300',
+    'via-yellow-300',
+
+    // Focus ring colors for buttons
+    'ring-blue-500',
+    'ring-gray-500',
+    'ring-primary-500',
+    'focus-visible:ring-blue-500',
+    'focus-visible:ring-gray-500',
+    'focus-visible:ring-primary-500',
+
+    // Primary color variations - using blue as primary fallback
+    'bg-primary-50',
+    'bg-primary-100',
+    'bg-primary-400',
+    'bg-primary-500',
+    'bg-primary-600',
+    'bg-primary-950',
+    'text-primary-400',
+    'text-primary-500',
+    'text-primary-600',
+    'ring-primary-400',
+    'ring-primary-500',
+    'hover:bg-primary-50',
+    'hover:bg-primary-100',
+    'hover:bg-primary-400',
+    'hover:bg-primary-500',
+    'hover:bg-primary-900',
+    'hover:bg-primary-950',
+    'hover:text-primary-400',
+    'hover:text-primary-500',
+    'dark:bg-primary-400',
+    'dark:bg-primary-500',
+    'dark:bg-primary-900',
+    'dark:bg-primary-950',
+    'dark:text-primary-400',
+    'dark:text-primary-500',
+    'dark:ring-primary-400',
+    'dark:hover:bg-primary-400',
+    'dark:hover:bg-primary-900',
+    'dark:hover:text-primary-400',
+    // Typography and font classes
+    'prose',
+    'prose-slate',
+    'prose-lg',
+    'prose-dark',
+    // Default UnoCSS font classes
+    'font-sans',
+    'font-serif',
+    'font-mono',
+    // Custom theme font classes
+    'font-heading',
+    'font-heading-alt',
+    'font-display',
+    'font-display-alt',
+    'font-small-caps',
+    'font-body',
+    // Individual Typekit font classes
+    'font-adorn-engraved',
+    'font-adorn-serif',
+    'font-mr-eaves',
+    'font-mrs-eaves',
+    'font-kopius',
+    'font-kopius-condensed',
+    'font-mrs-eaves-small-caps',
+    'dark:prose-invert',
+    'prose-invert',
+    'prose-stone',
+    // Font weight classes
+    'font-thin',
+    'font-extralight',
+    'font-light',
+    'font-normal',
+    'font-medium',
+    'font-semibold',
+    'font-bold',
+    'font-extrabold',
+    'font-black',
+    // Icon classes
+    'i-ph-anchor-simple-thin',
+    'i-mdi-alarm',
+    'i-logos-vue',
+    'i-carbon-sun',
+    'i-carbon-moon',
+    'i-twemoji-grinning-face-with-smiling-eyes',
+    'i-twemoji-face-with-tears-of-joy',
+    'i-heroicons-heart',
+    'i-heroicons-home',
+    'i-heroicons-user',
+    'i-heroicons-cog',
+    'i-heroicons-star',
+    'i-heroicons-bell',
+    'i-heroicons-search',
+    'i-heroicons-mail',
+  ],
+
+})
+/*
+
+
+import {
+    presetAttributify,
+    presetIcons,
+    presetUno,
+    transformerDirectives,
+    transformerVariantGroup,
+} from 'unocss'
+
+export default {
+    presets: [
+        presetUno(),
+        presetAttributify(),
+        presetIcons({
+            scale: 1.2,
+            extraProperties: {
+                'display': 'inline-block',
+                'vertical-align': 'middle',
+            },
+        }),
+        presetUna(),
+    ],
+    extractors: [
+        extratorUna({
+            prefixes,
+        }),
+    ],
+    transformers: [
+        transformerDirectives(),
+        transformerVariantGroup(),
+    ],
+}
+*/
