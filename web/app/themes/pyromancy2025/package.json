@@ -87,7 +87,8 @@
         "typescript-eslint": "^8.35.1",
         "unocss": "^66.3.2",
         "unocss-transformer-alias": "^0.0.8",
-        "vite": "^7.0.0"
+        "vite": "^7.0.0",
+        "vite-uno-project": "workspace:*"
     },
     "config": {
         "codesniffer": {
