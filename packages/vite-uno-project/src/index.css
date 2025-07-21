@@ -1,0 +1,62 @@
+@import 'https://use.typekit.net/qld2bql.css';
+
+/* Manual button reset since UnoCSS preflight isn't working */
+button {
+  background-color: transparent;
+  background-image: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-transform: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: default;
+}
+
+button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+:root {
+  /* Custom OKLCH colors */
+  --color-test-sky: oklch(74.6% 0.16 232.661);
+  --color-test-indigo: oklch(87% 0.065 274.039);
+  --color-my-mint: oklch(85% 0.12 160);
+  --color-my-coral: oklch(70% 0.15 30);
+
+  /* Heading font variables */
+  --font-heading:
+    'adorn-smooth-engraved', 'mr-eaves-xl-sans-narrow', ui-serif, serif;
+  --font-heading-alt:
+    'mr-eaves-xl-sans-narrow', 'adorn-smooth-engraved', ui-sans-serif,
+    sans-serif;
+  --font-display: 'adorn-smooth-engraved', ui-serif, serif;
+  --font-body: ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Theme variations */
+.theme-elegant {
+  --font-heading: 'adorn-smooth-engraved', ui-serif, serif;
+  --font-display: 'adorn-smooth-engraved', ui-serif, serif;
+}
+
+.theme-modern {
+  --font-heading: 'mr-eaves-xl-sans-narrow', ui-sans-serif, sans-serif;
+  --font-display: 'mr-eaves-xl-sans-narrow', ui-sans-serif, sans-serif;
+}
+
+.theme-system {
+  --font-heading: ui-sans-serif, system-ui, sans-serif;
+  --font-display: ui-serif, serif;
+}
+
+/* Then use them with arbitrary values */
+/* bg-[var(--color-test-sky)] */
+/* text-[var(--color-test-indigo)] */
+/* font-[var(--font-heading)] */
