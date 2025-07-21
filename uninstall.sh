@@ -61,6 +61,36 @@ uninstall_vendor() {
     fi
 }
 
+# Function to uninstall web/wp directory
+uninstall_wp() {
+    echo -e "${YELLOW}Uninstalling web/wp directory...${NC}"
+    if [ -d "web/wp" ]; then
+        rm -rf web/wp
+        echo -e "${GREEN}✓ web/wp directory removed${NC}"
+    else
+        echo -e "${RED}✗ web/wp directory not found${NC}"
+    fi
+}
+
+# Function to uninstall all node_modules directories
+uninstall_node_modules() {
+    echo -e "${YELLOW}Uninstalling node_modules directories...${NC}"
+    FOUND=$(find . -name 'node_modules' -type d -prune)
+    if [ -n "$FOUND" ]; then
+        find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+        echo -e "${GREEN}✓ node_modules directories removed${NC}"
+    else
+        echo -e "${RED}✗ No node_modules directories found${NC}"
+    fi
+}
+
+# Function to uninstall lock files
+uninstall_lock_files() {
+    echo -e "${YELLOW}Uninstalling lock files...${NC}"
+    rm -f pnpm-lock.yaml packages/**/pnpm-lock.yaml composer.lock
+    echo -e "${GREEN}✓ Lock files removed${NC}"
+}
+
 # Function to preview what would be deleted
 preview_uninstall() {
     echo -e "${YELLOW}=== PREVIEW MODE ===${NC}"
@@ -117,14 +147,20 @@ case "${1:-preview}" in
     "vendor")
         uninstall_vendor
         ;;
+    "wp")
+        uninstall_wp
+        ;;
     "all")
         uninstall_plugins
         uninstall_mu_plugins
         uninstall_themes
         uninstall_vendor
+        uninstall_wp
+        uninstall_node_modules
+        uninstall_lock_files
         ;;
     *)
-        echo "Usage: $0 [preview|all|plugins|mu-plugins|themes|vendor]"
+        echo "Usage: $0 [preview|all|plugins|mu-plugins|themes|vendor|wp]"
         exit 1
         ;;
 esac
