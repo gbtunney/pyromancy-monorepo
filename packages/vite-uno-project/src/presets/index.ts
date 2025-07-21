@@ -8,7 +8,7 @@ import fontFamily, {
   fontWeight as baseFontWeight,
 } from './_theme/_fonts.js'
 import { shortcuts } from './_shortcuts/index.js'
-
+import {tailwindOKLCHColorsPreset} from './tailwind-oklch-colors-preset.js'
 export type PresetOptions = {
   colors?: Theme['colors']
   fontFamily?: ThemedFontFamilyEntry //Record<string, string | string[]>;
@@ -18,7 +18,7 @@ export type PresetOptions = {
 export const gbtPreset = definePreset<PresetOptions>(
   (options: PresetOptions = {}) => {
     const mytheme = {
-      colors: options.colors ? merge(baseColors, options.colors) : baseColors,
+      colors: options.colors ? merge(tailwindOKLCHColorsPreset().theme.colors ,baseColors, options.colors) : baseColors,
       fontFamily: options.fontFamily
         ? merge(baseFonts, options.fontFamily)
         : baseFonts,

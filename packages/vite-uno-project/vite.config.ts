@@ -4,4 +4,7 @@ import UnoCSS from 'unocss/vite'
 
 export default defineConfig({
   plugins: [react(), UnoCSS({ inspector: true })],
+  build:{
+     emptyOutDir: true,
+  },
 })

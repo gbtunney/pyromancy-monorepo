@@ -7,6 +7,8 @@
     "dev:ts": "tsc -b -w",
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:all":"pnpm build && pnpm build:lib",
+    "build:lib": "vite build --config vite.lib.config.ts",
     "lint": "eslint .",
     "preview": "vite preview",
     "format": "pnpm exec prettier --write *",
@@ -14,6 +16,7 @@
   },
   "dependencies": {
     "@julr/unocss-preset-heropatterns": "^2.0.0",
+    "@types/node": "^24.0.15",
     "@unocss/core": "^66.3.2",
     "@unocss/preset-wind4": "^66.3.2",
     "apcach": "^0.6.4",
@@ -63,5 +66,8 @@
     "unocss": "^66.3.2",
     "vite": "^7.0.0"
   },
-  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
+  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f",
+  "exports": {
+    ".": "./src/index.ts"
+  }
 }
