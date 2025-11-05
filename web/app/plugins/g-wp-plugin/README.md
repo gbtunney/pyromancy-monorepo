@@ -40,6 +40,15 @@ The ZIP file will be created in `../packages/` directory with a timestamp and wi
 
 The package excludes development files (source TypeScript, config files, tests, etc.) to keep the distribution size minimal.
 
+### Downloading the Package
+
+The generated ZIP file can be found at:
+```
+web/app/plugins/packages/g-wp-plugin-[timestamp].zip
+```
+
+You can download this file directly from the repository or use your preferred method to transfer it to your WordPress installation.
+
 On production you only need
 
 - assets
