@@ -17,6 +17,11 @@ interface CalendarEvent {
 function formatICSDate(date: Date | string): string {
   const d = typeof date === 'string' ? new Date(date) : date
   
+  // Validate date
+  if (isNaN(d.getTime())) {
+    throw new Error(`Invalid date: ${date}`)
+  }
+  
   const year = d.getUTCFullYear()
   const month = String(d.getUTCMonth() + 1).padStart(2, '0')
   const day = String(d.getUTCDate()).padStart(2, '0')
@@ -39,6 +44,13 @@ function escapeICSText(text: string): string {
 }
 
 /**
+ * Generate a simple UUID-like identifier
+ */
+function generateUID(): string {
+  return `${Date.now()}-${Math.random().toString(36).substring(2, 11)}`
+}
+
+/**
  * Convert calendar events to ICS format
  */
 export function eventsToICS(events: CalendarEvent[]): string {
@@ -53,10 +65,10 @@ export function eventsToICS(events: CalendarEvent[]): string {
     'METHOD:PUBLISH',
   ]
   
-  events.forEach((event, index) => {
+  events.forEach((event) => {
     const startDate = formatICSDate(event.start)
     const endDate = event.end ? formatICSDate(event.end) : startDate
-    const uid = `event-${index}-${timestamp}@pyromancy.com`
+    const uid = `${generateUID()}@pyromancy.com`
     
     icsContent.push('BEGIN:VEVENT')
     icsContent.push(`UID:${uid}`)
