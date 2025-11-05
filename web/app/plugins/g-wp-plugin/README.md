@@ -8,6 +8,19 @@ Check video here [![short demo](https://img.youtube.com/vi/VA3G8ahoHLE/sddefault
 
 Caption: <i>Dummy dashboard with custom build vue + tailwind setup (Vite realtime environment)</i><br/>
 
+## Google Calendar Integration
+
+This plugin includes a Google Calendar component with download functionality:
+
+- View Google Calendar events in a full-featured calendar interface
+- Download calendar events to ICS format (compatible with Google Calendar, Apple Calendar, Outlook, etc.)
+- Click the "Download Calendar Events" button to export all visible events
+
+The download utility (`src/utils/calendarDownload.ts`) provides:
+- `eventsToICS()` - Convert events to ICS format
+- `downloadICSFile()` - Download ICS content as a file
+- `downloadCalendarEvents()` - Complete download workflow
+
 # How to use ?
 
 - Just clone/fork this repository
