@@ -44,10 +44,22 @@ function escapeICSText(text: string): string {
 }
 
 /**
- * Generate a simple UUID-like identifier
+ * Generate a deterministic UID based on event properties
+ * Using a simple hash approach for calendar event identification
  */
-function generateUID(): string {
-  return `${Date.now()}-${Math.random().toString(36).substring(2, 11)}`
+function generateEventUID(event: CalendarEvent, timestamp: string): string {
+  const startStr = typeof event.start === 'string' ? event.start : event.start.toISOString()
+  const uniqueStr = `${event.title}-${startStr}-${timestamp}`
+  
+  // Simple hash function for UID generation (non-cryptographic, but sufficient for calendar UIDs)
+  let hash = 0
+  for (let i = 0; i < uniqueStr.length; i++) {
+    const char = uniqueStr.charCodeAt(i)
+    hash = ((hash << 5) - hash) + char
+    hash = hash & hash // Convert to 32bit integer
+  }
+  
+  return `event-${Math.abs(hash)}-${timestamp}@pyromancy.com`
 }
 
 /**
@@ -68,7 +80,7 @@ export function eventsToICS(events: CalendarEvent[]): string {
   events.forEach((event) => {
     const startDate = formatICSDate(event.start)
     const endDate = event.end ? formatICSDate(event.end) : startDate
-    const uid = `${generateUID()}@pyromancy.com`
+    const uid = generateEventUID(event, timestamp)
     
     icsContent.push('BEGIN:VEVENT')
     icsContent.push(`UID:${uid}`)
