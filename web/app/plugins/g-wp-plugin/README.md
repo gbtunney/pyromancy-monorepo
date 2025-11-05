@@ -1,6 +1,6 @@
-# WP Plugin Vue Boilerplate (Vite Build)
+# G Plugin Utilities
 
-This is a Customizable sample WordPress Plugin which is developed as a single page app on backend with Vue js and Tailwind custom build css. and you don't have to reload page all the time.
+WordPress plugin with Google Calendar integration using FullCalendar and React, built with Vite.
 
 Check video here [![short demo](https://img.youtube.com/vi/VA3G8ahoHLE/sddefault.jpg)](https://www.youtube.com/watch?v=VA3G8ahoHLE)
 
@@ -12,8 +12,33 @@ Caption: <i>Dummy dashboard with custom build vue + tailwind setup (Vite realtim
 
 - Just clone/fork this repository
 - Check the package.json file
-- command: `npm i`
-- command: `npm run watch` for development and for production: `npm run production`
+- command: `pnpm install`
+- command: `pnpm dev` for development and for production: `pnpm build`
+
+## Creating a Distributable Package
+
+To create a ZIP file for distribution or download:
+
+```bash
+# Build and create ZIP package
+pnpm package
+
+# Or create ZIP without rebuilding
+pnpm package:zip
+
+# List all available packages
+pnpm package:list
+```
+
+The ZIP file will be created in `../packages/` directory with a timestamp and will include:
+- Plugin PHP files (`plugin.php`, `inc/`)
+- Built assets (`dist/`)
+- Composer dependencies (`vendor/`)
+- Public files
+- GraphQL types
+- README
+
+The package excludes development files (source TypeScript, config files, tests, etc.) to keep the distribution size minimal.
 
 On production you only need
 
