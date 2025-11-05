@@ -24,8 +24,11 @@ if (!existsSync(packagesDir)) {
     mkdirSync(packagesDir, { recursive: true });
 }
 
-// Generate timestamp for unique filename
-const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+// Generate timestamp for unique filename (e.g., 2025-11-05T06-43-41)
+const timestamp = new Date()
+    .toISOString()
+    .split('.')[0] // Remove milliseconds and Z
+    .replace(/[:.]/g, '-'); // Replace colons and dots with dashes
 const zipName = `${PLUGIN_NAME}-${timestamp}.zip`;
 const zipPath = join(packagesDir, zipName);
 
@@ -95,11 +98,20 @@ try {
     // Change to plugins directory
     process.chdir(pluginsDir);
 
-    // Build zip command
-    const includeArgs = includePatterns.map(pattern => `"${PLUGIN_NAME}/${pattern}"`).join(' ');
-    const excludeArgs = excludePatterns.map(pattern => `-x "${pattern}"`).join(' ');
+    // Build zip command with proper escaping
+    // Note: All paths are controlled by the script, not user input
+    const includeArgs = includePatterns.map(pattern => {
+        const safePath = `${PLUGIN_NAME}/${pattern}`.replace(/'/g, "'\\''");
+        return `'${safePath}'`;
+    }).join(' ');
     
-    const zipCommand = `zip -r "${zipPath}" ${includeArgs} ${excludeArgs}`;
+    const excludeArgs = excludePatterns.map(pattern => {
+        const safePattern = pattern.replace(/'/g, "'\\''");
+        return `-x '${safePattern}'`;
+    }).join(' ');
+    
+    const safeZipPath = zipPath.replace(/'/g, "'\\''");
+    const zipCommand = `zip -r '${safeZipPath}' ${includeArgs} ${excludeArgs}`;
     
     console.log('Executing:', zipCommand, '\n');
     execSync(zipCommand, { stdio: 'inherit' });
